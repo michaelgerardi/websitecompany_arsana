@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama_blog');
             $table->date('tanggal_blog');
             $table->string('keterangan');
+            $table->string('gambar');
             $table->char('status');
             $table->timestamps();
         });

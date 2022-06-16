@@ -9,5 +9,9 @@ class Blog extends Model
 {
     use HasFactory;
     protected $table = 'blog';
-    protected $fillable = ['id_kategori','nama_blog','tanggal_blog','keterangan','status'];
+    protected $fillable = ['id_kategori','nama_blog','tanggal_blog','keterangan','status','gambar'];
+
+    protected function kategori(){
+        return $this->hasMany('App\Models\kategori');
+    }
 }
