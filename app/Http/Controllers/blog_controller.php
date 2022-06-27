@@ -52,4 +52,12 @@ class blog_controller extends Controller
         $data_blog->delete();
         return redirect()->back();
     }
+
+    public function cari_kategori(Request $request){
+        $pagination = 5;
+        $kategori = kategori::when($request->keyword, function($query) use ($request){
+            $query->where('nama_kategori','like', "%{request->keyword}%");
+        })->orderBy('created_at', 'desc')->pagination($pagination);
+        return view('kategori.pengelompokan',['nama_kategori' => 'kategori','kategori'=>$kategori]);
+    }
 }
