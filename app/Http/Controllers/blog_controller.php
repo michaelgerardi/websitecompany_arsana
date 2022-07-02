@@ -46,7 +46,7 @@ class blog_controller extends Controller
         ];
         return view ('', $data);
     }
-
+ 
     public function delete_kategori($id_blog){
         $data_blog =  kategori::find($id_blog);
         $data_blog->delete();

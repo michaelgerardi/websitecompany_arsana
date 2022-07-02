@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\kategori;
+use App\Models\kategori;
 
 class kategori_controller extends Controller
 {
@@ -13,8 +13,9 @@ class kategori_controller extends Controller
     }
 
     public function tambah_kategori(Request $request){
-        App\Models\kategori::create($request->all());
-        return view();
+        kategori::create($request->all());
+        //return view();
+        return $request;
     }
 
     public function findidkategori($id_kategori){
