@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('blog', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('id_kategori');
             $table->string('nama_blog');
+            $table->string('id_kategori');
             $table->date('tanggal_blog');
             $table->string('keterangan');
             $table->string('gambar');

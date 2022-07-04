@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\kategori;
+use Validator;
 
 class blog_controller extends Controller
 {
@@ -21,7 +22,7 @@ class blog_controller extends Controller
             'tanggal_blog' => 'required',
             'keterangan' => 'required',
             'status' => 'required',
-            'gambar' => 'required|gambar|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
   
         $input = $request->all();
@@ -33,9 +34,9 @@ class blog_controller extends Controller
             $input['gambar'] = "$profileImage";
         }
     
-        Product::create($input);
-     
-        return redirect()->with('success','Product created successfully.');
+        blog::create($input);
+        return $input;
+        //return redirect()->with('success','Product created successfully.');
     }
 
     public function findidblog($id_blog){
