@@ -29,3 +29,4 @@ route::get('/blog',[App\Http\Controllers\blog_controller::class,'index_blog']);
 route::post('/blog/insert',[App\Http\Controllers\blog_controller::class,'tambah_blog']);
 
 route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout']);
+route::get('/blogdelete/{id}',[App\Http\Controllers\blog_controller::class,'delete_blog']);

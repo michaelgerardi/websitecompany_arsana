@@ -9,10 +9,16 @@ use Validator;
 
 class blog_controller extends Controller
 {
-    public function index_blog(){
-        $data_kategori = kategori::all();
-        $data_blog = blog::all();
+    public function index_blog(Request $request){
+        $data_blog = Blog::select('nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
+        ->join('kategori','blog.id_kategori','=','kategori.id')->get();
+        if(strlen($request->kat)!=0){
+            $data_blog = Blog::where('id_kategori',$request->kat)->select('nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
+            ->join('kategori','blog.id_kategori','=','kategori.id')->get();
+        }
+        $data_kategori = Kategori::all();
         return view('blog.index',compact('data_kategori','data_blog'));
+        //return $kat;
     }
 
     public function tambah_blog(Request $request){
@@ -39,8 +45,8 @@ class blog_controller extends Controller
         //return redirect()->with('success','Product created successfully.');
     }
 
-    public function findidblog($id_blog){
-        $data_blog = blog::find($id_blog);
+    public function findidblog($id){
+        $data_blog = blog::find($id);
         $data = [
             'title' => 'blog',
             'data_blog' => $data_blog
@@ -48,17 +54,9 @@ class blog_controller extends Controller
         return view ('', $data);
     }
  
-    public function delete_kategori($id_blog){
-        $data_blog =  kategori::find($id_blog);
+    public function delete_blog($id){
+        $data_blog =  blog::find($id);
         $data_blog->delete();
         return redirect()->back();
-    }
-
-    public function cari_kategori(Request $request){
-        $pagination = 5;
-        $kategori = kategori::when($request->keyword, function($query) use ($request){
-            $query->where('nama_kategori','like', "%{request->keyword}%");
-        })->orderBy('created_at', 'desc')->pagination($pagination);
-        return view('kategori.pengelompokan',['nama_kategori' => 'kategori','kategori'=>$kategori]);
     }
 }
