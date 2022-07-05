@@ -1,4 +1,14 @@
 <h1>Table Blog</h1>
+<form action="" method="get">
+  <label for="kat">Choose a car:</label>
+  <select name="kat" id="cars">
+   @foreach($data_kategori as $kate)
+    <option value="{{$kate->id}}">{{$kate->nama_kategori}}</option>
+    @endforeach
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
 <table class="table">
    <tr>
         <th>Nama Blog</th>
@@ -11,18 +21,17 @@
         <th>Delete</th>
    </tr>
    @foreach($data_blog as $blog)
-     @foreach($data_kategori as $kategori)
+  
    <tr>
         <td>{{$blog->nama_blog}}</td>
         <td>{{$blog->tanggal_blog}}</td>
         <td><img src="{{asset('images/'.$blog->gambar)}}" height="100px" width="100px"></td>
-        <td>{{$kategori->nama_kategori}}</td>
+        <td>{{$blog->nama_kategori}}</td>
         <td>{{$blog->keterangan}}</td>
         <td>{{$blog->status}}</td>
         <td><a href="">Edit</a></td>
-        <td><a href="">Delete</a></td>
+        <td><a href="/blogdelete/{{$blog->id}}">Delete</a></td>
    </tr>
-     @endforeach
    @endforeach
 </table>
 <br>
