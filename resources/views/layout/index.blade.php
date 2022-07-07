@@ -5,21 +5,6 @@
 <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
-{{-- TOPBAR STYLE --}}
-<style>
-  /* Modify the background color */
-    .topbar-custom {
-      background-color: #6C6B6B;
-    }
-
-  /* Modify brand and text color */
-  
-    /* .topbar-custom .topbar-brand,
-    .topbar-custom .topbar-text {
-              color: white;
-        } */
-</style>
-
 {{-- NAVBAR STYLE --}}
 <style>
   /* Modify the background color */
@@ -72,24 +57,31 @@
 </div> --}}
 
 {{-- <div class="header topbar-custom"> --}}
-<div class="navbar navbar-expand-lg top"></div>
+<div class="navbar navbar-expand-sm-auto" style = "background-color: #6C6B6B">
   <div class="container-fluid">
     <div class="header-left">
-      <div style="padding: 0 15px">
-        <img style="width: 45px; height:45px; margin-left:10px" src="{{asset('images/logo call.png')}}" alt="logo">
-        <a class="ml-2" style="color: #ffff"> : 08123849289</a>
-        <img style="width: 75px; height:45px; margin-left:150px" src="{{asset('images/logo_gmail.png')}}" alt="">
-        <a1 class="ml-3" style="color: #ffff">: arsana@gmail.com</a1>
-      </div>
+      {{-- <div style="padding: 0 15px"> --}}
+        {{-- <ul class="navbar-nav me-auto mb-1 mb-lg-0"> --}}
+            <a class="nav-brand" href="#">
+              <img style="width: 70px; height:70px; margin-left:30px" src="{{asset('images/wa_logo.png')}}" alt="logo">
+                <a class="ml-1" style="color: #ffff"> : 08123849289</a>
+            </a>
+          <a class="nav-brand" href="#">
+              <img style="width: 75px; height:45px; margin-left:50px" src="{{asset('images/logo_gmail.png')}}" alt="">
+              <a class="ml-1" style="color: #ffff">: arsana@gmail.com</a>
+          </a>
+        {{-- </ul> --}}
+      {{-- </div> --}}
     </div>
   </div>
+</div>
 {{-- </div> --}}
 
 
 <nav class="navbar navbar-expand-lg navbar-custom ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-    <img style="width: 90px; height:90px; border-radius:50%" src="{{asset('images/logo IMA.jpeg')}}" alt="">
+    <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
     </a>
       <ul class="navbar-nav mr-5">
         <li class="nav-item">
