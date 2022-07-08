@@ -47,21 +47,21 @@
 </head>
 
 <body>
-{{-- <div class="row">
+<!-- <div class="row">
   <div class="topnav col-md-12" id="myTopnav">
     <a class="ml-2" style="color: #ff"> : 08123849289</a>
     <img style="width: 45px; height:45px; margin-left:10px" src="{{asset('images/logo call.png')}}" alt="logo">
     <img style="width: 75px; height:45px; margin-left:150px" src="{{asset('images/logo_gmail.png')}}" alt="">
   <a1 class="ml-3">: arsana@gmail.com</a1>
   </div>
-</div> --}}
+</div> -->
 
-{{-- <div class="header topbar-custom"> --}}
+<!-- <div class="header topbar-custom"> -->
 <div class="navbar navbar-expand-sm-auto" style = "background-color: #6C6B6B">
   <div class="container-fluid">
     <div class="header-left">
-      {{-- <div style="padding: 0 15px"> --}}
-        {{-- <ul class="navbar-nav me-auto mb-1 mb-lg-0"> --}}
+      <!-- <div style="padding: 0 15px"> -->
+        <!-- <ul class="navbar-nav me-auto mb-1 mb-lg-0"> -->
             <a class="nav-brand" href="#">
               <img style="width: 70px; height:70px; margin-left:30px" src="{{asset('images/wa_logo.png')}}" alt="logo">
                 <a class="ml-1" style="color: #ffff"> : 08123849289</a>
@@ -70,12 +70,12 @@
               <img style="width: 75px; height:45px; margin-left:50px" src="{{asset('images/logo_gmail.png')}}" alt="">
               <a class="ml-1" style="color: #ffff">: arsana@gmail.com</a>
           </a>
-        {{-- </ul> --}}
-      {{-- </div> --}}
+        <!-- </ul> -->
+      <!-- </div> -->
     </div>
   </div>
 </div>
-{{-- </div> --}}
+<!-- </div> -->
 
 
 <nav class="navbar navbar-expand-lg navbar-custom ">
@@ -99,7 +99,7 @@
       </ul>
   </div>
 </nav>
-{{-- <div class="row">
+<!-- <div class="row">
     <div class="topbar col-md-12">
     <img style="width: 90px; height:90px; border-radius:50%" src="{{asset('images/logo IMA.jpeg')}}" alt="">
       <ul class="navbar-nav mr-5">
@@ -117,7 +117,7 @@
         </li>
       </ul>
     </div>
-</div> --}}
+</div> -->
 
 <!-- Slideshow container -->
 {{-- <div class="slideshow-container">
