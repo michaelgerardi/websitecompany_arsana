@@ -33,3 +33,12 @@ route::post('/blog/insert',[App\Http\Controllers\blog_controller::class,'tambah_
 route::get('/blogdelete/{id}',[App\Http\Controllers\blog_controller::class,'delete_blog']);
 route::get('/Editblog/{id}',[App\Http\Controllers\blog_controller::class, 'findidblog'])->name('Editblog');
 route::post('/ProsesEdit_blog',[App\Http\Controllers\blog_controller::class, 'Edit_blog'])->name('ProsesEdit_blog');
+
+//Route Layout
+route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout']);
+
+//Route Auth & Login
+Auth::routes();
+Route::post('/submit/login', [App\Http\Controllers\LoginAuthController::class, 'login'])->name('sublogin');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
