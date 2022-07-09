@@ -18,8 +18,8 @@ class kategori_controller extends Controller
         return $request;
     }
 
-    public function findidkategori($id_kategori){
-        $data_kategori = kategori::find($id_kategori);
+    public function findidkategori($id){
+        $data_kategori = kategori::find($id);
         $data = [
             'title' => 'kategori',
             'data_kategori' => $data_kategori
@@ -28,10 +28,11 @@ class kategori_controller extends Controller
     }
 
     public function edit_kategori(Request $request){
-        kategori::where('id',$request->id)->update([
-            'nama_kategori' => $request->nama_kategori
+         kategori::where('id',$request->id)->update([
+           'nama_kategori' => $request->nama_kategori
         ]);
         return redirect()->route('kategori');
+        //return $request->id;
     }
 
     public function delete_kategori($id_kategori){
