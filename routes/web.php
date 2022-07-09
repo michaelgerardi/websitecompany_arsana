@@ -30,3 +30,8 @@ route::post('/blog/insert',[App\Http\Controllers\blog_controller::class,'tambah_
 
 route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout']);
 route::get('/blogdelete/{id}',[App\Http\Controllers\blog_controller::class,'delete_blog']);
+
+Auth::routes();
+Route::post('/submit/login', [App\Http\Controllers\LoginAuthController::class, 'login'])->name('sublogin');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
