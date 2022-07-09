@@ -222,7 +222,7 @@
     <div class="row">
       <div class="col-lg-5 col-md-6 col-sm-12">
         <h4 style="color:black">ARSANA</h1>
-          <div class="decription" style="color: black">
+          <div class="decription; text-justify" style="color: black">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </div>
       </div>
@@ -242,7 +242,7 @@
       <div class="col-lg-7 col-md-6 col-sm-12">
         <h4 style="color:#ffff">SERVICE</h1>
           <h1 style="color:#ffff">Learning Ecosystem</h1>
-          <div class="decription" style="color: #ffff">
+          <div class="decription; text-justify" style="color: #ffff">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </div>
           <br>
@@ -258,7 +258,7 @@
     <div class="row">
       <div class="col-lg-5 col-md-6 col-sm-12">
         <h4 style="color:black">CONSULTING ECOSYSTEM</h1>
-          <div class="decription" style="color: black">
+          <div class="decription; text-justify" style="color: black">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </div>
       </div>
@@ -282,7 +282,10 @@
         <div class="card border-dark mb-4 ">
             <div class="card-body text-dark">
                 <h5 class="card-title">Konsultasi 1</h5>
-                <a class="btn btn-red" href="" role="button">JOIN</a>
+                <div class="decription" style="color: black">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+                <a class="btn btn-red" href="" role="button">Lanjut Konsultasi</a>
             </div>
         </div>
     </div>
@@ -290,7 +293,10 @@
         <div class="card border-dark mb-4 ">
             <div class="card-body text-dark">
                 <h5 class="card-title">Konsultasi 2</h5>
-                <a class="btn btn-red" href="" role="button">JOIN</a>
+                <div class="decription; text-justify" style="color: black" >
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                </div>
+                <a class="btn btn-red" href="" role="button">Lanjut Konsultasi</a>
             </div>
         </div>
     </div>
@@ -299,12 +305,24 @@
         <div class="card border-dark mb-4 ">
             <div class="card-body text-dark">
                 <h5 class="card-title">Konsultasi 3</h5>
-                <a class="btn btn-red" href="" role="button">JOIN</a>
+                <div class="decription" style="color: black">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </div>
+                <a class="btn btn-red" href="" role="button">Lanjut Konsultasi</a>
             </div>
         </div>
     </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="jumbotron" style="background-color:#ffff">
+  <div class="row">
+      <div class="col-md-6">
+      <h4 style="color: black;">CONTACT US</h4>
+    </div>
+  </div>
   </div>
 </div>
 <br>
