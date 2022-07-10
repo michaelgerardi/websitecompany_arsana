@@ -1,6 +1,7 @@
 <h2> Table Edit </h2>
-<form action="{{route('ProsesEditKategori',['id'=> $data_kategori->id])}}" method="post">
+<form action="{{route('ProsesEditKategori')}}" method="post">
 {{csrf_field()}}
+<input type="hidden" value="{{$data_kategori->id}}" name="id">
     <div class="form-group">
             <label class="control-label col-sm-2" for="email">Nama Kategori :</label>
             <div class="col-sm-10">

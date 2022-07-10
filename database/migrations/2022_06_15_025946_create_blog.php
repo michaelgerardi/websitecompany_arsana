@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('gambar');
             $table->char('status');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -33,5 +34,8 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('blog');
+        // Schema::table('blog', function (Blueprint $table) {
+        //     $table->dropSoftDeletes();
+        // });
     }
 };
