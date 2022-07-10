@@ -349,9 +349,13 @@ $(document).ready(function(){
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
   <div class="row">
-      <div class="col-md-6">
-      <h4 style="color: black;">CONTACT US</h4>
-    </div>
+     <div class="column">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </div>
+     <div class="column" style="margin-left: 150px;">
+        <h4>CONTACT US</h4>
+        <img style="width: 2cm; height:2cm;" src="images/mail.png" alt="">
+     </div>
   </div>
   </div>
 </div>
