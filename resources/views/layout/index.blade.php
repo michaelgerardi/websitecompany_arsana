@@ -370,30 +370,62 @@ $(document).ready(function(){
 </div>
 <br>
 <br>
-<div class="container-fluid">
-  <div class="jumbotron" style="background-color:#BB0A1E">
-    <div class="row">
-      <div class="col-lg-5 col-md-6 col-sm-12; text-justify">
-      <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
-      <br><br>
-      <a style="color: #ffff;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</a>
-      </div>
-      <div id="footer">
-        <div class="container">
-            <a style="color: #ffff; margin-left:50px">Dashboard</a>
-            <a style="color: #ffff; margin-left:90px">Learning</a>
-            <a style="color: #ffff; margin-left:100px">Consulting</a>
-        </div>
-        <div class="container mt-3">
-            <a style="color:#ffff; margin-left:60px">Berita</a><br><br>
-            <a style="color: #ffff; margin-left:60px">Service</a><br><br>
-            <a style="color: #ffff; margin-left:60px">About Us</a><br><br>
-            <a style="color:#ffff; margin-left:60px">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="container-fluid">    
+          <footer class="page-footer font-small" style="background-color:#BB0A1E">
+          <div class="container-fluid text-center text-md-left">
+          <div class="row">
+          <div class="col-lg-5 col-md-6 col-sm-12; text-justify">
+            <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px; margin-top:10px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
+            <br><br>
+            <a style="color: #ffff;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</a>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-2 mb-md-0 mb-2">
+             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Dashboard</h5>
+             <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Berita</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Service</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">About Us</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Contact Us</a>
+          </li>
+        </ul>
+          </div>
+          <div class="col-md-2 mb-md-0 mb-2">
+             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Learning</h5>
+             <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Kelas</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Login</a>
+          </li>
+        </ul>
+          </div>
+          <div class="col-md-3 mb-md-0 mb-3">
+             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Consulting</h5>
+             <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Konsultasi</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Jenis Konsultasi</a>
+          </li>
+        </ul>
+          </div>
+          </div>
+          </div>
+          <div class="footer-copyright text-center py-3" style = "background-color: #6C6B6B; color:#ffff">© 2022 Copyright:
+            <a style="color: #ffff;"> CrossDev</a>
+          </div>
+          </footer>
+          </div>
 <script src="assets/js/jquery.js"></script> 
 <script src="assets/js/popper.js"></script> 
 <script src="assets/js/bootstrap.js"></script>
