@@ -354,13 +354,46 @@ $(document).ready(function(){
      </div>
      <div class="column" style="margin-left: 150px;">
         <h4>CONTACT US</h4>
-        <img style="width: 2cm; height:2cm;" src="images/mail.png" alt="">
+        <img style="width: 55px; height: 55px;" src="images/mail.png" alt="">
+        <a> : arsanaecosystem@gmail.com</a>
+        <br>
+        <br>
+        <img style="width: 55px; height: 55px;" src="images/logo_call.png" alt="">
+        <a> : 08123849289</a>
+        <br>
+        <br>
+        <img style="width: 55px; height: 55px;"  src="images/logo_ig.png" alt="">
+        <a> : arsana.ecosystem</a>
      </div>
   </div>
   </div>
 </div>
 <br>
 <br>
+<div class="container-fluid">
+  <div class="jumbotron" style="background-color:#BB0A1E">
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-12; text-justify">
+      <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
+      <br><br>
+      <a style="color: #ffff;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</a>
+      </div>
+      <div id="footer">
+        <div class="container">
+            <a style="color: #ffff; margin-left:50px">Dashboard</a>
+            <a style="color: #ffff; margin-left:90px">Learning</a>
+            <a style="color: #ffff; margin-left:100px">Consulting</a>
+        </div>
+        <div class="container mt-3">
+            <a style="color:#ffff; margin-left:60px">Berita</a><br><br>
+            <a style="color: #ffff; margin-left:60px">Service</a><br><br>
+            <a style="color: #ffff; margin-left:60px">About Us</a><br><br>
+            <a style="color:#ffff; margin-left:60px">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="assets/js/jquery.js"></script> 
 <script src="assets/js/popper.js"></script> 
 <script src="assets/js/bootstrap.js"></script>
