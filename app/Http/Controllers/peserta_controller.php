@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Detail_user;
 
 class peserta_controller extends Controller
 {
@@ -39,6 +40,26 @@ class peserta_controller extends Controller
         $data_kategori = Kategori::all();
         return view('pengajar.index',compact('data_kategori','data_blog'));
         //return $data_blog;
+    }
+    public function viewReqJdPengajar()
+    {
+        return view('ReqJdPengajar.formreq_jdpeng');
+    }
+    public function insertreq(Request $request)
+    {
+        $request->validate([
+            'bidang' => 'required',
+            'pengalaman' => 'required',
+            'pdd_terakhir' => 'required',
+        ]);
+        Detail_user::create([
+            'user_id' => $request->id,
+            'bidang' => $request->bidang,
+            'pengalaman' => $request->pengalaman,
+            'pdd_terakhir' => $request->pdd_terakhir,
+            'acc' => '0',
+        ]);
+        return redirect('/home');
     }
 
 }

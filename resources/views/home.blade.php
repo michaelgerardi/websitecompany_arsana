@@ -23,6 +23,9 @@
                         Anda Login Sebagai Pengajar
                     @endif
                 </div>
+                @if(Auth::guard('web')->check())
+                    <a class="btn btn-primary" href="/reqroleP" role="button">Request Menjadi Pengajar</a>
+                @endif
             </div>
         </div>
     </div>
