@@ -33,6 +33,7 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('blog');
         // Schema::table('blog', function (Blueprint $table) {
         //     $table->dropSoftDeletes();

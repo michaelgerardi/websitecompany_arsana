@@ -82,7 +82,7 @@
         <!-- <ul class="navbar-nav me-auto mb-1 mb-lg-0"> -->
             <a class="nav-brand" href="#">
               <img style="width: 70px; height:70px; margin-left:30px" src="{{asset('images/wa_logo.png')}}" alt="logo">
-                <a class="ml-1" style="color: #ffff"> : 08123849289</a>
+                <a class="ml-1 " style="color: #ffff"> : 08123849289</a>
             </a>
           <a class="nav-brand" href="#">
               <img style="width: 75px; height:45px; margin-left:50px" src="{{asset('images/logo_gmail.png')}}" alt="">
@@ -196,54 +196,48 @@ $(document).ready(function(){
 <div class="container-fluid">
   <h1 class="mr-3" style="color:#BB0A1E">Berita Terbaru</h1>
     <hr width="100%" noshade size="25%" style="color:#BB0A1E">
-
+</div>
 <br>
 <br>
-<div class="row">
-  <div class="col-3">
-  <div class="card ml-2" style="width: 18rem; background-color:#6C6B6B">
-  <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="color: #ffff;">Card title</h5>
-    <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+<!-- CARD DECK BERITA -->
+<div class="container-fluid">
+  <div class="card-deck">
+      <div class="card" style="width: 18rem; background-color:#6C6B6B">
+      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #ffff;">Card title</h5>
+          <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem; background-color:#6C6B6B">
+      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #ffff;">Card title</h5>
+          <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem; background-color:#6C6B6B">
+      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #ffff;">Card title</h5>
+          <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+
+      <div class="card ml-2" style="width: 18rem; background-color:#6C6B6B">
+      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #ffff;">Card title</h5>
+          <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
 
   </div>
 </div>
-  </div>
-  <div class="col-3">
-  <div class="card ml-2" style="width: 18rem; background-color:#6C6B6B">
-  <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="color: #ffff;">Card title</h5>
-    <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
-  </div>
-</div>
-  </div>
-  <div class="col-3">
-  <div class="card ml-2" style="width: 18rem; background-color:#6C6B6B">
-  <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="color: #ffff;">Card title</h5>
-    <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-  </div>
-</div>
-  </div>
-  <div class="col-3">
-  <div class="card ml-2" style="width: 18rem; background-color:#6C6B6B">
-  <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title" style="color: #ffff;">Card title</h5>
-    <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-  </div>
-</div>
-  </div>
-</div>
-
-
-</div>
 <br>
 <br>
 
@@ -369,63 +363,150 @@ $(document).ready(function(){
   </div>
 </div>
 <br>
-<br>
-<div class="container-fluid">    
-          <footer class="page-footer font-small" style="background-color:#BB0A1E">
-          <div class="container-fluid text-center text-md-left">
-          <div class="row">
-          <div class="col-lg-5 col-md-6 col-sm-12; text-justify">
-            <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px; margin-top:10px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
-            <br><br>
-            <a style="color: #ffff;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</a>
-          </div>
-          <hr class="clearfix w-100 d-md-none pb-3">
-          <div class="col-md-2 mb-md-0 mb-2">
-             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Dashboard</h5>
-             <ul class="list-unstyled">
-          <li>
-            <a href="#!" style="margin-left: 50px; color:#ffff">Berita</a>
-          </li>
-          <li>
-            <a href="#!" style="margin-left: 50px; color:#ffff">Service</a>
-          </li>
-          <li>
-            <a href="#!" style="margin-left: 50px; color:#ffff">About Us</a>
-          </li>
-          <li>
-            <a href="#!" style="margin-left: 50px; color:#ffff">Contact Us</a>
-          </li>
+
+<!-- <div class="col-sm-12">    
+  <footer class="page-footer font-small col-sm-12" style="background-color:#BB0A1E">
+    <div class="container-fluid text-center text-md-left col-sm-12">
+      <div class="row">
+        <div class="col-lg-5 col-md-6 col-sm-12; text-justify">
+          <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px; margin-top:10px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
+          <br><br>
+          <a style="color: #ffff;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</a>
+        </div>
+      <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-2 mb-md-0 mb-2 col-sm-6">
+            <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Dashboard</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" style="margin-left: 50px; color:#ffff">Berita</a>
+            </li>
+            <li>
+              <a href="#!" style="margin-left: 50px; color:#ffff">Service</a>
+            </li>
+            <li>
+              <a href="#!" style="margin-left: 50px; color:#ffff">About Us</a>
+            </li>
+            <li>
+              <a href="#!" style="margin-left: 50px; color:#ffff">Contact Us</a>
+            </li>
         </ul>
-          </div>
-          <div class="col-md-2 mb-md-0 mb-2">
-             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Learning</h5>
-             <ul class="list-unstyled">
-          <li>
-            <a href="#!" style="margin-left: 50px; color:#ffff">Kelas</a>
-          </li>
-          <li>
-            <a href="#!" style="margin-left: 50px; color:#ffff">Login</a>
-          </li>
-        </ul>
-          </div>
-          <div class="col-md-3 mb-md-0 mb-3">
-             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Consulting</h5>
-             <ul class="list-unstyled">
-          <li>
-            <a href="#!" style="margin-left: 50px; color:#ffff">Konsultasi</a>
-          </li>
-          <li>
-            <a href="#!" style="margin-left: 50px; color:#ffff">Jenis Konsultasi</a>
-          </li>
-        </ul>
-          </div>
-          </div>
-          </div>
-          <div class="footer-copyright text-center py-3" style = "background-color: #6C6B6B; color:#ffff">© 2022 Copyright:
-            <a style="color: #ffff;"> CrossDev</a>
-          </div>
-          </footer>
-          </div>
+        </div>
+      <div class="col-md-2 mb-md-0 mb-2 col-sm-6">
+          <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Learning</h5>
+          <ul class="list-unstyled">
+      <li>
+        <a href="#!" style="margin-left: 50px; color:#ffff">Kelas</a>
+      </li>
+      <li>
+        <a href="#!" style="margin-left: 50px; color:#ffff">Login</a>
+      </li>
+    </ul>
+      </div>
+      <div class="col-md-3 mb-md-0 mb-3 col-sm-6">
+          <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Consulting</h5>
+          <ul class="list-unstyled">
+      <li>
+        <a href="#!" style="margin-left: 50px; color:#ffff">Konsultasi</a>
+      </li>
+      <li>
+        <a href="#!" style="margin-left: 50px; color:#ffff">Jenis Konsultasi</a>
+      </li>
+    </ul>
+      </div>
+    </div>
+    
+      <div class="footer-copyright text-center py-2" style = "background-color: #6C6B6B; color:#ffff">© 2022 Copyright:
+        <a style="color: #ffff;"> CrossDev</a>
+      </div>
+    </div>
+  </footer>
+</div> -->
+
+<!-- FOOTER -->
+<div class="container-fluid">
+  <!-- Footer -->
+<footer class="text-center text-lg-start text-white" style="background-color:#BB0A1E">
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <img style="width: 90px; height:90px; border-radius:50%; margin-top:10px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
+          <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h5 class="text-uppercase fw-bold mb-4">
+            Products
+          </h5>
+          <p class="fs-4">
+            <a href="#" class="text" style="color: #ffff;">Berita</a>
+          </p>
+          <p>
+            <a href="#" class="text" style="color: #ffff;">Service</a>
+          </p>
+          <p>
+            <a href="#" class="text" style="color: #ffff;">About Us</a>
+          </p>
+          <p>
+            <a href="#" class="text" style="color: #ffff;">Contact Us</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h5 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h5>
+          <p>
+            <a href="#" class="text" style="color: #ffff;">Kelas</a>
+          </p>
+          <p>
+            <a href="#" class="text" style="color: #ffff;">Login</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h5 class="text-uppercase fw-bold mb-4">
+            Contact
+          </h5>
+          <p>
+            <a href="#" class="text" style="color: #ffff;">Konsultasi</a>
+          </p>
+          <p>
+            <a href="#" class="text" style="color: #ffff;">Jenis Konsultasi</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color:#6C6B6B;">
+    © 2022 Copyright:
+    <a class="text-reset fw-bold" style="color: #ffff;">Crossdev</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</div>
+
 <script src="assets/js/jquery.js"></script> 
 <script src="assets/js/popper.js"></script> 
 <script src="assets/js/bootstrap.js"></script>
