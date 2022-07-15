@@ -40,5 +40,12 @@ route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout
 //Route Auth & Login
 Auth::routes();
 Route::post('/submit/login', [App\Http\Controllers\LoginAuthController::class, 'login'])->name('sublogin');
-
+route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'cek_login']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Admin
+route::get('/dashboard_Admin',[App\Http\Controllers\blog_controller::class,'dashboard_admin']);
+
+//pengajar
+route::get('/pengajar',[App\Http\Controllers\pengajar_controller::class,'pengajar_blog'])->name('blog');
+route::post('/pengajar/insert',[App\Http\Controllers\blog_controller::class,'tambah_blog']);

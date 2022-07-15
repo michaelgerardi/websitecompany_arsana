@@ -84,5 +84,8 @@ class LoginAuthController extends Controller
         return redirect('/');
     }
 
+    public function cek_login(){
+        return view('layouts.login');
+    }
 
 }
