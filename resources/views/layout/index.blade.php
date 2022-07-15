@@ -349,14 +349,83 @@ $(document).ready(function(){
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
   <div class="row">
-      <div class="col-md-6">
-      <h4 style="color: black;">CONTACT US</h4>
-    </div>
+     <div class="column">
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </div>
+     <div class="column" style="margin-left: 150px;">
+        <h4>CONTACT US</h4>
+        <img style="width: 55px; height: 55px;" src="images/mail.png" alt="">
+        <a> : arsanaecosystem@gmail.com</a>
+        <br>
+        <br>
+        <img style="width: 55px; height: 55px;" src="images/logo_call.png" alt="">
+        <a> : 08123849289</a>
+        <br>
+        <br>
+        <img style="width: 55px; height: 55px;"  src="images/logo_ig.png" alt="">
+        <a> : arsana.ecosystem</a>
+     </div>
   </div>
   </div>
 </div>
 <br>
 <br>
+<div class="container-fluid">    
+          <footer class="page-footer font-small" style="background-color:#BB0A1E">
+          <div class="container-fluid text-center text-md-left">
+          <div class="row">
+          <div class="col-lg-5 col-md-6 col-sm-12; text-justify">
+            <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px; margin-top:10px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
+            <br><br>
+            <a style="color: #ffff;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</a>
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-2 mb-md-0 mb-2">
+             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Dashboard</h5>
+             <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Berita</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Service</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">About Us</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Contact Us</a>
+          </li>
+        </ul>
+          </div>
+          <div class="col-md-2 mb-md-0 mb-2">
+             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Learning</h5>
+             <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Kelas</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Login</a>
+          </li>
+        </ul>
+          </div>
+          <div class="col-md-3 mb-md-0 mb-3">
+             <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Consulting</h5>
+             <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Konsultasi</a>
+          </li>
+          <li>
+            <a href="#!" style="margin-left: 50px; color:#ffff">Jenis Konsultasi</a>
+          </li>
+        </ul>
+          </div>
+          </div>
+          </div>
+          <div class="footer-copyright text-center py-3" style = "background-color: #6C6B6B; color:#ffff">© 2022 Copyright:
+            <a style="color: #ffff;"> CrossDev</a>
+          </div>
+          </footer>
+          </div>
 <script src="assets/js/jquery.js"></script> 
 <script src="assets/js/popper.js"></script> 
 <script src="assets/js/bootstrap.js"></script>
