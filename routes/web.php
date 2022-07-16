@@ -41,6 +41,7 @@ route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout
 Auth::routes();
 Route::post('/submit/login', [App\Http\Controllers\LoginAuthController::class, 'login'])->name('sublogin');
 route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'cek_login']);
+// route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'loginPage']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Admin
