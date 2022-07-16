@@ -8,6 +8,12 @@ use App\Models\Kategori;
 
 class pengajar_controller extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:pengajar');
+    }
+
     public function konten_pengajar(Request $request){
         $request->validate([
             'id_kategori' => 'required',
