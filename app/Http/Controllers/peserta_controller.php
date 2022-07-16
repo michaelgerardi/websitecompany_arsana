@@ -13,7 +13,7 @@ class peserta_controller extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:murid');
+        $this->middleware('auth');
     }
 
     public function konten_peserta(Request $request){
