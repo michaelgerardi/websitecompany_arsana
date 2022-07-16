@@ -50,3 +50,9 @@ route::get('/dashboard_Admin',[App\Http\Controllers\blog_controller::class,'dash
 //pengajar
 route::get('/pengajar',[App\Http\Controllers\pengajar_controller::class,'pengajar_blog'])->name('blog');
 route::post('/pengajar/insert',[App\Http\Controllers\blog_controller::class,'tambah_blog']);
+
+//reqjdpengajar
+route::get('/reqroleP',[App\Http\Controllers\peserta_controller::class,'viewReqJdPengajar'])->name('viewReqJdPengajar');
+route::post('/reqroleP/insert',[App\Http\Controllers\peserta_controller::class,'insertreq'])->name('insertreq');
+route::get('/LihatReq',[App\Http\Controllers\ReqJdPeng_controller::class,'LihatReq'])->name('LihatReq');
+route::get('/LihatReq/ApproveReq/{id}',[App\Http\Controllers\ReqJdPeng_controller::class,'ApproveReq'])->name('ApproveReq');
