@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Detail_user;
-use App\Models\blog;
+use App\Models\Blog;
+use App\Models\kategori;
 
 class peserta_controller extends Controller
 {
@@ -33,7 +34,7 @@ class peserta_controller extends Controller
             $input['gambar'] = "$profileImage";
         }
     
-        blog::create($input);
+        Blog::create($input);
         return $input;
         //return redirect()->with('success','Product created successfully.');
     }

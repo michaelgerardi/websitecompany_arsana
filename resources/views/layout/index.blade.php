@@ -1,4 +1,6 @@
 <html>
+<title>ARSANA</title>
+<link href="{{asset('images/logo IMA.jpeg')}}" rel="icon">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,6 +26,8 @@
               color: white;
         }
 </style>
+
+
 
 {{-- HR STYLE --}}
 <style>
@@ -65,6 +69,7 @@
 </head>
 
 <body>
+
 <!-- <div class="row">
   <div class="topnav col-md-12" id="myTopnav">
     <a class="ml-2" style="color: #ff"> : 08123849289</a>
@@ -193,6 +198,7 @@ $(document).ready(function(){
 <br>
 <br>
 {{-- BERITA TERBARU HEADING --}}
+<section id="news" class="news">
 <div class="container-fluid">
   <h1 class="mr-3" style="color:#BB0A1E">Berita Terbaru</h1>
     <hr width="100%" noshade size="25%" style="color:#BB0A1E">
@@ -253,6 +259,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
+</section>
 
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#BB0A1E">
@@ -337,6 +344,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
+<section id="contact" class="contact">
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
     <div class="row">
@@ -360,6 +368,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
+</section>
 <br>
 
 <!-- FOOTER -->

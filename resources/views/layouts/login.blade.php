@@ -49,7 +49,6 @@
               </div>
 
               <input type="submit" value="Log In" class="btn btn-block btn-primary">
-
             </form>
           </div>
         </div>
