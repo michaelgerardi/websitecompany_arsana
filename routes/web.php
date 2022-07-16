@@ -41,6 +41,7 @@ route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout
 Auth::routes();
 Route::post('/submit/login', [App\Http\Controllers\LoginAuthController::class, 'login'])->name('sublogin');
 route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'cek_login']);
+// route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'loginPage']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Admin
@@ -48,10 +49,14 @@ route::get('/dashboard_Admin',[App\Http\Controllers\blog_controller::class,'dash
 
 //pengajar
 route::get('/pengajar',[App\Http\Controllers\pengajar_controller::class,'pengajar_blog'])->name('blog');
-route::post('/pengajar/insert',[App\Http\Controllers\blog_controller::class,'tambah_blog']);
+route::post('/pengajar/insert',[App\Http\Controllers\pengajar_controller::class,'konten_pengajar']);
 
 //reqjdpengajar
 route::get('/reqroleP',[App\Http\Controllers\peserta_controller::class,'viewReqJdPengajar'])->name('viewReqJdPengajar');
 route::post('/reqroleP/insert',[App\Http\Controllers\peserta_controller::class,'insertreq'])->name('insertreq');
 route::get('/LihatReq',[App\Http\Controllers\ReqJdPeng_controller::class,'LihatReq'])->name('LihatReq');
 route::get('/LihatReq/ApproveReq/{id}',[App\Http\Controllers\ReqJdPeng_controller::class,'ApproveReq'])->name('ApproveReq');
+
+//Peserta
+route::get('/peserta',[App\Http\Controllers\peserta_controller::class,'peserta_blog'])->name('blog');
+route::post('/peserta/insert',[App\Http\Controllers\peserta_controller::class,'konten_peserta']);

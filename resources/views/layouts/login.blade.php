@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('login/fonts/icomoon/style.css')}}">
+    <link rel="stylesheet" href="{{asset('loginasset/fonts/icomoon/style.css')}}">
 
-    <link rel="stylesheet" href="{{asset('login/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('loginasset/css/owl.carousel.min.css')}}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('login/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('loginasset/css/bootstrap.min.css')}}">
     
     <!-- Style -->
-    <link rel="stylesheet" href="{{asset('login/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('loginasset/css/style.css')}}">
 
     <title>Login #2</title>
   </head>
@@ -23,7 +22,7 @@
   
 
   <div class="d-lg-flex half">
-    <div class="bg order-1 order-md-2" style="background-image: url('login/images/coba_1.jpg');"></div>
+    <div class="bg order-1 order-md-2" style="background-image: url('loginasset/images/coba_1.jpg');"></div>
     <div class="contents order-2 order-md-1">
 
       <div class="container">
@@ -62,9 +61,9 @@
     
     
 
-    <script src="{{asset('login/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{asset('login/js/popper.min.js')}}"></script>
-    <script src="{{asset('login/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('login/js/main.js')}}"></script>
+    <script src="{{asset('loginasset/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('loginasset/js/popper.min.js')}}"></script>
+    <script src="{{asset('loginasset/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('loginasset/js/main.js')}}"></script>
   </body>
 </html>

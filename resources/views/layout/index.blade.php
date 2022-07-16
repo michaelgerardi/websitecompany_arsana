@@ -75,13 +75,13 @@
 </div> -->
 
 <!-- <div class="header topbar-custom"> -->
-<div class="navbar navbar-expand-sm-auto" style = "background-color: #6C6B6B">
+<div class="navbar navbar-expand-sm-auto" style = "background-color: #6C6B6B;">
   <div class="container-fluid">
-    <div class="header-left">
+    <div class="header-left" style="margin-bottom: -9px;">
       <!-- <div style="padding: 0 15px"> -->
         <!-- <ul class="navbar-nav me-auto mb-1 mb-lg-0"> -->
             <a class="nav-brand" href="#">
-              <img style="width: 70px; height:70px; margin-left:30px" src="{{asset('images/wa_logo.png')}}" alt="logo">
+              <img style="width: 70px; height:70px; margin-left:30px; margin-top:-10px" src="{{asset('images/wa_logo.png')}}" alt="logo">
                 <a class="ml-1 " style="color: #ffff"> : 08123849289</a>
             </a>
           <a class="nav-brand" href="#">
@@ -198,55 +198,52 @@ $(document).ready(function(){
     <hr width="100%" noshade size="25%" style="color:#BB0A1E">
 </div>
 <br>
-<br>
 
 <!-- CARD DECK BERITA -->
 <div class="container-fluid">
   <div class="card-deck">
-      <div class="card" style="width: 18rem; background-color:#6C6B6B">
-      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
+      <div class="card" style="width: 18rem; background-color:#6C6B6B; border-radius:10%;">
+      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap" style="border-radius: 10%;">
         <div class="card-body">
           <h5 class="card-title" style="color: #ffff;">Card title</h5>
           <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
 
-      <div class="card" style="width: 18rem; background-color:#6C6B6B">
-      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
+      <div class="card" style="width: 18rem; background-color:#6C6B6B; border-radius:10%;">
+      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap" style="border-radius: 9.8%;">
         <div class="card-body">
           <h5 class="card-title" style="color: #ffff;">Card title</h5>
           <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
 
-      <div class="card" style="width: 18rem; background-color:#6C6B6B">
-      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
+      <div class="card" style="width: 18rem; background-color:#6C6B6B; border-radius:10%;">
+      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap" style="border-radius: 9.8%;">
         <div class="card-body">
           <h5 class="card-title" style="color: #ffff;">Card title</h5>
           <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
 
-      <div class="card ml-2" style="width: 18rem; background-color:#6C6B6B">
-      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap">
+      <div class="card ml-2" style="width: 18rem; background-color:#6C6B6B; border-radius:10%;">
+      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap" style="border-radius: 9.8%;">
         <div class="card-body">
           <h5 class="card-title" style="color: #ffff;">Card title</h5>
           <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
-
   </div>
 </div>
 
 <br>
-<br>
-
+<!-- ABOUT ARSANA -->
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
     <div class="row">
       <div class="col-lg-5 col-md-6 col-sm-12">
-        <h4 style="color:black">ARSANA</h1>
-          <div class="decription; text-justify" style="color: black">
+        <h4 style="color:black">ABOUT ARSANA</h1>
+          <div class="decription; text-justify; margin-left=100px" style="color: black">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </div>
       </div>
@@ -254,7 +251,7 @@ $(document).ready(function(){
           <img style="width: 7cm; height:7cm; margin-left: 500px" src="images/20220704070302.png" alt="">
         </div>
     </div>
-</div>
+  </div>
 </div>
 
 <div class="container-fluid">
@@ -275,7 +272,7 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-<br>
+
 <br>
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
@@ -290,10 +287,10 @@ $(document).ready(function(){
           <img style="width: 7cm; height:7cm; margin-left: 500px" src="images/20220704070302.png" alt="">
         </div>
     </div>
-</div>
+  </div>
 </div>
 <br>
-<br>
+
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#BB0A1E">
     <div class="row">
@@ -342,97 +339,40 @@ $(document).ready(function(){
 </div>
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
-  <div class="row">
-     <div class="column">
-     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-     </div>
-     <div class="column" style="margin-left: 150px;">
-        <h4>CONTACT US</h4>
-        <img style="width: 55px; height: 55px;" src="images/mail.png" alt="">
-        <a> : arsanaecosystem@gmail.com</a>
-        <br>
-        <br>
-        <img style="width: 55px; height: 55px;" src="images/logo_call.png" alt="">
-        <a> : 08123849289</a>
-        <br>
-        <br>
-        <img style="width: 55px; height: 55px;"  src="images/logo_ig.png" alt="">
-        <a> : arsana.ecosystem</a>
-     </div>
-  </div>
+    <div class="row">
+      <div class="column" style="margin-left: 120px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="column" style="margin-left: 150px;">
+          <h3>CONTACT US</h3>
+          <br>
+          <img style="width: 55px; height: 55px;" src="images/mail.png" alt="">
+          <a> : arsanaecosystem@gmail.com</a>
+          <br>
+          <br>
+          <img style="width: 55px; height: 55px;" src="images/logo_call.png" alt="">
+          <a> : 08123849289</a>
+          <br>
+          <br>
+          <img style="width: 55px; height: 55px;"  src="images/logo_ig.png" alt="">
+          <a> : arsana.ecosystem</a>
+      </div>
+    </div>
   </div>
 </div>
 <br>
 
-<!-- <div class="col-sm-12">    
-  <footer class="page-footer font-small col-sm-12" style="background-color:#BB0A1E">
-    <div class="container-fluid text-center text-md-left col-sm-12">
-      <div class="row">
-        <div class="col-lg-5 col-md-6 col-sm-12; text-justify">
-          <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px; margin-top:10px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
-          <br><br>
-          <a style="color: #ffff;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type</a>
-        </div>
-      <hr class="clearfix w-100 d-md-none pb-3">
-        <div class="col-md-2 mb-md-0 mb-2 col-sm-6">
-            <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Dashboard</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!" style="margin-left: 50px; color:#ffff">Berita</a>
-            </li>
-            <li>
-              <a href="#!" style="margin-left: 50px; color:#ffff">Service</a>
-            </li>
-            <li>
-              <a href="#!" style="margin-left: 50px; color:#ffff">About Us</a>
-            </li>
-            <li>
-              <a href="#!" style="margin-left: 50px; color:#ffff">Contact Us</a>
-            </li>
-        </ul>
-        </div>
-      <div class="col-md-2 mb-md-0 mb-2 col-sm-6">
-          <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Learning</h5>
-          <ul class="list-unstyled">
-      <li>
-        <a href="#!" style="margin-left: 50px; color:#ffff">Kelas</a>
-      </li>
-      <li>
-        <a href="#!" style="margin-left: 50px; color:#ffff">Login</a>
-      </li>
-    </ul>
-      </div>
-      <div class="col-md-3 mb-md-0 mb-3 col-sm-6">
-          <h5 class="text-uppercase" style="margin-left: 50px; color:#ffff; margin-top:10px">Consulting</h5>
-          <ul class="list-unstyled">
-      <li>
-        <a href="#!" style="margin-left: 50px; color:#ffff">Konsultasi</a>
-      </li>
-      <li>
-        <a href="#!" style="margin-left: 50px; color:#ffff">Jenis Konsultasi</a>
-      </li>
-    </ul>
-      </div>
-    </div>
-    
-      <div class="footer-copyright text-center py-2" style = "background-color: #6C6B6B; color:#ffff">© 2022 Copyright:
-        <a style="color: #ffff;"> CrossDev</a>
-      </div>
-    </div>
-  </footer>
-</div> -->
-
 <!-- FOOTER -->
 <div class="container-fluid">
   <!-- Footer -->
-<footer class="text-center text-lg-start text-white" style="background-color:#BB0A1E">
+<footer class="text-center text-lg-start text-white" style="background-color:#BB0A1E;">
   <!-- Section: Links  -->
   <section class="">
     <div class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="margin-top: 1%;">
           <!-- Content -->
           <img style="width: 90px; height:90px; border-radius:50%; margin-top:10px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
           <p>
@@ -442,7 +382,7 @@ $(document).ready(function(){
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4"  style="margin-top: 2%;">
           <!-- Links -->
           <h5 class="text-uppercase fw-bold mb-4">
             Products
@@ -463,7 +403,7 @@ $(document).ready(function(){
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="margin-top: 2%;">
           <!-- Links -->
           <h5 class="text-uppercase fw-bold mb-4">
             Useful links
@@ -478,7 +418,7 @@ $(document).ready(function(){
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="margin-top: 2%;">
           <!-- Links -->
           <h5 class="text-uppercase fw-bold mb-4">
             Contact
