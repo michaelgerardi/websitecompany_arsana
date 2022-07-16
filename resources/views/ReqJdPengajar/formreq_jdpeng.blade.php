@@ -1,4 +1,4 @@
-<h2> Table Edit </h2>
+<h2> Form Request </h2>
 <form action="{{route('insertreq')}}" method="post">
 {{csrf_field()}}
 <input type="hidden" value="{{Auth::user()->id}}" name="id">
