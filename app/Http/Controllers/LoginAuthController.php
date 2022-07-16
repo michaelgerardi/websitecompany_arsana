@@ -37,16 +37,15 @@ class LoginAuthController extends Controller
             'password' => 'required',
         ]);
         $user=User::where('email',$request->email)->first();
-        $role=Role::where('user_id',$user->id)->value('role');
         //return $role;
-        switch ($role) {
-            case '0':
+        switch ($user->role_id) {
+            case '1':
                 $guard="web";
                 break;
-            case '1':
+            case '2':
                 $guard="admin";
                 break;
-            case '2':
+            case '3':
                 $guard="pengajar";
                 break;
         }
