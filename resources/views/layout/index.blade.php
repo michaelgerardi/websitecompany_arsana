@@ -75,13 +75,13 @@
 </div> -->
 
 <!-- <div class="header topbar-custom"> -->
-<div class="navbar navbar-expand-sm-auto" style = "background-color: #6C6B6B">
+<div class="navbar navbar-expand-sm-auto" style = "background-color: #6C6B6B;">
   <div class="container-fluid">
-    <div class="header-left">
+    <div class="header-left" style="margin-bottom: -9px;">
       <!-- <div style="padding: 0 15px"> -->
         <!-- <ul class="navbar-nav me-auto mb-1 mb-lg-0"> -->
             <a class="nav-brand" href="#">
-              <img style="width: 70px; height:70px; margin-left:30px" src="{{asset('images/wa_logo.png')}}" alt="logo">
+              <img style="width: 70px; height:70px; margin-left:30px; margin-top:-10px" src="{{asset('images/wa_logo.png')}}" alt="logo">
                 <a class="ml-1 " style="color: #ffff"> : 08123849289</a>
             </a>
           <a class="nav-brand" href="#">
