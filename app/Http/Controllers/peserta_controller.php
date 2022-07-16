@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Detail_user;
+use App\Models\blog;
 
 class peserta_controller extends Controller
 {
@@ -11,7 +12,7 @@ class peserta_controller extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:murid');
+        $this->middleware('auth');
     }
 
     public function konten_peserta(Request $request){
