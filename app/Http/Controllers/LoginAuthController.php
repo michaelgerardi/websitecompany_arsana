@@ -14,19 +14,13 @@ class LoginAuthController extends Controller
     public function showLoginForm()
     {
         if (Auth::guard('admin')->check()) {
-            return redirect()->route('');
+            return redirect()->route('/home');
+        } else if (Auth::guard('user')->check()) {
+            return redirect()->route('/home');
+        } else if (Auth::guard('pengajar')->check()) {
+            return redirect()->route('/home');
         } else {
-            return view();
-        }
-        if (Auth::guard('user')->check()) {
-            return redirect()->route('');
-        } else {
-            return view();
-        }
-        if (Auth::guard('pengajar')->check()) {
-            return redirect()->route('');
-        } else {
-            return view();
+            return view('layout.login');
         }
     }
 
@@ -81,10 +75,6 @@ class LoginAuthController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
-    }
-
-    public function cek_login(){
-        return view('layouts.login');
     }
 
 }
