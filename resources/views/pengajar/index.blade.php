@@ -77,12 +77,5 @@ tr:nth-child(even) {
         <label for="exampleInputEmail1">File Gambar</label>
         <input name="gambar"type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
      </div>
-     <div class="form-group">
-            <label for="exampleFormControlSelect1">Status</label>
-            <select name="status"class="form-control" id="exampleFormControlSelect1">
-              <option value="Setuju">Setuju</option>
-              <option value="Tidak Setuju">Tidak Setuju</option>
-            </select>
-          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
 </form>

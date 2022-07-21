@@ -64,3 +64,7 @@ route::post('/peserta/insert',[App\Http\Controllers\peserta_controller::class,'k
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//slider CRUD
+route::get('/Slider',[App\Http\Controllers\slider_controller::class,'slider_index']);
+route::post('/slider/insert',[App\Http\Controllers\slider_controller::class,'tambah_slider']);
