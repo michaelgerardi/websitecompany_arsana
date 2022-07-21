@@ -11,10 +11,10 @@ use Validator;
 class blog_controller extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:admin');
+    // }
 
     public function index_blog(Request $request){
         $data_blog = Blog::select('blog.id','nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
