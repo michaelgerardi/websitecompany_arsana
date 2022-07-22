@@ -30,26 +30,34 @@
           <div class="col-md-7">
             <h3>Login to <strong>Colorlib</strong></h3>
             <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
-            <form action="#" method="post">
+            <form method="POST" action="{{ route('sublogin') }}">
+              @csrf
               <div class="form-group first">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" @if(isset($email) AND isset($pass)) value="{{$email}}" @endif id="email" placeholder="your-email@gmail.com" id="username" required autocomplete="email" autofocus>
               </div>
               <div class="form-group last mb-3">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Your Password" id="password">
+                <input type="password" class="form-control" placeholder="Your Password" id="password" name="password" @if(isset($email) AND isset($pass)) value="{{$pass}}" @endif required autocomplete="current-password">
               </div>
               
               <div class="d-flex mb-5 align-items-center">
                 <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
-                  <input type="checkbox" checked="checked"/>
+                  <input type="checkbox" checked="checked" name="rememberme">
                   <div class="control__indicator"></div>
                 </label>
                 <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
               </div>
 
-              <input type="submit" value="Log In" class="btn btn-block btn-primary">
+              <button type="submit" class="btn btn-block btn-primary">Log In</button>
             </form>
+            
+            <div class="flex items-center justify-end mt-4 align-middle ">
+              <a href="{{ route('auth.google') }}">
+                  <img src="https://developers.google.com/identity/images/btn_google_signin_dark_normal_web.png" style="margin-left: 3em;">
+              </a>
+            </div>
+
           </div>
         </div>
       </div>

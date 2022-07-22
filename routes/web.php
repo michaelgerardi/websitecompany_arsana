@@ -68,3 +68,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //slider CRUD
 route::get('/Slider',[App\Http\Controllers\slider_controller::class,'slider_index']);
 route::post('/slider/insert',[App\Http\Controllers\slider_controller::class,'tambah_slider']);
+
+//googleauth
+Route::get('auth/google',[App\Http\Controllers\LoginAuthController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback',[App\Http\Controllers\LoginAuthController::class, 'handleGoogleCallback']);
