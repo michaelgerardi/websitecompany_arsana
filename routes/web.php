@@ -36,6 +36,7 @@ route::post('/ProsesEdit_blog',[App\Http\Controllers\blog_controller::class, 'Ed
 
 //Route Layout
 route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout']);
+route::get('/service',[App\Http\Controllers\layout_controller::class,'serviceLay']);
 
 //Route Auth & Login
 //Auth::routes();
