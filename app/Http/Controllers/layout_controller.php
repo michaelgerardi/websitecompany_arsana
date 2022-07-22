@@ -10,4 +10,9 @@ class layout_controller extends Controller
     public function indexlayout(){
         return view('layout.index');
     }
+
+    // HALAMAN SERVICE
+    public function serviceLay(){
+        return view('layout.service');
+    }
 }
