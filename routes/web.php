@@ -41,7 +41,7 @@ route::get('/service',[App\Http\Controllers\layout_controller::class,'serviceLay
 //Route Auth & Login
 //Auth::routes();
 Route::post('/submit/login', [App\Http\Controllers\LoginAuthController::class, 'login'])->name('sublogin');
-route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'cek_login']);
+route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'showLoginForm'])->name('loginfinal');
 // route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'loginPage']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -73,3 +73,6 @@ route::post('/slider/insert',[App\Http\Controllers\slider_controller::class,'tam
 //Portofolio CRUD
 route::get('/portofolio',[App\Http\Controllers\portofolio_controller::class,'index_portofolio']);
 route::post('/portofolio/insert',[App\Http\Controllers\portofolio_controller::class,'tambah_portofolio']); 
+//googleauth
+Route::get('auth/google',[App\Http\Controllers\LoginAuthController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback',[App\Http\Controllers\LoginAuthController::class, 'handleGoogleCallback']);
