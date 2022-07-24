@@ -69,3 +69,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //slider CRUD
 route::get('/Slider',[App\Http\Controllers\slider_controller::class,'slider_index']);
 route::post('/slider/insert',[App\Http\Controllers\slider_controller::class,'tambah_slider']);
+
+//Portofolio CRUD
+route::get('/portofolio',[App\Http\Controllers\portofolio_controller::class,'index_portofolio']);
+route::post('/portofolio/insert',[App\Http\Controllers\portofolio_controller::class,'tambah_portofolio']); 
