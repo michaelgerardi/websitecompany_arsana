@@ -17,11 +17,11 @@ class LoginAuthController extends Controller
     public function showLoginForm()
     {
         if (Auth::guard('admin')->check()) {
-            return redirect()->route('home');
+            return redirect()->route('layout');
         } else if (Auth::guard('web')->check()) {
-            return redirect()->route('home');
+            return redirect()->route('layout');
         } else if (Auth::guard('pengajar')->check()) {
-            return redirect()->route('home');
+            return redirect()->route('layout');
         } else {
             if(Cookie::get('email') !== null){
                 $email=Cookie::get('email');
@@ -42,58 +42,57 @@ class LoginAuthController extends Controller
             'password' => 'required',
         ]);
         $user=User::where('email',$request->email)->first();
-        switch ($user->role_id) {
-            case '1':
-                $guard="web";
-                break;
-            case '2':
-                $guard="admin";
-                break;
-            case '3':
-                $guard="pengajar";
-                break;
-        }
-        if(auth()->guard($guard)->attempt([
-            'email' => $request->email,
-            'password' => $request->password,
-        ])) {
-            $user = auth()->guard($guard)->user();
-            if($request->rememberme=='on'){
-                $cookie1 = Cookie::make('email', $request->email, $minutes);
-                $cookie2 = Cookie::make('pass', $request->password, $minutes);
-                return redirect()->intended(url('/home'))->withCookie($cookie1)->withCookie($cookie2);
-            }else{
-                $cookie1 = Cookie::forget('email');
-                $cookie2 = Cookie::forget('pass');
-                return redirect()->intended(url('/home'))->withCookie($cookie1)->withCookie($cookie2);
+        if(isset($user)){
+            switch ($user->role_id) {
+                case '1':
+                    $guard="web";
+                    break;
+                case '2':
+                    $guard="admin";
+                    break;
+                case '3':
+                    $guard="pengajar";
+                    break;
             }
-        } else {
+            if(auth()->guard($guard)->attempt([
+                'email' => $request->email,
+                'password' => $request->password,
+            ])) {
+                $user = auth()->guard($guard)->user();
+                if($request->rememberme=='on'){
+                    $cookie1 = Cookie::make('email', $request->email, $minutes);
+                    $cookie2 = Cookie::make('pass', $request->password, $minutes);
+                    return redirect()->intended(url('/layout'))->withCookie($cookie1)->withCookie($cookie2);
+                }else{
+                    $cookie1 = Cookie::forget('email');
+                    $cookie2 = Cookie::forget('pass');
+                    return redirect()->intended(url('/layout'))->withCookie($cookie1)->withCookie($cookie2);
+                }
+            } else {
+                return redirect()->back()->withError('Credentials doesn\'t match.');
+            }
+        }else{
             return redirect()->back()->withError('Credentials doesn\'t match.');
         }
+        
         
         
     }
 
     public function logout(Request $request)
     {
-        switch ($request->roleattempt) {
-            case '0':
-                $guard="admin";
-                break;
-            case '1':
-                $guard="pengajar";
-                break;
-            case '2':
-                $guard="user";
-                break;
+        if(Auth::guard('admin')->check()){
+            Auth::guard('admin')->logout();
+        } elseif(Auth::guard('pengajar')->check()){
+            Auth::guard('pengajar')->logout();
+        }elseif(Auth::guard('web')->check()){
+            Auth::guard('web')->logout();
         }
-        Auth::guard($guard)->logout();
-
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('loginfinal');
     }
 
     //////////google/////////////
@@ -110,15 +109,16 @@ class LoginAuthController extends Controller
             $finduser = User::where('google_id', $user->id)->first();
             if($finduser){
                 Auth::login($finduser);
-                return redirect()->intended(url('/home'));
+                return redirect()->intended(url('/layout'));
             }else{
                 $newUser = User::updateOrCreate(['email' => $user->email],[
                         'name' => $user->name,
                         'google_id'=> $user->id,
+                        'role_id'=> '1',
                         'password' => Hash::make('123456dummy')
                     ]);
                 Auth::login($newUser);
-                return redirect()->intended(url('/home'));
+                return redirect()->intended(url('/layout'));
             }
         } catch (Exception $e) {
             dd($e->getMessage());

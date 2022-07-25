@@ -35,7 +35,7 @@ route::get('/Editblog/{id}',[App\Http\Controllers\blog_controller::class, 'findi
 route::post('/ProsesEdit_blog',[App\Http\Controllers\blog_controller::class, 'Edit_blog'])->name('ProsesEdit_blog');
 
 //Route Layout
-route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout']);
+route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout'])->name('mainpage');
 route::get('/service',[App\Http\Controllers\layout_controller::class,'serviceLay']);
 
 //Route Auth & Login
@@ -44,9 +44,13 @@ Route::post('/submit/login', [App\Http\Controllers\LoginAuthController::class, '
 route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'showLoginForm'])->name('loginfinal');
 // route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'loginPage']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/logoutfnl', [App\Http\Controllers\LoginAuthController::class, 'logout'])->name('logoutfnl');
 
 // Admin
 route::get('/dashboard_Admin',[App\Http\Controllers\blog_controller::class,'dashboard_admin']);
+
+//Register
+route::get('/register2',[App\Http\Controllers\RegisterController::class, 'registerLay']);
 
 //pengajar
 route::get('/pengajar',[App\Http\Controllers\pengajar_controller::class,'pengajar_blog'])->name('pengajar_blog');

@@ -215,6 +215,12 @@
                     <li class="nav-item">
                     <a class="navbar-brand" href="#contact"><b>Contact</b></a>
                     </li>
+                    <li class="nav-item">
+                    <a class="navbar-brand" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a>
+                    <form id="logout-form" action="{{ route('logoutfnl') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
+                    </li>
                 </ul>
             </div>
         </nav>
