@@ -74,6 +74,20 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 route::get('/Slider',[App\Http\Controllers\slider_controller::class,'slider_index']);
 route::post('/slider/insert',[App\Http\Controllers\slider_controller::class,'tambah_slider']);
 
+//Portofolio CRUD
+route::get('/portofolio',[App\Http\Controllers\portofolio_controller::class,'index_portofolio']);
+route::post('/portofolio/insert',[App\Http\Controllers\portofolio_controller::class,'tambah_portofolio']);
+route::get('/portofoliodelete/{id}',[App\Http\Controllers\portofolio_controller::class,'delete_portofolio']);
+route::get('/editportofolio/{id}',[App\Http\Controllers\portofolio_controller::class,'findidportofolio']);
+route::post('/proseseditportofolio',[App\Http\Controllers\portofolio_controller::class,'update_portofolio']);
+
+//LayananCRUD
+route::get('/layanan',[App\Http\Controllers\layanan_controller::class,'index_layanan']);
+route::post('/layanan/insert',[App\Http\Controllers\layanan_controller::class,'tambah_layanan']);
+route::get('/layanandelete/{id}',[App\Http\Controllers\layanan_controller::class,'delete_layanan']);
+route::get('/editlayanan/{id}',[App\Http\Controllers\layanan_controller::class,'findidlayanan']);
+route::post('/proseseditlayanan',[App\Http\Controllers\layanan_controller::class,'update_layanan']);
+
 //googleauth
 Route::get('auth/google',[App\Http\Controllers\LoginAuthController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback',[App\Http\Controllers\LoginAuthController::class, 'handleGoogleCallback']);

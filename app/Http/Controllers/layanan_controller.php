@@ -3,26 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\slider;
+use App\Models\layanan;
 
-class slider_controller extends Controller
+class layanan_controller extends Controller
 {
-    public function slider_index()
+    public function index_layanan()
     {
-        $data_slider = slider:: all();
-        return view('slider.index',compact('data_slider'));
+        $data_layanan = layanan::all();
+        return view('layanan.index',compact('data_layanan'));
     }
 
-    public function tambah_slider(Request $request)
+    public function tambah_layanan(Request $request)
     {
         $request->validate([
-            'nama_slider'=>'required',
-            'tanggal_slider'=>'required',
+            'judul_layanan'=>'required',
+            'deskripsi'=>'required',
+            'jenis_layanan'=>'required',
             'gambar'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $input = $request->all();
         if ($image = $request->file('gambar')) {
-            $destinationPath = 'slider/';
+            $destinationPath = 'layanan/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
@@ -32,27 +33,28 @@ class slider_controller extends Controller
         return $input;
     }
 
-    public function delete_slider($id)
+    public function delete_layanan($id)
     {
-        $data_slider = slider::find($id);
-        $data_slider->delete();
+        $data_layanan = layanan::find($id);
+        $data_layanan->delete();
         return redirect()->back();
     }
 
-    public function findidslider($id){
-        $data_slider = slider::find($id);
+    public function findidlayanan($id){
+        $data_layanan = layanan::find($id);
         $data = [
-            'title' => 'slider',
-            'data_slider' => $data_blog
+            'title' => 'layanan',
+            'data_layanan' => $data_layanan
         ];
-        return view ('slider.edit', compact('data'));
+        return view ('layanan.edit', compact('data'));
     }
 
-    public function update_slider(Request $request, $id)
+    public function update_layanan(Request $request, $id)
     {
         $request->validate([
-            'nama_slider'=>'required',
-            'tanggal_slider'=>'required',
+            'judul_layanan'=>'required',
+            'deskripsi'=>'required',
+            'jenis_layanan'=>'required'
         ]);
         
         $post = Post::find($id);
@@ -60,14 +62,14 @@ class slider_controller extends Controller
             $request->validate([
               'gambar' => 'required|gambar|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
-            $path = $request->file('gambar')->store('public/slider');
+            $path = $request->file('gambar')->store('public/layanan');
             $post->image = $path;
         }
         $post->title = $request->title;
         $post->description = $request->description;
         $post->save();
     
-        return redirect()->route('portofolio.index')
+        return redirect()->route('layanan.index')
                         ->with('success','Post updated successfully');
     }
 }
