@@ -79,7 +79,7 @@ class blog_controller extends Controller
             'status' => 'required'
         ]);
         
-        $post = Post::find($id);
+        $post = Blog::find($id);
         if($request->hasFile('gambar')){
             $request->validate([
               'gambar' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',

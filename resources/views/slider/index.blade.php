@@ -54,11 +54,17 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
+        @foreach($data_slider as $slider)
         <tr>
-            @foreach($data_slider as $slider)
-            <td></td>
-            @endforeach
+            
+            <td>{{$slider->nama_slider}}</td>
+            <td>{{$slider->tanggal_slider}}</td>
+            <td><img src="{{asset('slider/'.$slider->gambar)}}" height="100px" width="100px"></td>
+            <td><a class="btn btn-warning" role="button" href="/editslider/{{$slider->id}}">Edit</a></td>
+            <td><a class="btn btn-danger" role="button" href="/slidedelete/{{$slider->id}}">Delete</a></td>
+           
         </tr>
+        @endforeach
     </table>
   <br>
     <form action="/slider/insert" method="POST" enctype="multipart/form-data">

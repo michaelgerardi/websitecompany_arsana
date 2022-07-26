@@ -1,6 +1,7 @@
 <h1>Edit Slider</h1>
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="{{route('ProsesEditslider')}}" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}
+        <input type="hidden" name="id" value="{{$id}}">
         <div class="form-group">
             <label for="exampleFormControlInput1">Nama Slider</label>
             <input name="nama_slider"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">

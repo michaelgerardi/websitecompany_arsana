@@ -43,31 +43,31 @@ class slider_controller extends Controller
         $data_slider = slider::find($id);
         $data = [
             'title' => 'slider',
-            'data_slider' => $data_blog
+            'data_slider' => $data_slider
         ];
-        return view ('slider.edit', compact('data'));
+        return view ('slider.edit', compact('data','id'));
     }
 
-    public function update_slider(Request $request, $id)
+    public function update_slider(Request $request)
     {
         $request->validate([
             'nama_slider'=>'required',
             'tanggal_slider'=>'required',
         ]);
         
-        $post = Post::find($id);
+        $post = slider::find($request->id);
         if($request->hasFile('gambar')){
             $request->validate([
-              'gambar' => 'required|gambar|mimes:jpg,png,jpeg,gif,svg|max:2048',
+              'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
             $path = $request->file('gambar')->store('public/slider');
-            $post->image = $path;
+            $imgname = date('YmdHis') . "_" ."slider".".". $request->file('gambar')->getClientOriginalExtension();
+            $post->gambar = $imgname;
         }
-        $post->title = $request->title;
-        $post->description = $request->description;
+        $post->nama_slider = $request->nama_slider;
+        $post->tanggal_slider = $request->tanggal_slider;
         $post->save();
-    
-        return redirect()->route('portofolio.index')
-                        ->with('success','Post updated successfully');
+        return $post;
+        // return redirect()->route('slider.index')->with('success','Post updated successfully');
     }
 }

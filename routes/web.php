@@ -71,15 +71,18 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //slider CRUD
-route::get('/Slider',[App\Http\Controllers\slider_controller::class,'slider_index']);
+route::get('/Imageslider',[App\Http\Controllers\slider_controller::class,'slider_index']);
 route::post('/slider/insert',[App\Http\Controllers\slider_controller::class,'tambah_slider']);
+route::get('/slidedelete/{id}',[App\Http\Controllers\slider_controller::class,'delete_slider']);
+route::get('/editslider/{id}',[App\Http\Controllers\slider_controller::class,'findidslider']);
+route::post('/proseseditslider',[App\Http\Controllers\slider_controller::class,'update_slider'])->name('ProsesEditslider');
 
 //Portofolio CRUD
 route::get('/portofolio',[App\Http\Controllers\portofolio_controller::class,'index_portofolio']);
 route::post('/portofolio/insert',[App\Http\Controllers\portofolio_controller::class,'tambah_portofolio']);
 route::get('/portofoliodelete/{id}',[App\Http\Controllers\portofolio_controller::class,'delete_portofolio']);
-route::get('/editportofolio/{id}',[App\Http\Controllers\portofolio_controller::class,'findidportofolio']);
-route::post('/proseseditportofolio',[App\Http\Controllers\portofolio_controller::class,'update_portofolio']);
+route::get('/editportofolio/{id}',[App\Http\Controllers\portofolio_controller::class,'']);
+route::post('/proseseditportofolio',[App\Http\Controllers\portofolio_controller::class,'']);
 
 //LayananCRUD
 route::get('/layanan',[App\Http\Controllers\layanan_controller::class,'index_layanan']);
