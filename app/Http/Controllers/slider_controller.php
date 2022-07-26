@@ -21,14 +21,14 @@ class slider_controller extends Controller
             'gambar'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $input = $request->all();
-        if ($image = $request->file('gambar')) {
-            $destinationPath = 'slider/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['gambar'] = "$profileImage";
-        }
-
-        slider::create($input);
+        $image = $request->file('gambar');
+        $destinationPath = 'slider/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $input['gambar'] = "$profileImage";
+        $data=slider::create($input);
+        $nama =$data->id . "_" ."slider". "." . $image->getClientOriginalExtension();
+        slider::where('id', $data->id)->update(['gambar' => $nama]);
+        $image->move($destinationPath, $nama);
         return $input;
     }
 
@@ -56,18 +56,19 @@ class slider_controller extends Controller
         ]);
         
         $post = slider::find($request->id);
-        if($request->hasFile('gambar')){
+        if($image = $request->file('gambar')){
             $request->validate([
               'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
-            $path = $request->file('gambar')->store('public/slider');
-            $imgname = date('YmdHis') . "_" ."slider".".". $request->file('gambar')->getClientOriginalExtension();
+            $imgname = $request->id . "_" ."slider".".". $request->file('gambar')->getClientOriginalExtension();
+            $destinationPath = 'slider/';
+            $image->move($destinationPath, $imgname);
             $post->gambar = $imgname;
         }
         $post->nama_slider = $request->nama_slider;
         $post->tanggal_slider = $request->tanggal_slider;
         $post->save();
-        return $post;
+        return $imgname;
         // return redirect()->route('slider.index')->with('success','Post updated successfully');
     }
 }

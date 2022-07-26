@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">File Gambar</label>
-            <input name="gambar"type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
+            <input name="gambar" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
 </form>
