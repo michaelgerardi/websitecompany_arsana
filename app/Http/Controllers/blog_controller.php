@@ -37,17 +37,15 @@ class blog_controller extends Controller
             'status' => 'required',
             'gambar' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-  
         $input = $request->all();
-  
-        if ($image = $request->file('gambar')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['gambar'] = "$profileImage";
-        }
-    
-        blog::create($input);
+        $image = $request->file('gambar');
+        $destinationPath = 'images/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $input['gambar'] = "$profileImage";
+        $data=slider::create($input);
+        $nama =$data->id . "_" ."blog". "." . $image->getClientOriginalExtension();
+        slider::where('id', $data->id)->update(['gambar' => $nama]);
+        $image->move($destinationPath, $nama);
         return $input;
         //return redirect()->with('success','Product created successfully.');
     }
@@ -79,19 +77,24 @@ class blog_controller extends Controller
             'status' => 'required'
         ]);
         
-        $post = Blog::find($id);
-        if($request->hasFile('gambar')){
+        $post = slider::find($request->id);
+        if($image = $request->file('gambar')){
             $request->validate([
-              'gambar' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+              'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
-            $path = $request->file('gambar')->store('images/');
-            $post->image = $path;
+            $imgname = $request->id . "_" ."blog".".". $request->file('gambar')->getClientOriginalExtension();
+            $destinationPath = 'images/';
+            $image->move($destinationPath, $imgname);
+            $post->gambar = $imgname;
         }
-        $post->title = $request->title;
-        $post->description = $request->description;
+        $post->nama_blog = $request->nama_blog;
+        $post->tanggal_blog = $request->tanggal_blog;
+        $post->keterangan = $request->keterangan;
+        $post->status = $request->status;
         $post->save();
+        return $imgname;
     
-        return redirect()->route('blog')->with('success','Post updated successfully');
+        //return redirect()->route('blog')->with('success','Post updated successfully');
     }
 
     public function history()
@@ -129,8 +132,7 @@ class blog_controller extends Controller
         $data_grafikpie = blog::selectraw("nama_kategori, count(id_kategori) as jumlah")
         ->join('kategori','blog.id_kategori','=','kategori.id')->groupBy('nama_kategori')->get();
        //return $data_grafikpie;        
-        return view('dashboard.index',
-        compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie'));
+        return view('dashboard.index',compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie'));
     }
 
 
