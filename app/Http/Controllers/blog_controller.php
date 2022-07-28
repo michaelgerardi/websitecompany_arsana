@@ -42,9 +42,9 @@ class blog_controller extends Controller
         $destinationPath = 'images/';
         $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
         $input['gambar'] = "$profileImage";
-        $data=slider::create($input);
+        $data=blog::create($input);
         $nama =$data->id . "_" ."blog". "." . $image->getClientOriginalExtension();
-        slider::where('id', $data->id)->update(['gambar' => $nama]);
+        blog::where('id', $data->id)->update(['gambar' => $nama]);
         $image->move($destinationPath, $nama);
         return $input;
         //return redirect()->with('success','Product created successfully.');
@@ -67,7 +67,7 @@ class blog_controller extends Controller
     }
 
 
-    public function Edit_blog(Request $request,$id)
+    public function Edit_blog(Request $request)
     {
         $request->validate([
             'id_kategori' => 'required',
@@ -77,7 +77,7 @@ class blog_controller extends Controller
             'status' => 'required'
         ]);
         
-        $post = slider::find($request->id);
+        $post = blog::find($request->id);
         if($image = $request->file('gambar')){
             $request->validate([
               'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
@@ -92,7 +92,7 @@ class blog_controller extends Controller
         $post->keterangan = $request->keterangan;
         $post->status = $request->status;
         $post->save();
-        return $imgname;
+        return $post  ;
     
         //return redirect()->route('blog')->with('success','Post updated successfully');
     }

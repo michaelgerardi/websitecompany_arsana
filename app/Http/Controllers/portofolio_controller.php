@@ -16,8 +16,8 @@ class portofolio_controller extends Controller
     public function tambah_portofolio(Request $request)
     {
         $request->validate([
-            'nama_slider'=>'required',
-            'tanggal_slider'=>'required',
+            'nama_perusahaan'=>'required',
+            'tanggal_input'=>'required',
             'gambar'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $input = $request->all();
@@ -25,9 +25,9 @@ class portofolio_controller extends Controller
         $destinationPath = 'portofolio/';
         $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
         $input['gambar'] = "$profileImage";
-        $data=slider::create($input);
+        $data=portofolio::create($input);
         $nama =$data->id . "_" ."portofolio". "." . $image->getClientOriginalExtension();
-        slider::where('id', $data->id)->update(['gambar' => $nama]);
+        portofolio::where('id', $data->id)->update(['gambar' => $nama]);
         $image->move($destinationPath, $nama);
         return $input;
     }
@@ -40,14 +40,14 @@ class portofolio_controller extends Controller
     }
 
 
-    public function update_portofolio(Request $request, $id)
+    public function update_portofolio(Request $request)
     {
         $request->validate([
             'nama_perusahaan'=>'required',
             'tanggal_input'=>'required',
         ]);
         
-        $post = slider::find($request->id);
+        $post = portofolio::find($request->id);
         if($image = $request->file('gambar')){
             $request->validate([
               'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
@@ -57,8 +57,8 @@ class portofolio_controller extends Controller
             $image->move($destinationPath, $imgname);
             $post->gambar = $imgname;
         }
-        $post->nama_slider = $request->nama_slider;
-        $post->tanggal_slider = $request->tanggal_slider;
+        $post->nama_perusahaan = $request->nama_perusahaan;
+        $post->tanggal_input = $request->tanggal_input;
         $post->save();
         return $imgname;
       }
@@ -69,7 +69,7 @@ class portofolio_controller extends Controller
             'title' => 'portofolio',
             'data_portofolio' => $data_portofolio
         ];
-        return view ('portofolio.edit', compact('data'));
+        return view ('portofolio.edit', compact('data','id'));
     }
 
 }

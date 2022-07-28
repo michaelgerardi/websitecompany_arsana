@@ -62,6 +62,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                <a class="btn btn-danger" href="{{ 'auth/google''}}">google</a>
                             </div>
                         </div>
                     </form>

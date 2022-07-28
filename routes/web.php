@@ -78,11 +78,11 @@ route::get('/editslider/{id}',[App\Http\Controllers\slider_controller::class,'fi
 route::post('/proseseditslider',[App\Http\Controllers\slider_controller::class,'update_slider'])->name('ProsesEditslider');
 
 //Portofolio CRUD
-route::get('/portofolio',[App\Http\Controllers\portofolio_controller::class,'index_portofolio']);
+route::get('/Imageportofolio',[App\Http\Controllers\portofolio_controller::class,'index_portofolio']);
 route::post('/portofolio/insert',[App\Http\Controllers\portofolio_controller::class,'tambah_portofolio']);
 route::get('/portofoliodelete/{id}',[App\Http\Controllers\portofolio_controller::class,'delete_portofolio']);
-route::get('/editportofolio/{id}',[App\Http\Controllers\portofolio_controller::class,'']);
-route::post('/proseseditportofolio',[App\Http\Controllers\portofolio_controller::class,'']);
+route::get('/editportofolio/{id}',[App\Http\Controllers\portofolio_controller::class,'findidportofolio']);
+route::post('/proseseditportofolio',[App\Http\Controllers\portofolio_controller::class,'update_portofolio'])->name('ProsesEditportofolio');
 
 //LayananCRUD
 route::get('/layanan',[App\Http\Controllers\layanan_controller::class,'index_layanan']);

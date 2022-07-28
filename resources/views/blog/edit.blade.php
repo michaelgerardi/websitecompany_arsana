@@ -1,7 +1,7 @@
 <h1>Update Blog</h1>
-<form action="{{route('ProsesEdit_blog')}}" method="POST">
+<form action="{{route('ProsesEdit_blog')}}" method="POST" enctype="multipart/form-data">
 {{csrf_field()}}
-<input type="hidden" value="{{$data_blog->id}}" name="id">
+<input type="hidden" value="{{id}}" name="id">
 <div class="form-group">
         <label for="exampleInputEmail1">Nama Blog</label>
         <input name="nama_blog"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">

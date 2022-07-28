@@ -26,20 +26,19 @@
     <div class="bg order-1 order-md-2" style="background-image: url('loginasset/images/coba_1.jpg');height:1000px;"></div>
     <div class="contents order-2 order-md-1">
     <div class="container">
-    <div class="col-md-7 col-xl-7">
+    <div class="col-md-7">
     <img style="width: 70px; height:70px; border-radius:50%; margin-left:75px; margin-top:30px;"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
     </div>
     </div>
       <div class="container">
         <div class="row align-items-center justify-content-center">
-          <div class="col-md-7 col-xl-7">
+          <div class="col-md-7 col-sl-7">
             <h3 class="text-center"><strong> Selamat Datang </strong></h3>
             <p class="mb-4 text-center"><strong>ARSANA Learning System</strong></p>
-            <form action="{{ route('register') }}" method="post">
-                @csrf
+            <form action="#" method="post">
               <div class="form-group first">
                 <label for="username" style="color: #ffff;">Nama Lengkap</label>
-                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <input type="text" class="form-control" placeholder="Nama Lengkap" id="username">
               </div>
               <div class="form-group last mb-3">
                 <label for="password" style="color: #ffff;">Tanggal Lahir</label>
@@ -55,20 +54,20 @@
               </div>
               <div class="form-group last mb-3">
                 <label for="password" style="color: #ffff;">Email</label>
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                <input type="text" class="form-control" placeholder="Email" id="password">
               </div>
               <div class="form-group last mb-3">
                 <label for="password" style="color: #ffff;">Password</label>
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                <input type="password" class="form-control" placeholder="Password" id="password">
               </div>
               <div class="form-group last mb-3">
                 <label for="password" style="color: #ffff;">Re-Password</label>
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                <input type="password" class="form-control" placeholder="Re-Password" id="password">
               </div>
-              <button type="submit" class="btn btn-block btn-primary">DAFTAR</button>
             </form>
             <br>
             <br>
+            <input type="submit" value="DAFTAR" class="btn btn-block btn-primary">
           </div>
         </div>
       </div>
