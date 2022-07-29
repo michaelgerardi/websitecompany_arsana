@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\layout;
+use App\Models\Blog;
 
 class layout_controller extends Controller
 {
     public function indexlayout(){
-        return view('layout.index');
+        $content = Blog::where('status','1')->paginate(3);
+        return view('layout.index',compact('content'));
     }
 
     // HALAMAN SERVICE

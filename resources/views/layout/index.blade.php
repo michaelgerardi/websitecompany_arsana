@@ -66,31 +66,17 @@ $(document).ready(function(){
 <br>
 
 <!-- CARD DECK BERITA -->
-<div class="container-fluid">
+<div class="container-fluid col-md-12">
   <div class="card-deck">
-      <div class="card" style="width: 18rem; background-color:#6C6B6B; border-radius:10%;">
-      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap" style="border-radius: 10%;">
+    @foreach($content as $row)
+      <div class="card col-md-4" style="width: 18rem; background-color:#6C6B6B; border-radius:10%;">
+      <img class="card-img-top" style="height:300px;max-width:200px;width: expression(this.width > 200 ? 200: true);" src="{{asset('images/'.$row->gambar)}}" alt="Card image cap" style="border-radius: 10%;">
         <div class="card-body">
-          <h5 class="card-title" style="color: #ffff;">Card title</h5>
-          <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title" style="color: #ffff;">{{$row->nama_blog}}</h5>
+          <p class="card-text"  style="color: #ffff;">{{\Illuminate\Support\Str::limit($row->keterangan, $limit = 150, $end = '...')}}</p>
         </div>
       </div>
-
-      <div class="card" style="width: 18rem; background-color:#6C6B6B; border-radius:10%;">
-      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap" style="border-radius: 9.8%;">
-        <div class="card-body">
-          <h5 class="card-title" style="color: #ffff;">Card title</h5>
-          <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem; background-color:#6C6B6B; border-radius:10%;">
-      <img class="card-img-top" src="images/gambar1.jpg" alt="Card image cap" style="border-radius: 9.8%;">
-        <div class="card-body">
-          <h5 class="card-title" style="color: #ffff;">Card title</h5>
-          <p class="card-text"  style="color: #ffff;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
+      @endforeach
   </div>
 </div>
 

@@ -71,7 +71,7 @@
                   <input type="checkbox" name="rememberme" checked="checked"/>
                   <div class="control__indicator"></div>
                 </label>
-                <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+                <span class="ml-auto"><a href="/password/reset" class="forgot-pass">Forgot Password</a></span> 
               </div>
 
               <button type="submit"class="btn btn-danger btn-block">Log In</button>

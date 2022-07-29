@@ -16,11 +16,13 @@ return new class extends Migration
         Schema::create('blog', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_blog');
+            $table->unsignedBigInteger('user_id');
             $table->string('id_kategori');
             $table->date('tanggal_blog');
-            $table->string('keterangan');
+            $table->text('keterangan');
             $table->string('gambar');
-            $table->char('status');
+            $table->char('status',1);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });

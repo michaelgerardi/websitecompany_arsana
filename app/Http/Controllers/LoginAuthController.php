@@ -17,11 +17,11 @@ class LoginAuthController extends Controller
     public function showLoginForm()
     {
         if (Auth::guard('admin')->check()) {
-            return redirect()->route('layout');
+            return redirect()->route('mainpage');
         } else if (Auth::guard('web')->check()) {
-            return redirect()->route('layout');
+            return redirect()->route('mainpage');
         } else if (Auth::guard('pengajar')->check()) {
-            return redirect()->route('layout');
+            return redirect()->route('mainpage');
         } else {
             if(Cookie::get('email') !== null){
                 $email=Cookie::get('email');

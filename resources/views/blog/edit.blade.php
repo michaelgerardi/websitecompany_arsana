@@ -4,7 +4,7 @@
 <input type="hidden" value="{{$data_blog->id}}" name="id">
 <div class="form-group">
         <label for="exampleInputEmail1">Nama Blog</label>
-        <input name="nama_blog"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
+        <input name="nama_blog"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data_blog->nama_blog}}">
      </div>
      <div class="form-group">
         <label for="exampleInputPegawai">Kategori</label>
@@ -16,22 +16,24 @@
      </div>
      <div class="form-group">
         <label for="exampleInputEmail1">Tanggal Blog</label>
-        <input name="tanggal_blog"type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
+        <input name="tanggal_blog"type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data_blog->tanggal_blog}}">
      </div>
      <div class="form-group">
         <label for="exampleInputEmail1">Isi Blog !!!!</label>
-        <textarea name="keterangan" id="" cols="30" rows="10"></textarea>
+        <textarea name="keterangan" id="" cols="30" rows="10">{{$data_blog->keterangan}}</textarea>
      </div>
      <div class="form-group">
         <label for="exampleInputEmail1">File Gambar</label>
-        <input name="gambar"type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
+        <input name="gambar"type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
      </div>
+     @if(Auth::guard('admin')->check())
      <div class="form-group">
-            <label for="exampleFormControlSelect1">Status</label>
-            <select name="status"class="form-control" id="exampleFormControlSelect1">
-              <option value="Setuju">Setuju</option>
-              <option value="Tidak Setuju">Tidak Setuju</option>
-            </select>
-          </div>
+         <label for="exampleFormControlSelect1">Status</label>
+         <select name="status"class="form-control" id="exampleFormControlSelect1">
+         <option value="1">Setuju</option>
+         <option value="0">Tidak Setuju</option>
+         </select>
+      </div>
+      @endif
           <button type="submit" class="btn btn-primary">Submit</button>
 </form>
