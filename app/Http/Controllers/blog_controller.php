@@ -58,7 +58,6 @@ class blog_controller extends Controller
             'keterangan' => 'required',
             'gambar' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-  
         $input = $request->all();
         $input['status'] = "0";
         if (Auth::guard('web')->check()) {
@@ -67,19 +66,16 @@ class blog_controller extends Controller
             $input['user_id'] = Auth::guard('admin')->user()->id;
         }elseif (Auth::guard('pengajar')->check()) {
             $input['user_id'] = Auth::guard('pengajar')->user()->id;
-        }
-        
-        if ($image = $request->file('gambar')) {
-            $destinationPath = 'images/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['gambar'] = "$profileImage";
-        }
-        
-        blog::create($input);
-        // return $input;
-        
-         
+        }  
+        $image = $request->file('gambar');
+        $destinationPath = 'images/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $input['gambar'] = "$profileImage";
+        $data=blog::create($input);
+        $nama =$data->id . "_" ."blog". "." . $image->getClientOriginalExtension();
+        blog::where('id', $data->id)->update(['gambar' => $nama]);
+        $image->move($destinationPath, $nama);
+        return $input;
         //return redirect()->with('success','Product created successfully.');
     }
 
@@ -106,13 +102,15 @@ class blog_controller extends Controller
             'status' => 'required'
         ]);
         
-        $post = Blog::find($request->id);
-        if($request->hasFile('gambar')){
+        $post = blog::find($request->id);
+        if($image = $request->file('gambar')){
             $request->validate([
-              'gambar' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+              'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
-            $path = $request->file('gambar')->store('images/');
-            $post->image = $path;
+            $imgname = $request->id . "_" ."blog".".". $request->file('gambar')->getClientOriginalExtension();
+            $destinationPath = 'images/';
+            $image->move($destinationPath, $imgname);
+            $post->gambar = $imgname;
         }
         $post->nama_blog = $request->nama_blog;
         $post->id_kategori = $request->id_kategori;
@@ -120,8 +118,9 @@ class blog_controller extends Controller
         $post->keterangan = $request->keterangan;
         $post->status = $request->status;
         $post->save();
+        return $post  ;
     
-        return redirect()->route('blog')->with('success','Post updated successfully');
+        //return redirect()->route('blog')->with('success','Post updated successfully');
     }
 
     public function history()
@@ -159,8 +158,7 @@ class blog_controller extends Controller
         $data_grafikpie = blog::selectraw("nama_kategori, count(id_kategori) as jumlah")
         ->join('kategori','blog.id_kategori','=','kategori.id')->groupBy('nama_kategori')->get();
        //return $data_grafikpie;        
-        return view('dashboard.index',
-        compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie'));
+        return view('dashboard.index',compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie'));
     }
 
 

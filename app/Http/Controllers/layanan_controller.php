@@ -22,14 +22,14 @@ class layanan_controller extends Controller
             'gambar'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $input = $request->all();
-        if ($image = $request->file('gambar')) {
-            $destinationPath = 'layanan/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['gambar'] = "$profileImage";
-        }
-
-        slider::create($input);
+        $image = $request->file('gambar');
+        $destinationPath = 'slider/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $input['gambar'] = "$profileImage";
+        $data=slider::create($input);
+        $nama =$data->id . "_" ."slider". "." . $image->getClientOriginalExtension();
+        slider::where('id', $data->id)->update(['gambar' => $nama]);
+        $image->move($destinationPath, $nama);
         return $input;
     }
 
@@ -54,22 +54,22 @@ class layanan_controller extends Controller
         $request->validate([
             'judul_layanan'=>'required',
             'deskripsi'=>'required',
-            'jenis_layanan'=>'required'
+            'jenis_layanan'=>'required',
         ]);
         
-        $post = Post::find($id);
-        if($request->hasFile('gambar')){
+        $post = slider::find($request->id);
+        if($image = $request->file('gambar')){
             $request->validate([
-              'gambar' => 'required|gambar|mimes:jpg,png,jpeg,gif,svg|max:2048',
+              'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
-            $path = $request->file('gambar')->store('public/layanan');
-            $post->image = $path;
+            $imgname = $request->id . "_" ."slider".".". $request->file('gambar')->getClientOriginalExtension();
+            $destinationPath = 'slider/';
+            $image->move($destinationPath, $imgname);
+            $post->gambar = $imgname;
         }
-        $post->title = $request->title;
-        $post->description = $request->description;
+        $post->nama_slider = $request->nama_slider;
+        $post->tanggal_slider = $request->tanggal_slider;
         $post->save();
-    
-        return redirect()->route('layanan.index')
-                        ->with('success','Post updated successfully');
+        return $imgname;
     }
 }

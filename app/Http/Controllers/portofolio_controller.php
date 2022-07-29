@@ -21,14 +21,14 @@ class portofolio_controller extends Controller
             'gambar'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $input = $request->all();
-        if ($image = $request->file('gambar')) {
-            $destinationPath = 'portofolio/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['gambar'] = "$profileImage";
-        }
-
-        slider::create($input);
+        $image = $request->file('gambar');
+        $destinationPath = 'portofolio/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $input['gambar'] = "$profileImage";
+        $data=portofolio::create($input);
+        $nama =$data->id . "_" ."portofolio". "." . $image->getClientOriginalExtension();
+        portofolio::where('id', $data->id)->update(['gambar' => $nama]);
+        $image->move($destinationPath, $nama);
         return $input;
     }
 
@@ -40,28 +40,28 @@ class portofolio_controller extends Controller
     }
 
 
-    public function update_portofolio(Request $request, $id)
+    public function update_portofolio(Request $request)
     {
         $request->validate([
             'nama_perusahaan'=>'required',
             'tanggal_input'=>'required',
         ]);
         
-        $post = Post::find($id);
-        if($request->hasFile('gambar')){
+        $post = portofolio::find($request->id);
+        if($image = $request->file('gambar')){
             $request->validate([
-              'gambar' => 'required|gambar|mimes:jpg,png,jpeg,gif,svg|max:2048',
+              'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
-            $path = $request->file('gambar')->store('public/portofolio');
-            $post->image = $path;
+            $imgname = $request->id . "_" ."slider".".". $request->file('gambar')->getClientOriginalExtension();
+            $destinationPath = 'portofolio/';
+            $image->move($destinationPath, $imgname);
+            $post->gambar = $imgname;
         }
-        $post->title = $request->title;
-        $post->description = $request->description;
+        $post->nama_perusahaan = $request->nama_perusahaan;
+        $post->tanggal_input = $request->tanggal_input;
         $post->save();
-    
-        return redirect()->route('portofolio.index')
-                        ->with('success','Post updated successfully');
-    }
+        return $imgname;
+      }
 
     public function findidportofolio($id){
         $data_portofolio = portofolio::find($id);
@@ -69,7 +69,7 @@ class portofolio_controller extends Controller
             'title' => 'portofolio',
             'data_portofolio' => $data_portofolio
         ];
-        return view ('portofolio.edit', compact('data'));
+        return view ('portofolio.edit', compact('data','id'));
     }
 
 }

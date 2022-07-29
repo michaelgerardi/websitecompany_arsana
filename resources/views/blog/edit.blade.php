@@ -1,5 +1,5 @@
 <h1>Update Blog</h1>
-<form action="{{route('ProsesEdit_blog')}}" method="POST">
+<form action="{{route('ProsesEdit_blog')}}" method="POST" enctype="multipart/form-data">
 {{csrf_field()}}
 <input type="hidden" value="{{$data_blog->id}}" name="id">
 <div class="form-group">
