@@ -21,11 +21,11 @@ tr:nth-child(even) {
         <th>Nama layanan</th>
         <th></th>
     </tr>
-    @foreach()
+   
     <tr>
         <td></td>
     </tr>
-    @endforeach
+ 
 </table>
 <form action="" method="POST" enctype="multipart/form-data">
     {{csrf_field()}}

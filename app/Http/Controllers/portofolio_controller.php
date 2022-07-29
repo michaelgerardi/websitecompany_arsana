@@ -9,7 +9,7 @@ class portofolio_controller extends Controller
 {
     public function index_portofolio()
     {
-        $data_portofolio = portofolio:: all();
+        $data_portofolio = portofolio::paginate(4);
         return view('portofolio.index',compact('data_portofolio'));
     }
 
@@ -70,6 +70,11 @@ class portofolio_controller extends Controller
             'data_portofolio' => $data_portofolio
         ];
         return view ('portofolio.edit', compact('data','id'));
+    }
+
+    public function FunctionName(Type $var = null)
+    {
+        # code...
     }
 
 }

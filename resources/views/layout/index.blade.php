@@ -28,6 +28,29 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<style>
+  .cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 0;
+  
+}
+
+@media (min-width: 768px) {
+  .card img {
+    height: 11em;
+  }
+}
+</style>
 <script>
 $(document).ready(function(){ 
     $("#myCarousel").carousel({interval: 200});
@@ -138,6 +161,109 @@ $(document).ready(function(){
 </div>
 <br>
 
+<!-- ======= layanan Section ======= -->
+<div class="col-lg-5 col-md-6 col-sm-12">
+    <h1 style="color:black"><b>SERVICE</b></h1>
+</div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="cards-wrapper">
+      <div class="card">
+        <img src="images/gambar1.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="/consulting" class="btn btn-danger">See More</a>
+        </div>
+      </div>
+      <div class="card d-none d-md-block">
+        <img src="images/gambar1.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="/consulting" class="btn btn-danger">See More</a>
+        </div>
+      </div>
+      <div class="card d-none d-md-block">
+      <img src="images/gambar1.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="/consulting" class="btn btn-danger">See More</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+        <div class="card">
+        <img src="images/gambar1.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/consulting" class="btn btn-danger">See More</a>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+        <img src="images/gambar1.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/consulting" class="btn btn-danger">See More</a>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+        <img src="images/gambar1.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/consulting" class="btn btn-danger">See More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="cards-wrapper">
+        <div class="card">
+        <img src="images/gambar1.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/consulting" class="btn btn-danger">See More</a>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+        <img src="images/gambar1.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/consulting" class="btn btn-danger">See More</a>
+          </div>
+        </div>
+        <div class="card d-none d-md-block">
+        <img src="images/gambar1.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/consulting" class="btn btn-danger">See More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- ======= layanan Section ======= -->
+
+<br>
 <!-- ======= Portofolio Section ======= -->
 <section id="portfolio" class="portfolio">
   <div class="container-fluid">
@@ -148,19 +274,21 @@ $(document).ready(function(){
           <h1 style="color:#ffff;" class="text-center"><b>PORTFOLIO</b></h1>
           <div class="row">
 
+          @foreach($portofolio as $portofolio)
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
             <a href="">
             <div class="card-flyer">
               <div class="text-box">
                 <div class="image-box">
-                    <img src="images/astra.jpg" alt="" />
+                    <img src="{{asset('portofolio/'.$portofolio->gambar)}}" alt="" />
                 </div>
               </div>
             </div>
             </a>
             </div>
+            @endforeach
 
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <a href="">
               <div class="card-flyer">
                 <div class="text-box">
@@ -170,9 +298,9 @@ $(document).ready(function(){
                 </div>
               </div>
               </a>
-            </div>
+            </div> -->
 
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <a href="">
               <div class="card-flyer">
                 <div class="text-box">
@@ -182,9 +310,9 @@ $(document).ready(function(){
                 </div>
               </div>
               </a>
-            </div>
+            </div> -->
 
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <a href="">
               <div class="card-flyer">
                 <div class="text-box">
@@ -194,9 +322,9 @@ $(document).ready(function(){
                 </div>
               </div>
               </a>
-            </div>
+            </div> -->
 
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <a href="">
               <div class="card-flyer">
                 <div class="text-box">
@@ -206,9 +334,9 @@ $(document).ready(function(){
                 </div>
               </div>
               </a>
-            </div>
+            </div> -->
 
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <a href="">
               <div class="card-flyer">
                 <div class="text-box">
@@ -218,9 +346,9 @@ $(document).ready(function(){
                 </div>
               </div>
               </a>
-            </div>
+            </div> -->
 
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <a href="">
               <div class="card-flyer">
                 <div class="text-box">
@@ -230,9 +358,9 @@ $(document).ready(function(){
                 </div>
               </div>
               </a>
-            </div>
+            </div> -->
 
-            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
               <a href="">
               <div class="card-flyer">
                 <div class="text-box">
@@ -242,7 +370,7 @@ $(document).ready(function(){
                 </div>
               </div>
               </a>
-            </div>
+            </div> -->
 
           </div>
         </div>
