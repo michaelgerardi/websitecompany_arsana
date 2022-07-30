@@ -66,7 +66,7 @@
         </tr>
         @endforeach
     </table>
-    <!-- {!! $data_portofolio->links() !!} -->
+     {!! $data_portofolio->links() !!} 
   <br>
     <form action="/portofolio/insert" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}

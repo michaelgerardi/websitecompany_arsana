@@ -23,12 +23,12 @@ class layanan_controller extends Controller
         ]);
         $input = $request->all();
         $image = $request->file('gambar');
-        $destinationPath = 'slider/';
+        $destinationPath = 'layanan/';
         $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
         $input['gambar'] = "$profileImage";
-        $data=slider::create($input);
+        $data=layanan::create($input);
         $nama =$data->id . "_" ."slider". "." . $image->getClientOriginalExtension();
-        slider::where('id', $data->id)->update(['gambar' => $nama]);
+        layanan::where('id', $data->id)->update(['gambar' => $nama]);
         $image->move($destinationPath, $nama);
         return $input;
     }
@@ -49,7 +49,7 @@ class layanan_controller extends Controller
         return view ('layanan.edit', compact('data'));
     }
 
-    public function update_layanan(Request $request, $id)
+    public function update_layanan(Request $request)
     {
         $request->validate([
             'judul_layanan'=>'required',
@@ -57,18 +57,19 @@ class layanan_controller extends Controller
             'jenis_layanan'=>'required',
         ]);
         
-        $post = slider::find($request->id);
+        $post = layanan::find($request->id);
         if($image = $request->file('gambar')){
             $request->validate([
               'gambar' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
             ]);
             $imgname = $request->id . "_" ."slider".".". $request->file('gambar')->getClientOriginalExtension();
-            $destinationPath = 'slider/';
+            $destinationPath = 'layanan/';
             $image->move($destinationPath, $imgname);
             $post->gambar = $imgname;
         }
-        $post->nama_slider = $request->nama_slider;
-        $post->tanggal_slider = $request->tanggal_slider;
+        $post->judul_layanan = $request->judul_layanan;
+        $post->deskripsi = $request->deskripsi;
+        $post->jenis_layanan = $request->jenis_layanan;
         $post->save();
         return $imgname;
     }

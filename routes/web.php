@@ -33,6 +33,7 @@ route::post('/blog/insert',[App\Http\Controllers\blog_controller::class,'tambah_
 route::get('/blogdelete/{id}',[App\Http\Controllers\blog_controller::class,'delete_blog']);
 route::get('/Editblog/{id}',[App\Http\Controllers\blog_controller::class, 'findidblog'])->name('Editblog');
 route::post('/ProsesEdit_blog',[App\Http\Controllers\blog_controller::class, 'Edit_blog'])->name('ProsesEdit_blog');
+route::get('/viewblog/{id}',[App\Http\Controllers\layout_controller::class, 'viewdetailberita']);
 
 //Route Layout
 route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout'])->name('mainpage');
@@ -85,7 +86,7 @@ route::get('/editportofolio/{id}',[App\Http\Controllers\portofolio_controller::c
 route::post('/proseseditportofolio',[App\Http\Controllers\portofolio_controller::class,'update_portofolio'])->name('ProsesEditportofolio');
 
 //LayananCRUD
-route::get('/layanan',[App\Http\Controllers\layanan_controller::class,'index_layanan']);
+route::get('/data_layanan',[App\Http\Controllers\layanan_controller::class,'index_layanan']);
 route::post('/layanan/insert',[App\Http\Controllers\layanan_controller::class,'tambah_layanan']);
 route::get('/layanandelete/{id}',[App\Http\Controllers\layanan_controller::class,'delete_layanan']);
 route::get('/editlayanan/{id}',[App\Http\Controllers\layanan_controller::class,'findidlayanan']);
