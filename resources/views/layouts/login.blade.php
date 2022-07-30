@@ -56,28 +56,29 @@
           <h3 class="text-center"><strong> Selamat Datang </strong></h3>
             <p class="mb-4 text-center"><strong>ARSANA Learning System</strong></p>
             <form action="{{route('sublogin')}}" method="post">
+            {{csrf_field()}}
               <div class="form-group first">
                 <label for="username" style="color: #ffff;">Username</label>
-                <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" @if(isset($email) AND isset($pass)) value="{{$email}}" @endif id="email" placeholder="your-email@gmail.com" id="username" required autocomplete="email" autofocus>
               </div>
               <div class="form-group last mb-3">
                 <label for="password" style="color: #ffff;">Password</label>
-                <input type="password" class="form-control" placeholder="Your Password" id="password">
+                <input type="password" class="form-control" placeholder="Your Password" id="password" name="password" @if(isset($email) AND isset($pass)) value="{{$pass}}" @endif required autocomplete="current-password">
               </div>
               
               <div class="d-flex mb-5 align-items-center">
                 <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
-                  <input type="checkbox" checked="checked"/>
+                  <input type="checkbox" name="rememberme" checked="checked"/>
                   <div class="control__indicator"></div>
                 </label>
                 <span class="ml-auto"><a href="/password/reset" class="forgot-pass">Forgot Password</a></span> 
               </div>
 
-              <input type="submit" value="Log In" class="btn btn-danger btn-block">
+              <button type="submit"class="btn btn-danger btn-block">Log In</button>
               <hr width="100%" noshade size="25%" style="color:#BB0A1E">
               <!-- <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a> -->
                <!-- tambahkan script di bawah ini untuk membuat tombol signin google -->
-        <a class="btn btn-danger" href="{{ route('auth.google')}}">google</a>
+               <a class="btn btn-danger" href="{{ route('auth.google')}}">google</a>
 
             </form>
           </div>

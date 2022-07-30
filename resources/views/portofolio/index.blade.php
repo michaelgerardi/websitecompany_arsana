@@ -54,16 +54,19 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
+        @foreach($data_portofolio as $portofolio)
         <tr>
-            @foreach($data_portofolio as $portofolio)
+           
             <td>{{$portofolio->nama_perusahaan}}</td>
             <td>{{$portofolio->tanggal_input}}</td>
             <td><img src="{{asset('portofolio/'.$portofolio->gambar)}}" height="100px" width="100px"></td>
             <td><a class="btn btn-warning" role="button" href="/editportofolio/{{$portofolio->id}}">Edit</a></td>
             <td><a class="btn btn-danger" role="button" href="/portofoliodelete/{{$portofolio->id}}">Delete</a></td>
-            @endforeach
+        
         </tr>
+        @endforeach
     </table>
+     {!! $data_portofolio->links() !!} 
   <br>
     <form action="/portofolio/insert" method="POST" enctype="multipart/form-data">
         {{csrf_field()}}

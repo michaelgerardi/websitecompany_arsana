@@ -19,23 +19,32 @@ tr:nth-child(even) {
 <table>
     <tr>
         <th>Nama layanan</th>
-        <th></th>
+        <th>Jenis Layanan</th>
+        <th>Deskripsi</th>
+        <th>Gambar</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
-    @foreach()
+   @foreach($data_layanan as $layanan)
     <tr>
-        <td></td>
+        <td>{{$layanan->judul_layanan}}</td>
+        <td>{{$layanan->deskripsi}}</td>
+        <td>{{$layanan->jenis_layanan}}</td>
+        <td><img src="{{asset('layanan/'.$layanan->gambar)}}" height="100px" width="100px"></td>
+            <td><a class="btn btn-warning" role="button" href="/editlayanan/{{$layanan->id}}">Edit</a></td>
+            <td><a class="btn btn-danger" role="button" href="/layanandelete/{{$layanan->id}}">Delete</a></td>
     </tr>
-    @endforeach
+ @endforeach
 </table>
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="/layanan/insert" method="POST" enctype="multipart/form-data">
     {{csrf_field()}}
     <div class="form-group">
         <label for="exampleInputEmail1">Judul Layanan</label>
-        <input name="judul_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
+        <input name="judul_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Layanan">
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Jenis Layanan</label>
-        <input name="jenis_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
+        <input name="jenis_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jenis Layanan">
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Gambar Layanan</label>
