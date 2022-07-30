@@ -55,7 +55,7 @@
           <div class="col-md-7">
           <h3 class="text-center"><strong> Selamat Datang </strong></h3>
             <p class="mb-4 text-center"><strong>ARSANA Learning System</strong></p>
-            <form action="#" method="post">
+            <form action="{{route('sublogin')}}" method="post">
               <div class="form-group first">
                 <label for="username" style="color: #ffff;">Username</label>
                 <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
@@ -77,7 +77,7 @@
               <hr width="100%" noshade size="25%" style="color:#BB0A1E">
               <!-- <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a> -->
                <!-- tambahkan script di bawah ini untuk membuat tombol signin google -->
-        <a class="btn btn-danger" href="{{ '/auth/redirect'}}">google</a>
+        <a class="btn btn-danger" href="{{ route('auth.google')}}">google</a>
 
             </form>
           </div>
