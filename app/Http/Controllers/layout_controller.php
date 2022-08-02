@@ -29,5 +29,8 @@ class layout_controller extends Controller
        return view('layout.viewberita',compact('data_portofolio'));
     }
 
-
+    public function admin()
+    {
+        return view('layouts.admin');
+    }
 }

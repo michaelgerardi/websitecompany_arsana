@@ -49,6 +49,7 @@ Route::post('/logoutfnl', [App\Http\Controllers\LoginAuthController::class, 'log
 
 // Admin
 route::get('/dashboard_Admin',[App\Http\Controllers\blog_controller::class,'dashboard_admin']);
+route::get('/dashboard',[App\Http\Controllers\layout_controller::class,'admin']);
 
 //Register
 route::get('/register2',[App\Http\Controllers\RegisterController::class, 'registerLay']);

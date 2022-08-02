@@ -9,7 +9,7 @@ class layanan_controller extends Controller
 {
     public function index_layanan()
     {
-        $data_layanan = layanan::all();
+        $data_layanan = layanan::paginate(4);
         return view('layanan.index',compact('data_layanan'));
     }
 

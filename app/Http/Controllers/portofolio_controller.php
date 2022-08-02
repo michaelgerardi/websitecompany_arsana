@@ -72,9 +72,5 @@ class portofolio_controller extends Controller
         return view ('portofolio.edit', compact('data','id'));
     }
 
-    public function FunctionName(Type $var = null)
-    {
-        # code...
-    }
 
 }

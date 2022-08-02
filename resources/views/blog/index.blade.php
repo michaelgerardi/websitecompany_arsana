@@ -71,6 +71,12 @@
   </select>
   <input class="btn btn-secondary" role="button" type="submit" value="Submit">
 </form>
+<br>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+<br>
 <table class="table">
   <thead>
    <tr>
@@ -100,7 +106,21 @@
    </tbody>
 </table>
 <br>
-<form action="/blog/insert" method="POST" enctype="multipart/form-data">
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="/blog/insert" method="POST" enctype="multipart/form-data">
      {{csrf_field()}}
      <div class="form-group">
         <label for="exampleFormControlInput1">Nama Blog</label>
@@ -108,7 +128,7 @@
      </div>
      <div class="form-group">
         <label for="exampleInputPegawai">Kategori</label>
-        <select name="id_kategori" id="exampleInputPegawai">
+        <select name="id_kategori" id="exampleInputPegawai"  aria-label="Default select example" class="form-select">
           @foreach ($data_kategori as $kategori)
             <option value={{$kategori->id}}>{{$kategori->nama_kategori}}</option>
           @endforeach
@@ -126,15 +146,16 @@
         <label for="exampleFormControlInput1">File Gambar</label>
         <input name="gambar"type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
      </div>
-     <!-- <div class="form-group">
-        <label for="exampleFormControlSelect1">Status</label>
-        <select name="status"class="form-control" id="exampleFormControlSelect1">
-          <option value="Setuju">Setuju</option>
-          <option value="Tidak Setuju">Tidak Setuju</option>
-        </select>
-      </div> -->
-          <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="Submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 </div>
 </body>
 </html>
