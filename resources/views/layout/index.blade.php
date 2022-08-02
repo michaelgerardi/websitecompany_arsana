@@ -445,9 +445,9 @@ margin-bottom:10px;
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </div>
       </div>
-      <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
-                </div>
+        <div class="col-lg-7 col-md-6 col-sm-12">
+          <img style="width: 7cm; height:7cm; margin-left: 500px" src="images/20220704070302.png" alt="">
+        </div>
     </div>
   </div>
 </div>
@@ -457,9 +457,9 @@ margin-bottom:10px;
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#BB0A1E">
     <div class="row">
-    <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
-                </div>
+      <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
+        <img style="width: 7cm; height:7cm; margin-left:150px" src="images/20220704070302.png" alt="">
+      </div>
       <div class="col-lg-7 col-md-6 col-sm-12 col-xl-6">
         <h4 style="color:#ffff"><b>SERVICE</b></h1>
           <h1 style="color:#ffff">Learning Ecosystem</h1>
@@ -484,9 +484,9 @@ margin-bottom:10px;
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </div>
       </div>
-      <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
-      </div>
+        <div class="col-lg-7 col-md-6 col-sm-12">
+          <img style="width: 7cm; height:7cm; margin-left: 500px" src="images/20220704070302.png" alt="">
+        </div>
     </div>
   </div>
 </div>
@@ -521,7 +521,7 @@ margin-bottom:10px;
                       <p class="txt2">{{\Illuminate\Support\Str::limit($layanan[$ii-1]->keterangan, 150, $end='...')}} </p>
                   </div>
                   <div class="footer">
-                      <p><a class="waves-effect waves-light btn" href="/viewblog/{{$layanan[$ii-1]->id}}">Read More</a></a></p>
+                      <p><a class="waves-effect waves-light btn" href="/viewlay/{{$layanan[$ii-1]->id}}">Read More</a></a></p>
                       <!-- <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p> -->
                   </div>
                 </div>

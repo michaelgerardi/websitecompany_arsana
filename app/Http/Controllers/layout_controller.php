@@ -17,8 +17,8 @@ class layout_controller extends Controller
         $Citem = count($content);
         $CpgL = ceil(count($layanan)/3);
         $CitemL = count($layanan);
-        return view('layout.index',compact('content','portofolio','layanan','Cpg','Citem','CpgL','CitemL'));
-        //return $Citem;
+        //return view('layout.index',compact('content','portofolio','layanan','Cpg','Citem','CpgL','CitemL'));
+        return $layanan;
     }
 
     // HALAMAN SERVICE
