@@ -493,7 +493,7 @@ margin-bottom:10px;
 <br>
 
 <!-- ======= layanan Section ======= -->
-<section id="news" class="news">
+<section id="service" class="news">
 <div class="container-fluid">
   <h1 class="mr-3" style="color:#BB0A1E">Layanan Terbaru</h1>
     <hr width="100%" noshade size="25%" style="color:#BB0A1E">
@@ -501,7 +501,7 @@ margin-bottom:10px;
 </section>
 <br>
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <!-- ------------------ -->
     @for($i=1;$i<=$CpgL;$i++)
@@ -538,11 +538,11 @@ margin-bottom:10px;
 <!-- ------------ -->
     
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
