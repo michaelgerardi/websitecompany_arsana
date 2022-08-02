@@ -10,11 +10,15 @@ use App\Models\layanan;
 class layout_controller extends Controller
 {
     public function indexlayout(){
-        $content = Blog::where('status','1')->paginate(3)->sortByDesc('created_at');
+        $content = Blog::where('status','1')->latest()->paginate(9);
         $portofolio = portofolio::all();
-        $layanan = layanan::paginate(3)->sortByDesc('id');
-        return view('layout.index',compact('content','portofolio','layanan'));
-
+        $layanan = layanan::latest()->paginate(9);
+        $Cpg = ceil(count($content)/3);
+        $Citem = count($content);
+        $CpgL = ceil(count($layanan)/3);
+        $CitemL = count($layanan);
+        return view('layout.index',compact('content','portofolio','layanan','Cpg','Citem','CpgL','CitemL'));
+        //return $Citem;
     }
 
     // HALAMAN SERVICE
