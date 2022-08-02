@@ -10,11 +10,15 @@ use App\Models\layanan;
 class layout_controller extends Controller
 {
     public function indexlayout(){
-        $content = Blog::where('status','1')->paginate(3)->sortByDesc('created_at');
+        $content = Blog::where('status','1')->latest()->paginate(9);
         $portofolio = portofolio::all();
-        $layanan = layanan::paginate(3)->sortByDesc('id');
-        return view('layout.index',compact('content','portofolio','layanan'));
-
+        $layanan = layanan::latest()->paginate(9);
+        $Cpg = ceil(count($content)/3);
+        $Citem = count($content);
+        $CpgL = ceil(count($layanan)/3);
+        $CitemL = count($layanan);
+        return view('layout.index',compact('content','portofolio','layanan','Cpg','Citem','CpgL','CitemL'));
+        //return $Citem;
     }
 
     // HALAMAN SERVICE
@@ -25,8 +29,15 @@ class layout_controller extends Controller
     //Halaman View berita
     public function viewdetailberita($id)
     {
-       $data_portofolio = protofolio::where('id',$id)->get();
-       return view('layout.viewberita',compact('data_portofolio'));
+       $data_blog = Blog::where('id',$id)->first();
+       //return $data_blog;
+       return view('layout.viewberita',compact('data_blog'));
+    }
+    public function viewdetaillayanan($id)
+    {
+       $data_layanan = layanan::where('id',$id)->first();
+       //return $data_blog;
+       return view('consulting.consulting',compact('data_layanan'));
     }
 
     public function admin()

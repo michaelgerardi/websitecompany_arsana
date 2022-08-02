@@ -44,6 +44,9 @@
   border-radius: 0;
   
 }
+html {
+  scroll-behavior: smooth;
+}
 
 @media (min-width: 768px) {
   .card img {
@@ -88,7 +91,7 @@ $(document).ready(function(){
         color: #333333;
     }
     .cardcontainer{
-        width: 350px;
+        width: 100%;
         height: 500px;
         background-color: white;
         margin-left: auto;
@@ -385,31 +388,51 @@ margin-bottom:10px;
 <br>
 
 <!-- CARD DECK BERITA -->
-<div class="row col-md-12">
-@foreach($content as $konten)
-<div class="container-fluid col-md-4">
-  <div class="card-deck">
-  <div class="container">
-        
-        <div class="cardcontainer">
-            <div class="photo">
-                <img src="{{asset('images/'.$konten->gambar)}}">
-                <div class="photos">Photos</div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <!-- ------------------ -->
+    @for($i=1;$i<=$Cpg;$i++)
+    <div class="carousel-item @if($i==1) active @endif">
+      <div class="container justify-content-center col-md-10">
+        <div class="row col-md-12">
+          @for($ii=$i*3-2;$ii<=$i*3;$ii++)
+            <div class="container-fluid col-md-4">
+              <div class="container col-md-12">
+                <div class="cardcontainer">
+                  <div class="photo">
+                      <img src="{{asset('images/'.$content[$ii-1]->gambar)}}">
+                      <div class="photos">Photos</div>
+                  </div>
+                  <div class="content">
+                      <p class="txt4">{{$content[$ii-1]->nama_blog}}</p>
+                      <p class="txt2">{{\Illuminate\Support\Str::limit($content[$ii-1]->keterangan, 150, $end='...')}} </p>
+                  </div>
+                  <div class="footer">
+                      <p><a class="waves-effect waves-light btn" href="/viewblog/{{$content[$ii-1]->id}}">Read More</a></a></p>
+                      <!-- <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p> -->
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="content">
-                <p class="txt4">{{$konten->nama_blog}}</p>
-                <p class="txt5">A city that never sleeps</p>
-                <p class="txt2">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling </p>
-            </div>
-            <div class="footer">
-                <p><a class="waves-effect waves-light btn" href="#">Read More</a></a></p>
-                <!-- <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p> -->
-            </div>
+            @if($ii==$Citem)
+              @break
+            @endif
+          @endfor
         </div>
+      </div>
     </div>
+    @endfor
+<!-- ------------ -->
+    
   </div>
-</div>
-@endforeach
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 <br>
 <!-- ABOUT ARSANA -->
@@ -478,31 +501,51 @@ margin-bottom:10px;
 </section>
 <br>
 
-<div class="row col-md-12">
-@foreach($layanan as $layanan)
-<div class="container-fluid col-md-4">
-  <div class="card-deck">
-  <div class="container">
-        
-        <div class="cardcontainer">
-            <div class="photo">
-                <img src="{{asset('layanan/'.$layanan->gambar)}}">
-                <div class="photos">Photos</div>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <!-- ------------------ -->
+    @for($i=1;$i<=$CpgL;$i++)
+    <div class="carousel-item @if($i==1) active @endif">
+      <div class="container justify-content-center col-md-10">
+        <div class="row col-md-12">
+          @for($ii=$i*3-2;$ii<=$i*3;$ii++)
+            <div class="container-fluid col-md-4">
+              <div class="container col-md-12">
+                <div class="cardcontainer">
+                  <div class="photo">
+                      <img src="{{asset('layanan/'.$layanan[$ii-1]->gambar)}}">
+                      <div class="photos">Photos</div>
+                  </div>
+                  <div class="content">
+                      <p class="txt4">{{$layanan[$ii-1]->nama_blog}}</p>
+                      <p class="txt2">{{\Illuminate\Support\Str::limit($layanan[$ii-1]->keterangan, 150, $end='...')}} </p>
+                  </div>
+                  <div class="footer">
+                      <p><a class="waves-effect waves-light btn" href="/viewblog/{{$layanan[$ii-1]->id}}">Read More</a></a></p>
+                      <!-- <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p> -->
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="content">
-                <p class="txt4">{{$layanan->judul_layanan}}</p>
-                <p class="txt5">{{$layanan->jenis_layanan}}</p>
-                <p class="txt2">{{$layanan->deskripsi}}</p>
-            </div>
-            <div class="footer">
-                <p><a class="waves-effect waves-light btn" href="#">Read More</a></a></p>
-                <!-- <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p> -->
-            </div>
+            @if($ii==$CitemL)
+              @break
+            @endif
+          @endfor
         </div>
+      </div>
     </div>
+    @endfor
+<!-- ------------ -->
+    
   </div>
-</div>
-@endforeach
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 <!-- ======= layanan Section ======= -->
 

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('loginfinal');
 });
 
 //kategori CRUD
@@ -92,6 +92,7 @@ route::post('/layanan/insert',[App\Http\Controllers\layanan_controller::class,'t
 route::get('/layanandelete/{id}',[App\Http\Controllers\layanan_controller::class,'delete_layanan']);
 route::get('/editlayanan/{id}',[App\Http\Controllers\layanan_controller::class,'findidlayanan']);
 route::post('/proseseditlayanan',[App\Http\Controllers\layanan_controller::class,'update_layanan']);
+route::get('/viewlay/{id}',[App\Http\Controllers\layout_controller::class, 'viewdetaillayanan']);
 
 //googleauth
 Route::get('auth/google',[App\Http\Controllers\LoginAuthController::class, 'redirectToGoogle'])->name('auth.google');
