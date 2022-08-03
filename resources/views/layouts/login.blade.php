@@ -78,8 +78,8 @@
               <hr width="100%" noshade size="25%" style="color:#BB0A1E">
               <!-- <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a> -->
                <!-- tambahkan script di bawah ini untuk membuat tombol signin google -->
-               <a class="btn btn-danger" href="{{ route('auth.google')}}">google</a>
-
+               <a class="btn btn-google btn-user btn-block" href="{{ route('auth.google')}}">google</a>
+            
             </form>
           </div>
         </div>
