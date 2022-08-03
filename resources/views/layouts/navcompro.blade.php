@@ -215,12 +215,7 @@
                     <li class="nav-item">
                     <a class="navbar-brand" href="#contact"><b>Contact</b></a>
                     </li>
-                    <li class="nav-item">
-                    <a class="navbar-brand" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a>
-                    <form id="logout-form" action="{{ route('logoutfnl') }}" method="POST" class="d-none">
-                      @csrf
-                    </form>
-                    </li>
+                   
                 </ul>
             </div>
         </nav>
@@ -240,8 +235,8 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="margin-top: 1%;">
           <!-- Content -->
-          <img style="width: 90px; height:90px; border-radius:50%; margin-top:10px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
-          <p>
+          <img style="width: 90px; height:90px; border-radius:50%; margin-top:10px;"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
+          <p class="text-justify">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
           </p>
         </div>
@@ -254,16 +249,16 @@
             Products
           </h5>
           <p class="fs-4">
-            <a href="#" class="text" style="color: #ffff;">Berita</a>
+            <a href="#news" class="text" style="color: #ffff;">Berita</a>
           </p>
           <p>
-            <a href="#" class="text" style="color: #ffff;">Service</a>
+            <a href="#service" class="text" style="color: #ffff;">Service</a>
           </p>
           <p>
-            <a href="#" class="text" style="color: #ffff;">About Us</a>
+            <a href="#about" class="text" style="color: #ffff;">About Us</a>
           </p>
           <p>
-            <a href="#" class="text" style="color: #ffff;">Contact Us</a>
+            <a href="#contact" class="text" style="color: #ffff;">Contact Us</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -278,8 +273,12 @@
             <a href="#" class="text" style="color: #ffff;">Kelas</a>
           </p>
           <p>
-            <a href="#" class="text" style="color: #ffff;">Login</a>
+            <a href="/layoutlogin" class="text" style="color: #ffff;">Login</a>
           </p>
+          <a class="navbar-brand" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a>
+                    <form id="logout-form" action="{{ route('logoutfnl') }}" method="POST" class="d-none">
+                      @csrf
+                    </form>
         </div>
         <!-- Grid column -->
 
@@ -316,5 +315,6 @@
     <script src="assets/js/jquery.js"></script> 
     <script src="assets/js/popper.js"></script> 
     <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/news.js"></script>
 </body>
 </html>

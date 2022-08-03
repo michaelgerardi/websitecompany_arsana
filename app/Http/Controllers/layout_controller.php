@@ -42,6 +42,16 @@ class layout_controller extends Controller
 
     public function admin()
     {
-        return view('layouts.admin');
+        $data_setuju = blog::selectraw("count(*) as total_setuju,DATE_FORMAT(tanggal_blog,'%M')as month ")
+        ->where('status','1')->groupby('month')->orderBy('month','desc')->get();
+        $data_tidaksetuju = blog::selectraw("count(*) as total_tidaksetuju,DATE_FORMAT(tanggal_blog,'%M')as month ")
+        ->where('status','0')->groupby('month')->orderBy('month','desc')->get();
+        $bulan = blog::selectraw("DATE_FORMAT(tanggal_blog,'%M')as month")->distinct()->orderBy('tanggal_blog','asc')->get();
+        $data_konten = blog::selectraw("count(*) AS total_data, DATE_FORMAT(tanggal_blog,'%M')as month" )
+        ->groupby('month')->orderBy('tanggal_blog','asc')->get();
+        $data_grafikpie = blog::selectraw("nama_kategori, count(id_kategori) as jumlah")
+        ->join('kategori','blog.id_kategori','=','kategori.id')->groupBy('nama_kategori')->get();
+        return view('layouts.admin',compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie'));
+        //return $data_grafikpie;
     }
 }

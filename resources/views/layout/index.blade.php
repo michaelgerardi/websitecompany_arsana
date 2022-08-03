@@ -445,9 +445,9 @@ margin-bottom:10px;
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </div>
       </div>
-        <div class="col-lg-7 col-md-6 col-sm-12">
-          <img style="width: 7cm; height:7cm; margin-left: 500px" src="images/20220704070302.png" alt="">
-        </div>
+      <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
+                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
+      </div>
     </div>
   </div>
 </div>
@@ -457,8 +457,8 @@ margin-bottom:10px;
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#BB0A1E">
     <div class="row">
-      <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-        <img style="width: 7cm; height:7cm; margin-left:150px" src="images/20220704070302.png" alt="">
+    <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
+                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
       </div>
       <div class="col-lg-7 col-md-6 col-sm-12 col-xl-6">
         <h4 style="color:#ffff"><b>SERVICE</b></h1>
@@ -484,9 +484,9 @@ margin-bottom:10px;
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </div>
       </div>
-        <div class="col-lg-7 col-md-6 col-sm-12">
-          <img style="width: 7cm; height:7cm; margin-left: 500px" src="images/20220704070302.png" alt="">
-        </div>
+      <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
+                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
+      </div>
     </div>
   </div>
 </div>
@@ -717,25 +717,35 @@ margin-bottom:10px;
 
 <!-- CONTACT US -->
 <section id="contact" class="contact">
-  <div class="container-fluid">
+  <div class="container col-md-12">
     <div class="jumbotron" style="background-color:#ffff">
-      <div class="row">
-        <div class="column" style="margin-left: 120px;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="row col-md-12">
+        <div class="column col-md-6 mr-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <div class="column" style="margin-left: 150px;">
-            <h3><b>CONTACT US</b></h3>
+        <div class="column col-md-4 ml-5" >
+            <h3 class="ml-5"><b>CONTACT US</b></h3>
             <br>
-            <img style="width: 55px; height: 55px;" src="images/mail.png" alt="">
-            <a> : arsanaecosystem@gmail.com</a>
-            <br>
-            <br>
-            <img style="width: 55px; height: 55px;" src="images/logo_call.png" alt="">
-            <a> : 08123849289</a>
-            <br>
-            <br>
-            <img style="width: 55px; height: 55px;"  src="images/logo_ig.png" alt="">
-            <a> : arsana.ecosystem</a>
+            <div class="container col-md-12 ml-5 pl-2" >
+              <form action="#" method="post">
+                <div class="form-group first">
+                  <label for="username" style="color: black;">Name</label>
+                  <input type="text" class="form-control" placeholder="Your Name" id="name" >
+                </div>
+                <div class="form-group last mb-3">
+                  <label for="password" style="color: black;">Email</label>
+                  <input type="password" class="form-control" placeholder="Your Email" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Comment</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-danger btn-block">
+                <!-- <hr width="100%" noshade size="25%" style="color:#BB0A1E">
+                <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a> -->
+              </form>
+            </div>
+            
         </div>
       </div>
     </div>
