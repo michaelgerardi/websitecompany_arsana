@@ -396,7 +396,7 @@ margin-bottom:10px;
       <div class="container justify-content-center col-md-10">
         <div class="row col-md-12">
           @for($ii=$i*3-2;$ii<=$i*3;$ii++)
-            <div class="container-fluid col-md-4">
+            <div class="container col-md-4 mx-0">
               <div class="container col-md-12">
                 <div class="cardcontainer">
                   <div class="photo">
@@ -509,7 +509,7 @@ margin-bottom:10px;
       <div class="container justify-content-center col-md-10">
         <div class="row col-md-12">
           @for($ii=$i*3-2;$ii<=$i*3;$ii++)
-            <div class="container-fluid col-md-4">
+            <div class="container col-md-4 mx-0">
               <div class="container col-md-12">
                 <div class="cardcontainer">
                   <div class="photo">
