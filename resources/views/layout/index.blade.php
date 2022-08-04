@@ -145,6 +145,8 @@ $(document).ready(function(){
     }
     .txt2{
         position: relative;
+        overflow: hidden; 
+        text-overflow: ellipsis;
         top: 10px;
     }
     .cardcontainer:hover > .photo{
@@ -374,6 +376,13 @@ margin-bottom:10px;
     margin-bottom: 10px;
   }
 }
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
 </style>
 <br>
 <br>
@@ -404,8 +413,10 @@ margin-bottom:10px;
                       <div class="photos">Photos</div>
                   </div>
                   <div class="content">
-                      <p class="txt4">{{$content[$ii-1]->nama_blog}}</p>
-                      <p class="txt2">{{\Illuminate\Support\Str::limit($content[$ii-1]->keterangan, 150, $end='...')}} </p>
+                    <div class="container col-md-12">
+                      <p class="txt4 col-md-12">{{$content[$ii-1]->nama_blog}}</p>
+                      <p class="txt2 col-md-12">{{\Illuminate\Support\Str::limit($content[$ii-1]->keterangan, 150, $end='...')}} </p>
+                    </div>
                   </div>
                   <div class="footer">
                       <p><a class="waves-effect waves-light btn" href="/viewblog/{{$content[$ii-1]->id}}">Read More</a></a></p>
@@ -426,7 +437,7 @@ margin-bottom:10px;
     
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="carousel-control-prev-icon" style="color:black" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
   <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
@@ -517,8 +528,10 @@ margin-bottom:10px;
                       <div class="photos">Photos</div>
                   </div>
                   <div class="content">
-                      <p class="txt4">{{$layanan[$ii-1]->nama_blog}}</p>
-                      <p class="txt2">{{\Illuminate\Support\Str::limit($layanan[$ii-1]->keterangan, 150, $end='...')}} </p>
+                      <div class="container col-md-12">
+                        <p class="txt4">{{$layanan[$ii-1]->judul_layanan}}</p>
+                        <p class="txt2 col-md-12">{{\Illuminate\Support\Str::limit($layanan[$ii-1]->deskripsi, 150, $end='...')}} </p>
+                      </div>
                   </div>
                   <div class="footer">
                       <p><a class="waves-effect waves-light btn" href="/viewlay/{{$layanan[$ii-1]->id}}">Read More</a></a></p>
@@ -573,90 +586,6 @@ margin-bottom:10px;
             </a>
             </div>
             @endforeach
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <a href="">
-              <div class="card-flyer">
-                <div class="text-box">
-                  <div class="image-box">
-                    <img src="images/logo_ugm.jpg" alt="" />
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div> -->
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <a href="">
-              <div class="card-flyer">
-                <div class="text-box">
-                  <div class="image-box">
-                    <img src="images/logo_ukdw.jpg" alt="" />
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div> -->
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <a href="">
-              <div class="card-flyer">
-                <div class="text-box">
-                  <div class="image-box">
-                    <img src="images/logo_ristek.png" alt="" />
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div> -->
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <a href="">
-              <div class="card-flyer">
-                <div class="text-box">
-                  <div class="image-box">
-                    <img src="images/pertamina.png" alt="" />
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div> -->
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <a href="">
-              <div class="card-flyer">
-                <div class="text-box">
-                  <div class="image-box">
-                    <img src="images/logo_dinped.png" alt="" />
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div> -->
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <a href="">
-              <div class="card-flyer">
-                <div class="text-box">
-                  <div class="image-box">
-                    <img src="images/logo_crossdev.jpeg" alt="" />
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div> -->
-
-            <!-- <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-              <a href="">
-              <div class="card-flyer">
-                <div class="text-box">
-                  <div class="image-box">
-                    <img src="images/logo_kominfo.jpg" alt="" />
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div> -->
 
           </div>
         </div>

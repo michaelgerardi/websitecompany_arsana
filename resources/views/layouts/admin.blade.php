@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="admin/css/sb-admin-2.min.css" rel="stylesheet">
-
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 
 <body id="page-top">
@@ -190,7 +189,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::guard('admin')->user()->name}}</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -318,7 +317,141 @@
                     </div>   
                 </div>
                 <!-- /.container-fluid -->
-                <div id="piechart"></div>
+                <div class="row col-md-12">
+                    <div class="col-md-4">
+                        <div id="container"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="datamasuk"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="piechart"></div>
+                    </div>
+                </div>
+                <script>
+                        Highcharts.chart('container', {
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: 'Data Konten Approval'
+                        },
+                        subtitle: {
+                            text: 'Source: WorldClimate.com'
+                        },
+                        xAxis: {
+                            categories: [<?php
+                                            foreach($bulan as $row2){
+                                            echo "'".$row2->month."',";   
+                                            }
+                                        ?>],
+                            crosshair: true
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: 'Jumlah (Konten)'
+                            }
+                        },
+                        tooltip: {
+                            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                '<td style="padding:0"><b>{point.y:.1f} Konten</b></td></tr>',
+                            footerFormat: '</table>',
+                            shared: true,
+                            useHTML: true
+                        },
+                        plotOptions: {
+                            column: {
+                                pointPadding: 0.2,
+                                borderWidth: 0
+                            }
+                        },
+                        series: [{
+                            name: 'Setuju',
+                            data: [<?php
+                                            foreach( $data_setuju as $row2){
+                                            echo $row2->total_setuju.",";   
+                                            }
+                                        ?>]
+
+                        }, {
+                            name: 'Tidak Setuju',
+                            data: [<?php
+                                            foreach( $data_tidaksetuju as $row2){
+                                            echo $row2->total_tidaksetuju.",";   
+                                            }
+                                        ?>]
+
+                        }]
+                    });
+                </script>
+                <script>
+                        Highcharts.chart('datamasuk', {
+
+                    title: {
+                        text: 'Data Konten Perbulan'
+                    },
+
+                    subtitle: {
+                        text: 'Source: thesolarfoundation.com'
+                    },
+
+                    yAxis: {
+                        title: {
+                            text: 'Number of Employees'
+                        }
+                    },
+
+                    xAxis: {
+                        categories: [<?php
+                                            foreach($bulan as $row2){
+                                            echo "'".$row2->month."',";   
+                                            }
+                                        ?>],
+                        crosshair: true
+                    },
+
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle'
+                    },
+
+                    plotOptions: {
+                        column: {
+                                pointPadding: 0.2,
+                                borderWidth: 0
+                            }
+                    },
+
+                    series: [{
+                        name: 'Data Konten',
+                        data: [<?php
+                                            foreach( $data_konten as $row2){
+                                            echo $row2->total_data.",";   
+                                            }
+                                        ?>]
+                    }],
+
+                    responsive: {
+                        rules: [{
+                            condition: {
+                                maxWidth: 500
+                            },
+                            chartOptions: {
+                                legend: {
+                                    layout: 'horizontal',
+                                    align: 'center',
+                                    verticalAlign: 'bottom'
+                                }
+                            }
+                        }]
+                    }
+
+                    });
+                        
+                </script>
                 <script>
                         Highcharts.chart('piechart', {
                         chart: {
@@ -352,13 +485,15 @@
                             name: 'Brands',
                             colorByPoint: true,
                             data: [<?php
-                                            foreach( $data_grafikpie as $row2){
-                                            echo $row2->jumlah.",";   
-                                            }
-                                        ?>]
+                            foreach( $data_grafikpie as $row2){
+                                echo "{"
+                                ."name:"."'".$row2->nama_kategori."',"
+                                ."y:".$row2->jumlah."
+                                },"; 
+                            }
+                            ?>]
                         }]
-                    });
-                                
+                    });              
               </script>
             </div>
             <!-- End of Main Content -->
@@ -421,47 +556,6 @@
     <!-- <script src="admin/js/demo/chart-area-demo.js"></script>
     
     <script src="admin/js/demo/chart-pie-demo.js"></script> -->
-    <script>
-                        Highcharts.chart('piechart', {
-                        chart: {
-                            plotBackgroundColor: null,
-                            plotBorderWidth: null,
-                            plotShadow: false,
-                            type: 'pie'
-                        },
-                        title: {
-                            text: 'Data Konten Kategori'
-                        },
-                        tooltip: {
-                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                        },
-                        accessibility: {
-                            point: {
-                                valueSuffix: '%'
-                            }
-                        },
-                        plotOptions: {
-                            pie: {
-                                allowPointSelect: true,
-                                cursor: 'pointer',
-                                dataLabels: {
-                                    enabled: true,
-                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-                                }
-                            }
-                        },
-                        series: [{
-                            name: 'Brands',
-                            colorByPoint: true,
-                            data: [<?php
-                                            foreach( $data_grafikpie as $row2){
-                                            echo $row2->jumlah.",";   
-                                            }
-                                        ?>]
-                        }]
-                    });
-                                
-                    </script>
                     
 </body>
 
