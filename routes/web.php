@@ -49,7 +49,7 @@ Route::post('/logoutfnl', [App\Http\Controllers\LoginAuthController::class, 'log
 
 // Admin
 route::get('/dashboard_Admin',[App\Http\Controllers\blog_controller::class,'dashboard_admin']);
-route::get('/dashboard',[App\Http\Controllers\layout_controller::class,'admin']);
+route::get('/dashboard',[App\Http\Controllers\layout_controller::class,'admin'])->name('dashboard_admin');
 
 //Register
 route::get('/register2',[App\Http\Controllers\RegisterController::class, 'registerLay']);
@@ -67,6 +67,8 @@ route::get('/LihatReq/ApproveReq/{id}',[App\Http\Controllers\ReqJdPeng_controlle
 //Peserta
 route::get('/peserta',[App\Http\Controllers\peserta_controller::class,'peserta_blog'])->name('peserta_blog');
 route::post('/peserta/insert',[App\Http\Controllers\peserta_controller::class,'konten_peserta']);
+route::get('/userindex',[App\Http\Controllers\peserta_controller::class,'userindex'])->name('userindex');
+
 
 Auth::routes();
 
@@ -97,3 +99,8 @@ route::get('/viewlay/{id}',[App\Http\Controllers\layout_controller::class, 'view
 //googleauth
 Route::get('auth/google',[App\Http\Controllers\LoginAuthController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback',[App\Http\Controllers\LoginAuthController::class, 'handleGoogleCallback']);
+
+//datauser
+Route::get('/viewdatauser',[App\Http\Controllers\data_user_controller::class, 'viewdatauser'])->name('viewdatauser');
+Route::get('/viewdatapengajar',[App\Http\Controllers\data_user_controller::class, 'viewdatapengajar'])->name('viewdatapengajar');
+

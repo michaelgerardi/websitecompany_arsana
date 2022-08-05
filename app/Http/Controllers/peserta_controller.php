@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Detail_user;
 use App\Models\Blog;
 use App\Models\kategori;
+use Auth;
 
 class peserta_controller extends Controller
 {
@@ -15,7 +16,24 @@ class peserta_controller extends Controller
     {
         $this->middleware('auth');
     }
-
+    public function userindex()
+    {
+        if (Auth::guard('pengajar')->check()) {
+            $role='pengajar';
+        } else if (Auth::guard('web')->check()) {
+            $role='web';
+        }
+        $data_setuju = blog::where('blog.id',Auth::guard($role)->user()->id)->selectraw("count(*) as total_setuju,DATE_FORMAT(tanggal_blog,'%M')as month ")
+        ->where('status','1')->groupby('month')->orderBy('month','desc')->get();
+        $data_tidaksetuju = blog::where('blog.id',Auth::guard($role)->user()->id)->selectraw("count(*) as total_tidaksetuju,DATE_FORMAT(tanggal_blog,'%M')as month ")
+        ->where('status','0')->groupby('month')->orderBy('month','desc')->get();
+        $bulan = blog::where('blog.id',Auth::guard($role)->user()->id)->selectraw("DATE_FORMAT(tanggal_blog,'%M')as month")->distinct()->orderBy('tanggal_blog','asc')->get();
+        $data_konten = blog::where('blog.id',Auth::guard($role)->user()->id)->selectraw("count(*) AS total_data, DATE_FORMAT(tanggal_blog,'%M')as month" )
+        ->groupby('month')->orderBy('tanggal_blog','asc')->get();
+        $data_grafikpie = blog::where('blog.id',Auth::guard($role)->user()->id)->selectraw("nama_kategori, count(id_kategori) as jumlah")
+        ->join('kategori','blog.id_kategori','=','kategori.id')->groupBy('nama_kategori')->get();
+        return view('layouts.userindex',compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie'));
+    }
     public function konten_peserta(Request $request){
         $request->validate([
             'id_kategori' => 'required',

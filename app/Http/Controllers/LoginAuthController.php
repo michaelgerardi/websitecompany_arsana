@@ -17,11 +17,11 @@ class LoginAuthController extends Controller
     public function showLoginForm()
     {
         if (Auth::guard('admin')->check()) {
-            return redirect()->route('mainpage');
+            return redirect()->route('dashboard_admin');
         } else if (Auth::guard('web')->check()) {
-            return redirect()->route('mainpage');
+            return redirect()->route('userindex');
         } else if (Auth::guard('pengajar')->check()) {
-            return redirect()->route('mainpage');
+            return redirect()->route('userindex');
         } else {
             if(Cookie::get('email') !== null){
                 $email=Cookie::get('email');
@@ -62,11 +62,25 @@ class LoginAuthController extends Controller
                 if($request->rememberme=='on'){
                     $cookie1 = Cookie::make('email', $request->email, $minutes);
                     $cookie2 = Cookie::make('pass', $request->password, $minutes);
-                    return redirect()->intended(url('/layout'))->withCookie($cookie1)->withCookie($cookie2);
+                    if ($guard=='admin') {
+                        return redirect()->intended(url('/dashboard'))->withCookie($cookie1)->withCookie($cookie2);
+                    }elseif ($guard=='web') {
+                        return redirect()->intended(url('/userindex'))->withCookie($cookie1)->withCookie($cookie2);
+                    }elseif ($guard=='pengajar') {
+                        return redirect()->intended(url('/userindex'))->withCookie($cookie1)->withCookie($cookie2);
+                    }
+                    
                 }else{
                     $cookie1 = Cookie::forget('email');
                     $cookie2 = Cookie::forget('pass');
-                    return redirect()->intended(url('/layout'))->withCookie($cookie1)->withCookie($cookie2);
+                    if ($guard=='admin') {
+                        return redirect()->intended(url('/dashboard'))->withCookie($cookie1)->withCookie($cookie2);
+                    }elseif ($guard=='web') {
+                        return redirect()->intended(url('/userindex'))->withCookie($cookie1)->withCookie($cookie2);
+                    }elseif ($guard=='pengajar') {
+                        return redirect()->intended(url('/userindex'))->withCookie($cookie1)->withCookie($cookie2);
+                    }
+                    
                 }
             } else {
                 return redirect()->back()->withError('Credentials doesn\'t match.');
@@ -109,7 +123,7 @@ class LoginAuthController extends Controller
             $finduser = User::where('google_id', $user->id)->first();
             if($finduser){
                 Auth::login($finduser);
-                return redirect()->intended(url('/layout'));
+                return redirect()->intended(url('/userindex'));
             }else{
                 $newUser = User::updateOrCreate(['email' => $user->email],[
                         'name' => $user->name,
@@ -118,7 +132,7 @@ class LoginAuthController extends Controller
                         'password' => Hash::make('123456dummy')
                     ]);
                 Auth::login($newUser);
-                return redirect()->intended(url('/layout'));
+                return redirect()->intended(url('/userindex'));
             }
         } catch (Exception $e) {
             dd($e->getMessage());

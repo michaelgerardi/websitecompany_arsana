@@ -275,7 +275,7 @@
           <p>
             <a href="/layoutlogin" class="text" style="color: #ffff;">Login</a>
           </p>
-          <a class="navbar-brand" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a>
+          <a class="text" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a>
                     <form id="logout-form" action="{{ route('logoutfnl') }}" method="POST" class="d-none">
                       @csrf
                     </form>
