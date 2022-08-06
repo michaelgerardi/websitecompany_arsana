@@ -76,7 +76,7 @@
     <tr>
           <th>Nama</th>
           <th>Email</th>
-          <th>Role</th>
+          
     </tr>
     </thead>
     <tbody>
@@ -84,7 +84,7 @@
     <tr>
           <td>{{$row->name}}</td>
           <td>{{$row->email}}</td>
-          <td>@if($row->role_id==1) Murid @elseif($row->role_id==2) Admin @elseif($row->role_id==2) Pengajar @endif</td>
+        
     </tr>
     @endforeach
     </tbody>

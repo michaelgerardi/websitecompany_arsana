@@ -28,7 +28,7 @@ class blog_controller extends Controller
                 ])->select('blog.id','nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
                 ->join('kategori','blog.id_kategori','=','kategori.id')->get();
             }
-            
+            $view='blog.index';
         }else{
             if (Auth::guard('web')->check()) {
                 $id = Auth::user()->id;
@@ -44,9 +44,10 @@ class blog_controller extends Controller
                 ])->select('blog.id','nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
                 ->join('kategori','blog.id_kategori','=','kategori.id')->get();
             }
+            $view='blog.userindex';
         }
         $data_kategori = Kategori::all();
-        return view('blog.index',compact('data_kategori','data_blog'));
+        return view($view,compact('data_kategori','data_blog'));
         //return $data_blog;
     }
 

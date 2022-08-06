@@ -9,8 +9,10 @@ class data_user_controller extends Controller
 {
     public function viewdatauser()
     {
-       $user=User::where('role_id','1')->get();
+       $user1=User::where('role_id','1')->with('details')->get();
+       $user = $user1->sortByDesc('details.created_at')->values()->all();
        return view('data_user.user',compact('user'));
+       //return $user;
     }
     public function viewdatapengajar()
     {

@@ -77,8 +77,8 @@
           <th>Nama</th>
           <th>Email</th>
           <th>Role</th>
-          <th>Edit</th>
-          <th>Delete</th>
+          <th>Data Diri</th>
+          <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -87,12 +87,26 @@
           <td>{{$row->name}}</td>
           <td>{{$row->email}}</td>
           <td>@if($row->role_id==1) Murid @elseif($row->role_id==2) Admin @elseif($row->role_id==2) Pengajar @endif</td>
-          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$loop->iteration}}">
+          <td>
+            @if(DB::table('detail_user')->where('user_id', $row->id)->value('id')!=null)
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$loop->iteration}}">
             Lihat Data Diri
-        </button></td>
-          <td><a class="btn btn-danger" role="button" href="/blogdelete/{{$row->id}}">Delete</a></td>
+            </button>
+            
+            <a class="ml-1" data-toggle="popover" data-trigger="focus" title="Ada Permintaan Menjadi Pengajar" 
+                data-content="User Ini Memberikan Permintaan Menjadi Pengajar">
+                    <i class="fa fa-info-circle text-info"></i>
+            </a>
+            @else
+            <button type="button" class="btn btn-primary" disabled>
+            Lihat Data Diri
+            </button>
+            @endif    
+          </td>
+          <td><a class="btn btn-primary" role="button" href="/LihatReq/ApproveReq/{{$row->id}}">Approve</a></td>
     </tr>
     <!-- Modal -->
+    @if(DB::table('detail_user')->where('user_id', $row->id)->value('id')!=null)
 <div class="modal fade" id="exampleModal{{$loop->iteration}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -105,22 +119,24 @@
       <div class="modal-body">
         <div class="form-group">
             <label for="exampleFormControlInput1">Bidang/Keahlian :</label>
-            <input name="nama_perusahaan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Perusahaan"readonly>
+            <input name="bidang" type="text" class="form-control" id="exampleInputEmail1" value="{{$row->details->bidang}}" readonly>
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Pengalaman :</label>
-            <input name="tanggal_input"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+            <input name="pengalaman" type="text" class="form-control" id="exampleInputEmail1" value="{{$row->details->pengalaman}}" readonly>
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Pendidikan Terakhir :</label>
-            <input name="nama_perusahaan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Perusahaan"readonly>
+            <input name="pdd_terakhir" type="text" class="form-control" id="exampleInputEmail1" value="{{$row->details->pdd_terakhir}}" readonly>
         </div>
+      </div>
         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
       </div>
          
     </div>
   </div>
-</div>             
+</div> 
+@endif            
 <!-- /.container-fluid -->
     @endforeach
     </tbody>

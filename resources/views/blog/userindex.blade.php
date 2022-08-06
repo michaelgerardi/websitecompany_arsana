@@ -1,4 +1,4 @@
-@extends('layouts.navadmin')
+@extends('layouts.navuser')
 
 @section('content')
 <div id="content">
@@ -53,6 +53,7 @@
 
   </nav>
   <!-- End of Topbar -->
+  
   <div class="container-fluid">
     <h1 class="font-family">Table Konten</h1>
 

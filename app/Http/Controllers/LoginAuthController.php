@@ -121,10 +121,13 @@ class LoginAuthController extends Controller
         try {
             $user = Socialite::driver('google')->stateless()->user();
             $finduser = User::where('google_id', $user->id)->first();
-            if($finduser){
+            if($finduser->role_id==1){
                 Auth::login($finduser);
                 return redirect()->intended(url('/userindex'));
-            }else{
+            }elseif ($finduser->role_id==3) {
+                Auth::guard('pengajar')->login($finduser);
+                return redirect()->intended(url('/userindex'));
+            } else{
                 $newUser = User::updateOrCreate(['email' => $user->email],[
                         'name' => $user->name,
                         'google_id'=> $user->id,
