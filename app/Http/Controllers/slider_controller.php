@@ -9,7 +9,7 @@ class slider_controller extends Controller
 {
     public function slider_index()
     {
-        $data_slider = slider:: all();
+        $data_slider = slider::paginate(4);
         return view('slider.index',compact('data_slider'));
     }
 

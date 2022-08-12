@@ -8,7 +8,7 @@ use App\Models\kategori;
 class kategori_controller extends Controller
 {
     public function index_kategori(){
-        $data_kategori = kategori::all();
+        $data_kategori = kategori::paginate(4);
         return view('kategori.index',compact('data_kategori'));
     }
 
