@@ -70,7 +70,7 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Data Tabel Layanan</h1>
         </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-button 30px; margin-left: 30px;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-button 30px; margin-left: 10px; margin-bottom:10px">
                 [+] Tambah Data Layanan
             </button>
         <table class="table">
@@ -118,11 +118,11 @@
                             {{csrf_field()}}
                             <div class="form-group">
                             <label for="exampleInputEmail1">Judul Layanan</label>
-                            <input name="judul_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Layanan">
+                            <input name="judul_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Layanan" value="{{$layanan->judul_layanan}}">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Jenis Layanan</label>
-                                <input name="jenis_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jenis Layanan">
+                                <input name="jenis_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jenis Layanan" value="{{$layanan->jenis_layanan}}">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Gambar Layanan</label>
@@ -130,7 +130,7 @@
                             </div>
                             <div class="form-group">
                             <label for="exampleFormControlTextarea1">Deskripsi Layanan</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="deskripsi"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="deskripsi">{{$layanan->deskripsi}}</textarea>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

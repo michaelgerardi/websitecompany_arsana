@@ -54,15 +54,15 @@
                             {{csrf_field()}}
                             <div class="form-group">
                               <label for="exampleFormControlInput1">Nama perusahaan</label>
-                              <input name="nama_perusahaan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                              <input name="nama_perusahaan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$portofolio->nama_perusahaan}}">
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">Tanggal Input</label>
-                              <input name="tanggal_input"type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                              <input name="tanggal_input"type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$portofolio->tanggal_input}}">
                           </div>
                           <div class="form-group">
                               <label for="exampleFormControlInput1">File Gambar</label>
-                              <input name="gambar" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                              <input name="gambar" type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                           </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
