@@ -75,6 +75,7 @@
               </div>
 
               <button type="submit"class="btn btn-danger btn-block">Log In</button>
+              <a type="button" class="btn  btn-primary btn-block" href="{{ route('register') }}">Register</a>
               <hr width="100%" noshade size="25%" style="color:#BB0A1E">
               <!-- <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a> -->
                <!-- tambahkan script di bawah ini untuk membuat tombol signin google -->
