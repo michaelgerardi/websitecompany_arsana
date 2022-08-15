@@ -20,13 +20,13 @@ class blog_controller extends Controller
     public function index_blog(Request $request){
         if(Auth::guard('admin')->check()){
             $data_blog = Blog::select('blog.id','nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
-            ->join('kategori','blog.id_kategori','=','kategori.id')->get();
+            ->join('kategori','blog.id_kategori','=','kategori.id')->paginate(5);
             if(strlen($request->kat)!=0){
                 $data_blog = Blog::where([
                     ['id_kategori',$request->kat],
                     
                 ])->select('blog.id','nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
-                ->join('kategori','blog.id_kategori','=','kategori.id')->get();
+                ->join('kategori','blog.id_kategori','=','kategori.id')->paginate(5);
             }
             $view='blog.index';
         }else{
@@ -36,13 +36,13 @@ class blog_controller extends Controller
                 $id = Auth::guard('pengajar')->user()->id;
             }
             $data_blog = Blog::where('user_id',$id)->select('blog.id','nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
-            ->join('kategori','blog.id_kategori','=','kategori.id')->get();
+            ->join('kategori','blog.id_kategori','=','kategori.id')->paginate(5);
             if(strlen($request->kat)!=0){
                 $data_blog = Blog::where([
                     ['id_kategori',$request->kat],
                     ['user_id',$id]
                 ])->select('blog.id','nama_blog','nama_kategori','tanggal_blog','keterangan','gambar','status')
-                ->join('kategori','blog.id_kategori','=','kategori.id')->get();
+                ->join('kategori','blog.id_kategori','=','kategori.id')->paginate(5);
             }
             $view='blog.userindex';
         }

@@ -88,9 +88,51 @@
                     @foreach ($data_kategori as $kategori)
                     <tr>
                         <td>{{$kategori->nama_kategori}}</td>
-                        <td><a class="btn btn-warning" role="button" href="/EditKategori/{{$kategori->id}}">Edit</a></td>
+                        <td>
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Modaledit{{$loop->iteration}}">
+                                Edit
+                            </button>
+                        </td>
                         <td><a class="btn btn-danger" role="button" href="/kategoridelete/{{$kategori->id}}">Delete</a></td>
                     </tr>
+
+                    <!-- Modal edit -->
+                    <div class="modal fade" id="Modaledit{{$loop->iteration}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Kategori</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <ul>
+                                    @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                    @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <form action="{{route('ProsesEditKategori')}}" method="post">
+                            {{csrf_field()}}
+                            <input type="hidden" value="{{$kategori->id}}" name="id">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Nama Kategori</label>
+                                <input name="nama_kategori"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Kategori" value="{{$kategori->nama_kategori}}">
+                            </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="Submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                            </form>
+                            </div>
+                        </div>
+                        </div>
+                    <!-- /.modal edit -->
                     @endforeach
                 </tbody>  
             </table>
@@ -105,21 +147,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                        @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="/kategori/insert" method="POST">
                 {{csrf_field()}}
-                <div class="form-group has-feedback{{$errors->has('nama_kategori') ? 'has-error' : ''}}">
-                    <label class="control-label col-sm-2" for="email">Nama Kategori :</label>
-                    <div class="col-sm-10">
-                    <input name="nama_kategori" type="text" class="form-control" id="email" placeholder="Nama Kategori" >
-                    @if ($errors->has('nama_kategori'))
-                            <span class="help-block">
-                                <p style="color: red">{{$errors->first('nama_kategori')}}</p>
-                            </span>
-                    @endif
-                    </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nama Kategori</label>
+                    <input name="nama_kategori"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Kategori">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -129,7 +171,7 @@
                 </div>
             </div>
             </div>
-        <!-- /.container-fluid -->
+        <!-- /.modal --> 
         </div>
     
     <!-- End of Main Content -->

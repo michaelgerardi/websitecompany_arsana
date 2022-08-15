@@ -71,7 +71,7 @@
                         <a class="collapse-item" href="/blog">Data Konten</a>
                         <a class="collapse-item" href="{{route('viewdatauser')}}">Data Peserta</a>
                         <a class="collapse-item" href="{{route('viewdatapengajar')}}">Data Pengajar</a>
-                        <a class="collapse-item" href="cards.html">Data Slider</a>
+                        <a class="collapse-item" href="/Imageslider">Data Slider</a>
                         <a class="collapse-item" href="/Imageportofolio">Data Portofolio</a>
                         <a class="collapse-item" href="/data_layanan">Data Layanan</a>
                     </div>

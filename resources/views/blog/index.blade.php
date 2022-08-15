@@ -58,20 +58,20 @@
 
   <form action="" method="get">
     <label class="" for="kat">Kategori:</label>
-    <select class="form-select" aria-label="Default select example" name="kat" id="kategori">
+    <select class="custom-select col-md-3" aria-label="Default select example" name="kat" id="kategori">
     @foreach($data_kategori as $kate)
       <option value="{{$kate->id}}">{{$kate->nama_kategori}}</option>
       @endforeach
     </select>
-    <input class="btn btn-secondary" role="button" type="submit" value="Submit">
+    <input class="btn btn-secondary" role="button" type="submit" value="Submit" style="margin-top:10px">
   </form>
   <br>
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
+    [+]Tambah Data Konten
   </button>
   <br>
-  <table class="table">
+  <table class="table" style="margin-top:20px">
     <thead>
     <tr>
           <th>Nama Blog</th>
@@ -99,6 +99,7 @@
     @endforeach
     </tbody>
   </table>
+  {!! $data_blog->withQueryString()->links() !!} 
   <br>
 
 
@@ -108,7 +109,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Input Data Konten</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -122,7 +123,7 @@
       </div>
       <div class="form-group">
           <label for="exampleInputPegawai">Kategori</label>
-          <select name="id_kategori" id="exampleInputPegawai"  aria-label="Default select example" class="form-select">
+          <select class="custom-select" aria-label="Default select example" name="id_kategori">
             @foreach ($data_kategori as $kategori)
               <option value={{$kategori->id}}>{{$kategori->nama_kategori}}</option>
             @endforeach
