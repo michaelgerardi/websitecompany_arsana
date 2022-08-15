@@ -141,4 +141,11 @@ class LoginAuthController extends Controller
             dd($e->getMessage());
         }
     }
+    public function relog_reset(Request $request)
+    {
+        Auth::guard('web')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('loginfinal');
+    }
 }

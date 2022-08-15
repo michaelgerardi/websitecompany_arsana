@@ -46,6 +46,7 @@ route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'sho
 // route::get('/layoutlogin',[App\Http\Controllers\LoginAuthController::class, 'loginPage']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/logoutfnl', [App\Http\Controllers\LoginAuthController::class, 'logout'])->name('logoutfnl');
+Route::get('/relog',[App\Http\Controllers\LoginAuthController::class, 'relog_reset'])->name('rlog');
 
 // Admin
 route::get('/dashboard_Admin',[App\Http\Controllers\blog_controller::class,'dashboard_admin']);
@@ -103,4 +104,6 @@ Route::get('auth/google/callback',[App\Http\Controllers\LoginAuthController::cla
 //datauser
 Route::get('/viewdatauser',[App\Http\Controllers\data_user_controller::class, 'viewdatauser'])->name('viewdatauser');
 Route::get('/viewdatapengajar',[App\Http\Controllers\data_user_controller::class, 'viewdatapengajar'])->name('viewdatapengajar');
+
+
 
