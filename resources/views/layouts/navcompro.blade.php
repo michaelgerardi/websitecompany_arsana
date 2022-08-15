@@ -197,7 +197,7 @@
         <nav class="navbar navbar-expand-lg navbar-custom ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
+                <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px"  src="{{asset('images/logo_IMA.jpeg')}}" alt="">
                 </a>
                 <ul class="navbar-nav mr-5">
                     <li class="nav-item">
@@ -275,7 +275,7 @@
           <p>
             <a href="/layoutlogin" class="text" style="color: #ffff;">Login</a>
           </p>
-          <a class="text" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a>
+          <!-- <a class="text" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a> -->
                     <form id="logout-form" action="{{ route('logoutfnl') }}" method="POST" class="d-none">
                       @csrf
                     </form>
