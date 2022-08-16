@@ -19,7 +19,7 @@ class layanan_controller extends Controller
             'judul_layanan'=>'required',
             'deskripsi'=>'required',
             'jenis_layanan'=>'required',
-            'gambar'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            // 'gambar'=>'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
         $input = $request->all();
         $image = $request->file('gambar');
@@ -30,7 +30,8 @@ class layanan_controller extends Controller
         $nama =$data->id . "_" ."slider". "." . $image->getClientOriginalExtension();
         layanan::where('id', $data->id)->update(['gambar' => $nama]);
         $image->move($destinationPath, $nama);
-        return $input;
+        // return $input;
+        return redirect('/data_layanan');
     }
 
     public function delete_layanan($id)

@@ -70,7 +70,7 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Data Tabel Layanan</h1>
         </div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-button 30px; margin-left: 30px;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-button 30px; margin-left: 10px; margin-bottom:10px">
                 [+] Tambah Data Layanan
             </button>
         <table class="table">
@@ -119,11 +119,13 @@
                             <input type="hidden" name="id" value="{{$layanan->id}}">
                             <div class="form-group">
                             <label for="exampleInputEmail1">Judul Layanan</label>
+
                             <input name="judul_layanan"type="text" class="form-control" id="exampleInputEmail1" value="{{$layanan->judul_layanan}}" aria-describedby="emailHelp" placeholder="Nama Layanan">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Jenis Layanan</label>
                                 <input name="jenis_layanan"type="text" class="form-control" id="exampleInputEmail1" value="{{$layanan->jenis_layanan}}" aria-describedby="emailHelp" placeholder="Jenis Layanan">
+                          
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Gambar Layanan</label>
