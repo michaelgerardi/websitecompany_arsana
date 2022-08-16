@@ -132,6 +132,15 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                    @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <ul>
+                                    @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                    @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         <form action="/slider/insert" method="POST" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group">

@@ -55,12 +55,17 @@ class portofolio_controller extends Controller
             $imgname = $request->id . "_" ."slider".".". $request->file('gambar')->getClientOriginalExtension();
             $destinationPath = 'portofolio/';
             $image->move($destinationPath, $imgname);
-            $post->gambar = $imgname;
+            portofolio::where('id',$request->id)->update([
+                'nama_perusahaan' => $request->nama_perusahaan,
+                'tanggal_input' => $request->tanggal_input,
+                'gambar' => $imgname,
+             ]);
         }
-        $post->nama_perusahaan = $request->nama_perusahaan;
-        $post->tanggal_input = $request->tanggal_input;
-        $post->save();
-        return $imgname;
+        portofolio::where('id',$request->id)->update([
+            'nama_perusahaan' => $request->nama_perusahaan,
+            'tanggal_input' => $request->tanggal_input
+         ]);
+        return redirect()->back();
       }
 
     public function findidportofolio($id){

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\portofolio;
 use App\Models\layanan;
+use App\Models\user;
 
 class layout_controller extends Controller
 {
@@ -51,7 +52,9 @@ class layout_controller extends Controller
         ->groupby('month')->orderBy('tanggal_blog','asc')->get();
         $data_grafikpie = blog::selectraw("nama_kategori, count(id_kategori) as jumlah")
         ->join('kategori','blog.id_kategori','=','kategori.id')->groupBy('nama_kategori')->get();
-        return view('layouts.admin',compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie'));
-        //return $data_grafikpie;
+        $data_pengajar = user::where('role_id','3')->count('role_id');
+        $data_peserta = user::where('role_id','1')->count('role_id');
+        return view('layouts.admin',compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie','data_pengajar','data_peserta'));
+        //return $data_pengajar;
     }
 }

@@ -85,8 +85,8 @@
             @foreach($data_layanan as $layanan)
                 <tr>
                     <td>{{$layanan->judul_layanan}}</td>
-                    <td>{{$layanan->deskripsi}}</td>
                     <td>{{$layanan->jenis_layanan}}</td>
+                    <td>{{$layanan->deskripsi}}</td>
                     <td><img src="{{asset('layanan/'.$layanan->gambar)}}" height="100px" width="100px"></td>
                     <td>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Modaledit{{$loop->iteration}}">
@@ -99,7 +99,7 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Kategori</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Layanan</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
@@ -116,21 +116,23 @@
                             @endif
                             <form action="{{route('ProsesEditlayanan')}}" method="POST" enctype="multipart/form-data">
                             {{csrf_field()}}
+                            <input type="hidden" name="id" value="{{$layanan->id}}">
                             <div class="form-group">
                             <label for="exampleInputEmail1">Judul Layanan</label>
-                            <input name="judul_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Layanan">
+                            <input name="judul_layanan"type="text" class="form-control" id="exampleInputEmail1" value="{{$layanan->judul_layanan}}" aria-describedby="emailHelp" placeholder="Nama Layanan">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Jenis Layanan</label>
-                                <input name="jenis_layanan"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jenis Layanan">
+                                <input name="jenis_layanan"type="text" class="form-control" id="exampleInputEmail1" value="{{$layanan->jenis_layanan}}" aria-describedby="emailHelp" placeholder="Jenis Layanan">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Gambar Layanan</label>
                                 <input name="gambar"type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Blog">
+                                <b>Last File:</b><a href="{{asset('layanan/'.$layanan->gambar)}}" target="_blank">{{asset('layanan/'.$layanan->gambar)}}</a>
                             </div>
                             <div class="form-group">
                             <label for="exampleFormControlTextarea1">Deskripsi Layanan</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="deskripsi"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="deskripsi">{{$layanan->deskripsi}}</textarea>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -157,6 +159,15 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                    @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    <ul>
+                                    @foreach($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                    @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                         <form action="/layanan/insert" method="POST" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group">

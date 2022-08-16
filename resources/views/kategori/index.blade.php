@@ -71,6 +71,15 @@
                 <h1 class="h3 mb-0 text-gray-800">Data Tabel Kategori</h1>
             </div>
             <br>
+            @if(count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                    </ul>
+                </div>
+            @endif
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin: top 30px; margin: button 30%; margin: left 30px;">
                     [+] Tambah Data Kategori
                 </button>
@@ -121,7 +130,7 @@
                             <input type="hidden" value="{{$kategori->id}}" name="id">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama Kategori</label>
-                                <input name="nama_kategori"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Kategori" value="{{$kategori->nama_kategori}}">
+                                <input name="nama_kategori" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Kategori" value="{{$kategori->nama_kategori}}">
                             </div>
                             </div>
                             <div class="modal-footer">

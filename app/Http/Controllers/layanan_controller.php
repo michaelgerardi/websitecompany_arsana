@@ -65,12 +65,20 @@ class layanan_controller extends Controller
             $imgname = $request->id . "_" ."slider".".". $request->file('gambar')->getClientOriginalExtension();
             $destinationPath = 'layanan/';
             $image->move($destinationPath, $imgname);
-            $post->gambar = $imgname;
+            layanan::where('id',$request->id)->update([
+                'judul_layanan' => $request->judul_layanan,
+                'deskripsi' => $request->deskripsi,
+                'jenis_layanan' => $request->jenis_layanan,
+                'gambar' => $imgname,
+            ]);
+        }else {
+            layanan::where('id',$request->id)->update([
+                'judul_layanan' => $request->judul_layanan,
+                'deskripsi' => $request->deskripsi,
+                'jenis_layanan' => $request->jenis_layanan
+            ]);
         }
-        $post->judul_layanan = $request->judul_layanan;
-        $post->deskripsi = $request->deskripsi;
-        $post->jenis_layanan = $request->jenis_layanan;
-        $post->save();
-        return $imgname;
+        
+        return redirect()->back();
     }
 }

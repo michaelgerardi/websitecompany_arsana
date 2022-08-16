@@ -14,7 +14,7 @@ class kategori_controller extends Controller
 
     public function tambah_kategori(Request $request){
         $this->validate($request,[
-            'nama_kategori'=>'required'
+            'nama_kategori'=>'required|max:255'
         ]);
         kategori::create($request->all());
         //return view();
