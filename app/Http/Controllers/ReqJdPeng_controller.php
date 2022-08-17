@@ -9,6 +9,10 @@ use Auth;
 
 class ReqJdPeng_controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:web');
+    }
     public function LihatReq(Type $var = null)
     {
         $data_req = Detail_user::where('acc','0')->get();

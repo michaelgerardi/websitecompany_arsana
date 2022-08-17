@@ -8,17 +8,15 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
+  
   <div class="carousel-inner">
-    <div class="carousel-item active">
-    <img src="images/img1.png" class="d-block w-100" alt="First slide">
+    @foreach($slider as $item)
+    <div class="carousel-item @if($loop->iteration==1)active @endif">
+    <img src="slider/{{$item->gambar}}" class="d-block w-100" alt="First slide">
     </div>
-    <div class="carousel-item">
-    <img src="images/img2.png" class="d-block w-100"alt="Second slide">
-    </div>
-    <div class="carousel-item">
-    <img src="images/img3.png" class="d-block w-100"alt="Third slide">
-    </div>
+    @endforeach
   </div>
+ 
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -414,8 +412,8 @@ margin-bottom:10px;
                   </div>
                   <div class="content">
                     <div class="container col-md-12">
-                      <p class="txt4 col-md-12">{{$content[$ii-1]->nama_blog}}</p>
-                      <p class="txt2 col-md-12">{{\Illuminate\Support\Str::limit($content[$ii-1]->keterangan, 150, $end='...')}} </p>
+                      <p class="txt4 col-md-12" style="margin-top:20px">{{$content[$ii-1]->nama_blog}}</p>
+                      <p class="txt2 col-md-12" style="margin-top:25px">{{\Illuminate\Support\Str::limit($content[$ii-1]->keterangan, 150, $end='...')}} </p>
                     </div>
                   </div>
                   <div class="footer">
@@ -453,8 +451,10 @@ margin-bottom:10px;
       <div class="col-lg-5 col-md-6 col-sm-12">
         <h4 style="color:black"><b>ABOUT ARSANA</b></h4>
           <div class="decription; margin-left=100px" style="color: black; text-align:justify;">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </div>
+          Sebuah platform peningkatan kompetensi untuk para profesional dan akademisi. 
+          Menyajikan pelatihan secara blended learning, in house training, 
+          dan konsultasi yang diisi oleh para ahli & praktisi.
+           </div>
       </div>
       <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
                     <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
@@ -469,14 +469,18 @@ margin-bottom:10px;
   <div class="jumbotron" style="background-color:#BB0A1E">
     <div class="row">
     <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
+                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/learning.jpg" alt="">
       </div>
       <div class="col-lg-7 col-md-6 col-sm-12 col-xl-6">
         <h4 style="color:#ffff"><b>SERVICE</b></h1>
           <h1 style="color:#ffff">Learning Ecosystem</h1>
           <div class="decription; text-justify" style="color: #ffff">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </div>
+          Learning Ecosystem adalah sebuah media belajar untuk pelatihan peningkatan 
+          skills yang tersedia di platform ARSANA. Dikemas dengan metode blended 
+          learning yang memudahkan sistem belajar secara real time maupun self learning. 
+          Setiap tema akan disajikan dalam model asinkronus (belajar mandiri berupa video, modul, dll) 
+          dan sinkronus (belajar secara live).
+             </div>
           <br>
             <!-- LINK HALAMAN SERVICE -->
             <a class="btn btn-white" href="/service" role="button">See More</a>
@@ -492,11 +496,12 @@ margin-bottom:10px;
       <div class="col-lg-5 col-md-6 col-sm-12">
         <h4 style="color:black"><b>CONSULTING ECOSYSTEM</b></h1>
           <div class="decription; text-justify" style="color: black">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </div>
+          Kami menyediakan pelayanan konsultasi  dengan 
+          praktisi/narasumber pengampu secara individu ataupun group, baik secara offline maupun online.
+              </div>
       </div>
       <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
+                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/consultans.jpg" alt="">
       </div>
     </div>
   </div>
@@ -529,8 +534,8 @@ margin-bottom:10px;
                   </div>
                   <div class="content">
                       <div class="container col-md-12">
-                        <p class="txt4">{{$layanan[$ii-1]->judul_layanan}}</p>
-                        <p class="txt2 col-md-12">{{\Illuminate\Support\Str::limit($layanan[$ii-1]->deskripsi, 150, $end='...')}} </p>
+                        <h4 class="txt4 col-md-12" style="margin-top:20px"><b>{{$layanan[$ii-1]->judul_layanan}}</b></h4>
+                        <p class="txt2 col-md-12" style="margin-top:25px">{{\Illuminate\Support\Str::limit($layanan[$ii-1]->deskripsi, 40, $end='...')}} </p>
                       </div>
                   </div>
                   <div class="footer">
@@ -653,17 +658,17 @@ margin-bottom:10px;
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="column col-md-4 ml-5" >
-            <h3 class="ml-5"><b>CONTACT US</b></h3>
+            <h3 class="ml-5"><b>COMMENT FOR US</b></h3>
             <br>
             <div class="container col-md-12 ml-5 pl-2" >
-              <form action="#" method="post">
+              <form action="#" >
                 <div class="form-group first">
                   <label for="username" style="color: black;">Name</label>
                   <input type="text" class="form-control" placeholder="Your Name" id="name" >
                 </div>
                 <div class="form-group last mb-3">
                   <label for="password" style="color: black;">Email</label>
-                  <input type="password" class="form-control" placeholder="Your Email" id="email">
+                  <input type="text" class="form-control" placeholder="Your Email" id="email">
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Comment</label>
@@ -710,7 +715,7 @@ margin-bottom:10px;
                                         <img src="images/a.png">
                                     </div>
                                     <div class="team-content">
-                                        <h3 class="title">Dana Robins</h3>
+                                        <h3 class="title">Ktut Rentyasti Pakupi (Asti) </h3>
                                         <span class="post">Marketing Consultant</span>
                                     </div>
                                     <ul class="social">
@@ -727,7 +732,7 @@ margin-bottom:10px;
                                         <img src="images/a.png">
                                     </div>
                                     <div class="team-content">
-                                        <h3 class="title">John Doe</h3>
+                                        <h3 class="title">I Made Andi Arsana</h3>
                                         <span class="post">Marketing Consultant</span>
                                     </div>
                                     <ul class="social">
@@ -744,7 +749,7 @@ margin-bottom:10px;
                                         <img src="images/a.png">
                                     </div>
                                     <div class="team-content">
-                                        <h3 class="title">Sophia Lee</h3>
+                                        <h3 class="title">Pandu Henri </h3>
                                         <span class="post">Customer Support</span>
                                     </div>
                                     <ul class="social">

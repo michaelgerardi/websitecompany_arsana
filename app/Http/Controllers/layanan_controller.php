@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\layanan;
+use File;
 
 class layanan_controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index_layanan()
     {
         $data_layanan = layanan::paginate(4);
@@ -37,6 +42,8 @@ class layanan_controller extends Controller
     public function delete_layanan($id)
     {
         $data_layanan = layanan::find($id);
+        $destinationPath = 'layanan';
+        File::delete($destinationPath.'/'.$data_layanan->gambar);
         $data_layanan->delete();
         return redirect()->back();
     }

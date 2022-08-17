@@ -7,6 +7,10 @@ use App\Models\portofolio;
 
 class portofolio_controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index_portofolio()
     {
         $data_portofolio = portofolio::paginate(4);

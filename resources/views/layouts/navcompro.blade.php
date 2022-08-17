@@ -227,52 +227,75 @@
 <div class="container-fluid">
   <!-- Footer -->
 <footer class="text-center text-lg-start text-white" style="background-color:#BB0A1E;">
+<!-- Section: Social media -->
+<!-- <section class="d-flex justify justify-content-lg-between p-4 border-bottom" style="height:50px"> -->
+<!-- <section class="d-flex mb-auto mt-auto p-2 align-items-start flex-column p-2 border-bottom" style="height:80px">
+  <div class="container-fluid">
+    <div class="row gx-5">
+      <div class="col-6 col-md-4">
+        <div class="p-4"><b>Get connected with us:</b></div>
+      </div>
+      <div class="col-8 col-sm-6 col-md-8">
+        <div class="p-4">
+          <i class="fa fa-envelope"></i><a class="text-white"> :arsana.ecosystem@gmail.com</a>
+          <i class="fa fa-mobile"></i><a class="text-white"> : +6287738934560</a>
+          <i class="fa fa-globe" style="margin-left:10px"></i><a class="text-white"> : arsanaecosystem.com</a>
+          <i class="fa fa-facebook"></i><a class="text-white"> : @arsana.ecosystem</a>
+        </div>
+      </div>
+    </div>
+  </div>    
+
+  </section> -->
+  <!-- Section: Social media -->
+
+
   <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
+  <section>
+    <div class="container text-md-start mt-5">
       <!-- Grid row -->
-      <div class="row mt-3">
+      <div class="row row-cols-lg-5">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="margin-top: 1%;">
+        <div class="col-md-3 col-lg-3 col-xl-3 mb-4" style="margin-top: 1%;">
           <!-- Content -->
-          <img style="width: 90px; height:90px; border-radius:50%; margin-top:10px;"  src="{{asset('images/logo IMA.jpeg')}}" alt="">
-          <p class="text-justify">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+          <img style="width: 90px; height:90px; border-radius:50%; margin-top:10px; margin-left:-10px"  src="{{asset('images/logo_IMA.jpeg')}}" alt="">
+          <p class="text-center">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
           </p>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4"  style="margin-top: 2%;">
+        <div class="col-md-2 col-lg-2 col-xl-2 mb-4"  style="margin-top: 2%;">
           <!-- Links -->
-          <h5 class="text-uppercase fw-bold mb-4">
-            Products
+          <h5 class="text-uppercase fw-bold mb-4 text-justify">
+            <b>Home</b>
           </h5>
-          <p class="fs-4">
+          <p class="text-justify">
             <a href="#news" class="text" style="color: #ffff;">Berita</a>
           </p>
-          <p>
+          <p class="text-justify">
             <a href="#service" class="text" style="color: #ffff;">Service</a>
           </p>
-          <p>
+          <p class="text-justify">
             <a href="#about" class="text" style="color: #ffff;">About Us</a>
           </p>
-          <p>
+          <p class="text-justify">
             <a href="#contact" class="text" style="color: #ffff;">Contact Us</a>
           </p>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="margin-top: 2%;">
+        <div class="col-md-3 col-lg-2 col-xl-2 mb-4" style="margin-top: 2%;">
           <!-- Links -->
-          <h5 class="text-uppercase fw-bold mb-4">
-            Useful links
+          <h5 class="text-uppercase fw-bold mb-4 text-justify">
+            <b>Link</b>
           </h5>
-          <p>
+          <p class="text-justify">
             <a href="#" class="text" style="color: #ffff;">Kelas</a>
           </p>
-          <p>
+          <p class="text-justify">
             <a href="/layoutlogin" class="text" style="color: #ffff;">Login</a>
           </p>
           <!-- <a class="text" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a> -->
@@ -283,19 +306,41 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="margin-top: 2%;">
+        <div class="col-md-4 col-lg-2 col-xl-2 mb-4" style="margin-top: 2%;">
           <!-- Links -->
-          <h5 class="text-uppercase fw-bold mb-4">
-            Contact
+          <h5 class="text-uppercase fw-bold mb-4 text-justify">
+            <b>Layanan</b>
           </h5>
-          <p>
+          <p class="text-justify">
             <a href="#" class="text" style="color: #ffff;">Konsultasi</a>
           </p>
-          <p>
+          <p class="text-justify">
             <a href="#" class="text" style="color: #ffff;">Jenis Konsultasi</a>
           </p>
         </div>
         <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mb-4" style="margin-top: 2%;">
+          <!-- Links -->
+          <h5 class="text-uppercase fw-bold mb-4">
+            <b>Contact Us</b>
+          </h5>
+          <p class="text-justify">
+            <i class="fa fa-envelope"></i><a class="text" style="color:#ffff;"> : arsana.ecosystem@gmail.com</a>
+          </p>
+          <p class="text-justify">
+            <i class="fa fa-phone"></i><a class="text" style="color:#ffff;"> : +6287738934560</a>
+          </p>
+          <p class="text-justify">
+            <i class="fa fa-globe"></i><a class="text" style="color:#ffff;"> : arsanaecosystem.com</a>
+          </p>
+          <p class="text-justify">
+            <i class="fa fa-instagram"></i><a class="text" style="color:#ffff;"> : @arsana.ecosystem</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
       </div>
       <!-- Grid row -->
     </div>

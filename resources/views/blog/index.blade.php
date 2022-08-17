@@ -99,66 +99,68 @@
           <td><a class="btn btn-danger" role="button" href="/blogdelete/{{$blog->id}}">Delete</a></td>
           <!-- Modal edit -->
           <div class="modal fade" id="Modaledit{{$loop->iteration}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Konten</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                            @if(count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                    @foreach($errors->all() as $error)
-                                    <li>{{$error}}</li>
-                                    @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            <form action="{{route('ProsesEdit_blog')}}" method="POST" enctype="multipart/form-data">
-                                {{csrf_field()}}
-                                <input type="hidden" value="{{$blog->id}}" name="id">
-                                <div class="form-group">
-                                        <label for="exampleInputEmail1">Nama Blog</label>
-                                        <input name="nama_blog"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$blog->nama_blog}}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPegawai">Kategori</label>
-                                        <select name="id_kategori" id="exampleInputPegawai" class="custom-select" >
-                                          @foreach ($data_kategori as $kategori)
-                                            <option value={{$kategori->id}}>{{$kategori->nama_kategori}}</option>
-                                          @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Tanggal Blog</label>
-                                        <input name="tanggal_blog"type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$blog->tanggal_blog}}">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Deskripsi</label>
-                                        <textarea class="form-control" name="keterangan" id="" cols="30" rows="10"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">File Gambar</label>
-                                        <input name="gambar"type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                    </div>
-                                    @if(Auth::guard('admin')->check())
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Status</label>
-                                        <select name="status"class="form-control" id="exampleFormControlSelect1">
-                                        <option value="1">Setuju</option>
-                                        <option value="0">Tidak Setuju</option>
-                                        </select>
-                                      </div>
-                                      @endif
-                                          <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            </div>
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Data Konten</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                        @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <form action="{{route('ProsesEdit_blog')}}" method="POST" enctype="multipart/form-data">
+                  {{csrf_field()}}
+                  <input type="hidden" value="{{$blog->id}}" name="id">
+                  <div class="form-group">
+                          <label for="exampleInputEmail1">Nama Blog</label>
+                          <input name="nama_blog"type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$blog->nama_blog}}">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputPegawai">Kategori</label>
+                          <select name="id_kategori" id="exampleInputPegawai" class="custom-select" >
+                            @foreach ($data_kategori as $kategori)
+                              <option value={{$kategori->id}}>{{$kategori->nama_kategori}}</option>
+                            @endforeach
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Tanggal Blog</label>
+                          <input name="tanggal_blog"type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$blog->tanggal_blog}}">
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">Deskripsi</label>
+                          <textarea class="form-control" name="keterangan" id="" cols="30" rows="10">{{$blog->keterangan}}</textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">File Gambar</label>
+                          <input name="gambar"type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          <b>Last File:</b><a href="{{asset('images/'.$blog->gambar)}}" target="_blank">{{asset('images/'.$blog->gambar)}}</a>
+
+                      </div>
+                      @if(Auth::guard('admin')->check())
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Status</label>
+                          <select name="status"class="form-control" id="exampleFormControlSelect1">
+                          <option value="1">Setuju</option>
+                          <option value="0">Tidak Setuju</option>
+                          </select>
                         </div>
-                        </div>
-                    <!-- /.modal edit -->
+                      @endif
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- /.modal edit -->
     </tr>
     @endforeach
     </tbody>

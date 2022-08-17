@@ -7,6 +7,10 @@ use App\Models\kategori;
 
 class kategori_controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index_kategori(){
         $data_kategori = kategori::paginate(4);
         return view('kategori.index',compact('data_kategori'));

@@ -8,14 +8,15 @@ use App\Models\Blog;
 use App\Models\kategori;
 use Validator;
 use Auth;
+use File;
 
 class blog_controller extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:admin');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth:admin,pengajar,web');
+    }
 
     public function index_blog(Request $request){
         if(Auth::guard('admin')->check()){
@@ -88,6 +89,8 @@ class blog_controller extends Controller
  
     public function delete_blog($id){
         $data_blog =  blog::find($id);
+        $destinationPath = 'images';
+        File::delete($destinationPath.'/'.$data_blog->gambar);
         $data_blog->delete();
         return redirect()->back();
     }
@@ -100,7 +103,6 @@ class blog_controller extends Controller
             'nama_blog' => 'required',
             'tanggal_blog' => 'required',
             'keterangan' => 'required',
-            'status' => 'required'
         ]);
         
         $post = blog::find($request->id);
@@ -119,7 +121,7 @@ class blog_controller extends Controller
         $post->keterangan = $request->keterangan;
         $post->status = $request->status;
         $post->save();
-        return $post  ;
+        return redirect()->back();
     
         //return redirect()->route('blog')->with('success','Post updated successfully');
     }

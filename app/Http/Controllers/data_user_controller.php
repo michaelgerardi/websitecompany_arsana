@@ -7,6 +7,10 @@ use App\Models\User;
 
 class data_user_controller extends Controller
 {
+   public function __construct()
+    {
+        $this->middleware('auth:pengajar');
+    }
     public function viewdatauser()
     {
        $user1=User::where('role_id','1')->with('details')->get();
