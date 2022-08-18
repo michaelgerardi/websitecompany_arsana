@@ -204,16 +204,16 @@
                     <a class="navbar-brand" href="/layout"><b>Home</b></a>
                     </li>
                     <li class="nav-item">
-                    <a class="navbar-brand" href="#news"><b>News</b></a>
+                    <a class="navbar-brand" href="/layout#news"><b>News</b></a>
                     </li>
                     <li class="nav-item">
-                    <a class="navbar-brand" href="#portofolio"><b>Portofolio</b></a>
+                    <a class="navbar-brand" href="/layout#portfolio"><b>Portofolio</b></a>
                     </li>
                     <li class="nav-item">
-                    <a class="navbar-brand" href="#about"><b>About</b></a>
+                    <a class="navbar-brand" href="/layout#about"><b>About</b></a>
                     </li>
                     <li class="nav-item">
-                    <a class="navbar-brand" href="#contact"><b>Contact</b></a>
+                    <a class="navbar-brand" href="/layout#footer"><b>Contact</b></a>
                     </li>
                    
                 </ul>
@@ -251,9 +251,10 @@
 
 
   <!-- Section: Links  -->
-  <section>
-    <div class="container text-md-start mt-5">
+  <section id="footer" name="footer">
+    <div class="container-fluid text-md-start mt-5">
       <!-- Grid row -->
+      <div class="container">
       <div class="row row-cols-lg-5">
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mb-4" style="margin-top: 1%;">
@@ -275,13 +276,13 @@
             <a href="#news" class="text" style="color: #ffff;">Berita</a>
           </p>
           <p class="text-justify">
-            <a href="#service" class="text" style="color: #ffff;">Service</a>
+            <a href="#services" class="text" style="color: #ffff;">Service</a>
           </p>
           <p class="text-justify">
             <a href="#about" class="text" style="color: #ffff;">About Us</a>
           </p>
           <p class="text-justify">
-            <a href="#contact" class="text" style="color: #ffff;">Contact Us</a>
+            <a href="#comment" class="text" style="color: #ffff;">Comment For Us</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -323,7 +324,7 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mb-4" style="margin-top: 2%;">
           <!-- Links -->
-          <h5 class="text-uppercase fw-bold mb-4">
+          <h5 class="text-uppercase fw-bold mb-4 text-justify">
             <b>Contact Us</b>
           </h5>
           <p class="text-justify">
@@ -355,6 +356,7 @@
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
+</div>
 </div>
     </div>
     <script src="assets/js/jquery.js"></script> 

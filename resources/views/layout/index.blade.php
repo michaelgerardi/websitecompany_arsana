@@ -445,19 +445,19 @@ margin-bottom:10px;
 </div>
 <br>
 <!-- ABOUT ARSANA -->
+<section id="about" class="about">
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
     <div class="row">
-      <div class="col-lg-5 col-md-6 col-sm-12">
-        <h4 style="color:black"><b>ABOUT ARSANA</b></h4>
-          <div class="decription; margin-left=100px" style="color: black; text-align:justify;">
-          Sebuah platform peningkatan kompetensi untuk para profesional dan akademisi. 
-          Menyajikan pelatihan secara blended learning, in house training, 
-          dan konsultasi yang diisi oleh para ahli & praktisi.
-           </div>
+      <div class="col-sm-5 col-md-5 col-xl-5 col-xs-12">
+        <h3 class="text-start mt-4" style="color:black"><b>ABOUT ARSANA</b></h3>
+          <p class="text-start" style="color: black; text-align:justify;">
+          Sebuah platform peningkatan kompetensi untuk para profesional dan akademisi. Menyajikan pelatihan secara blended learning, in house training, 
+          dan konsultasi yang diisi oleh para ahli & praktisi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum rerum porro architecto, officiis ducimus voluptates quaerat dicta cupiditate nulla nobis, dolorum consequatur accusantium laboriosam corporis sit minima nisi, maxime blanditiis?
+           </p>
       </div>
-      <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/gambar2.jpg" alt="">
+      <div class="col-sm-6 col-md-6 col-xl-6 col-xs-12 offset-1">
+        <img class="mx-auto d-block" src="images/gambar2_1.jpg" alt="">
       </div>
     </div>
   </div>
@@ -465,16 +465,17 @@ margin-bottom:10px;
 </section>
 
 <!-- SERVICE -->
+<section id="services" class="services">
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#BB0A1E">
     <div class="row">
-    <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/learning.jpg" alt="">
+    <div class="col-sm-5 col-md-5 col-xl-5 col-xs-12">
+      <img class="img-fluid ml-5" src="images/learning_1.jpg" alt="">
       </div>
-      <div class="col-lg-7 col-md-6 col-sm-12 col-xl-6">
-        <h4 style="color:#ffff"><b>SERVICE</b></h1>
-          <h1 style="color:#ffff">Learning Ecosystem</h1>
-          <div class="decription; text-justify" style="color: #ffff">
+      <div class="col-sm-6 col-md-6 col-xl-6 col-xs-12 offset-1">
+        <h4 class="text-start" style="color:#ffff"><b>SERVICE</b></h1>
+          <h1 class="text-start" style="color:#ffff; text-align:justify">Learning Ecosystem</h1>
+          <div class="text-start" style="color: #ffff; text-align:justify">
           Learning Ecosystem adalah sebuah media belajar untuk pelatihan peningkatan 
           skills yang tersedia di platform ARSANA. Dikemas dengan metode blended 
           learning yang memudahkan sistem belajar secara real time maupun self learning. 
@@ -488,20 +489,21 @@ margin-bottom:10px;
     </div>
   </div>
 </div>
+</section>
 
 <br>
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
     <div class="row">
-      <div class="col-lg-5 col-md-6 col-sm-12">
-        <h4 style="color:black"><b>CONSULTING ECOSYSTEM</b></h1>
-          <div class="decription; text-justify" style="color: black">
+      <div class="col-sm-5 col-md-5 col-xl-5 col-xs-12">
+        <h4 class="text-start mt-5" style="color:black"><b>CONSULTING ECOSYSTEM</b></h1>
+          <p class="text-start" style="color: black; text-align:justify">
           Kami menyediakan pelayanan konsultasi  dengan 
-          praktisi/narasumber pengampu secara individu ataupun group, baik secara offline maupun online.
-              </div>
+          praktisi/narasumber pengampu secara individu ataupun group, baik secara offline maupun online. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione inventore delectus ex rem exercitationem repellendus in ea, voluptate nostrum ipsa maiores dolorum obcaecati cumque vel nulla eius sed laudantium earum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis non aliquam officia, adipisci at pariatur exercitationem laborum facere iure tenetur placeat impedit. Repellat, alias. Qui adipisci veritatis maxime unde officia?
+          </p>
       </div>
-      <div class="col-lg-5 col-md-6 col-sm-12 col-xl-6">
-                    <img style="width: 12cm; height:7cm; margin-left:150px" src="images/consultans.jpg" alt="">
+      <div class="col-sm-6 col-md-6 col-xl-6 col-xs-12 offset-1">
+        <img class="mx-auto d-block" src="images/consultans_2.jpg" alt="">
       </div>
     </div>
   </div>
@@ -649,18 +651,18 @@ margin-bottom:10px;
 
 
 
-<!-- CONTACT US -->
-<section id="contact" class="contact">
-  <div class="container col-md-12">
+<!-- COMMENT US -->
+<section id="comment" class="comment">
+  <div class="container-fluid">
     <div class="jumbotron" style="background-color:#ffff">
-      <div class="row col-md-12">
-        <div class="column col-md-6 mr-5">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="row">
+        <div class="col-sm-5 col-md-5 col-xl-5 col-xs-12">
+        <iframe class="mx-auto d-block" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="550" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <div class="column col-md-4 ml-5" >
-            <h3 class="ml-5"><b>COMMENT FOR US</b></h3>
+        <div class="col-sm-6 col-md-6 col-xl-6 col-xs-12 offset-1" >
+            <h3 class="text-start" style="text-align: justify"><b>COMMENT FOR US</b></h3>
             <br>
-            <div class="container col-md-12 ml-5 pl-2" >
+            <div class="container-fluid">
               <form action="#" >
                 <div class="form-group first">
                   <label for="username" style="color: black;">Name</label>
