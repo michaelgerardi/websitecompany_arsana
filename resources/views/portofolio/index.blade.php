@@ -67,6 +67,15 @@
     <!-- End of Topbar -->
 <!-- Begin Page Content -->
     <h1 style="margin-left: 10px">Data Tabel Portofolio</h1>
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+            @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+            @endforeach
+            </ul>
+        </div>
+    @endif
     <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top: 30px; margin-button 30px; margin-left: 30px;">
             [+] Tambah Data Portofolio

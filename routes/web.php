@@ -105,5 +105,7 @@ Route::get('auth/google/callback',[App\Http\Controllers\LoginAuthController::cla
 Route::get('/viewdatauser',[App\Http\Controllers\data_user_controller::class, 'viewdatauser'])->name('viewdatauser');
 Route::get('/viewdatapengajar',[App\Http\Controllers\data_user_controller::class, 'viewdatapengajar'])->name('viewdatapengajar');
 
+// crud comment
+route::post('/comment',[App\Http\Controllers\comment_controller::class,'savecomment'])->name('savecomment');
 
 

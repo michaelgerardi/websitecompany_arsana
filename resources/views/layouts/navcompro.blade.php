@@ -7,16 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
 
 <style>
   body{
@@ -194,174 +190,166 @@
 <i class="fa fa-whatsapp my-float"></i>
 </a>
     <div class="app">
-        <nav class="navbar navbar-expand-lg navbar-custom ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                <img style="width: 90px; height:90px; border-radius:50%; margin-left:88px"  src="{{asset('images/logo_IMA.jpeg')}}" alt="">
-                </a>
-                <ul class="navbar-nav mr-5">
-                    <li class="nav-item">
-                    <a class="navbar-brand" href="/layout"><b>Home</b></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="navbar-brand" href="/layout#news"><b>News</b></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="navbar-brand" href="/layout#portfolio"><b>Portofolio</b></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="navbar-brand" href="/layout#about"><b>About</b></a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="navbar-brand" href="/layout#footer"><b>Contact</b></a>
-                    </li>
-                   
-                </ul>
+        <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-custom">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img class="img-fluid ml-4" style="width: 90px; height:90px; border-radius:50%;" src="{{asset('images/logo_IMA.jpeg')}}" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <!-- <span class="navbar-toggler-icon"></span> -->
+              <span class="fa fa-bars" style="color:#ffff"></span>
+            </button>
+            
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="navbar-brand " href="/layout"><b>Home</b></a>
+                </li>
+                <li class="nav-item">
+                <a class="navbar-brand " href="/layout#news"><b>News</b></a>
+                </li>
+                <li class="nav-item">
+                <a class="navbar-brand " href="/layout#portfolio"><b>Portofolio</b></a>
+                </li>
+                <li class="nav-item">
+                <a class="navbar-brand " href="/layout#about"><b>About</b></a>
+                </li>
+                <li class="nav-item">
+                <a class="navbar-brand " href="/layout#footer"><b>Contact</b></a>
+                </li>
+              </ul>
             </div>
+          </div>
         </nav>
+              <!-- <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="fa fa-bars" style="color:#ffff;"></span>
+                </button>
+              </div> -->
+            
+              
+            
 
         <main class="py-4">
                 @yield('content')
         </main>
         <!-- FOOTER -->
-<div class="container-fluid">
-  <!-- Footer -->
-<footer class="text-center text-lg-start text-white" style="background-color:#BB0A1E;">
-<!-- Section: Social media -->
-<!-- <section class="d-flex justify justify-content-lg-between p-4 border-bottom" style="height:50px"> -->
-<!-- <section class="d-flex mb-auto mt-auto p-2 align-items-start flex-column p-2 border-bottom" style="height:80px">
-  <div class="container-fluid">
-    <div class="row gx-5">
-      <div class="col-6 col-md-4">
-        <div class="p-4"><b>Get connected with us:</b></div>
-      </div>
-      <div class="col-8 col-sm-6 col-md-8">
-        <div class="p-4">
-          <i class="fa fa-envelope"></i><a class="text-white"> :arsana.ecosystem@gmail.com</a>
-          <i class="fa fa-mobile"></i><a class="text-white"> : +6287738934560</a>
-          <i class="fa fa-globe" style="margin-left:10px"></i><a class="text-white"> : arsanaecosystem.com</a>
-          <i class="fa fa-facebook"></i><a class="text-white"> : @arsana.ecosystem</a>
+    <div class="container-fluid">
+      <!-- Footer -->
+      <footer class="text-center text-lg-start text-white" style="background-color:#BB0A1E;">
+        <!-- Section: Links  -->
+        <section id="footer" name="footer">
+          <div class="container-fluid text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="container-fluid">
+            <div class="row row-cols-lg-5">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-3 col-xl-3 mt-3 mb-4 mr-lg-auto">
+                <!-- Content -->
+                <img class="mb-2" style="width: 90px; height:90px; border-radius:50%; margin-left:-10px"  src="{{asset('images/logo_IMA.jpeg')}}" alt="">
+                <p class="text-center">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-1 col-lg-2 col-xl-1 mr-md-4 mt-3 mb-4 mr-lg-0 ml-lg-auto">
+                <!-- Links -->
+                <h5 class="text-uppercase fw-bold mb-4 text-justify">
+                  <b>Home</b>
+                </h5>
+                <p class="text-justify">
+                  <a href="#news" class="text" style="color: #ffff;">Berita</a>
+                </p>
+                <p class="text-justify">
+                  <a href="#services" class="text" style="color: #ffff;">Service</a>
+                </p>
+                <p class="text-justify">
+                  <a href="#about" class="text" style="color: #ffff;">About Us</a>
+                </p>
+                <p class="text-justify">
+                  <a href="#comment" class="text" style="color: #ffff;">Comment For Us</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-1 col-lg-2 col-xl-1 mr-md-4 mt-3 mb-4 mr-lg-0">
+                <!-- Links -->
+                <h5 class="text-uppercase fw-bold mb-4 text-justify">
+                  <b>Link</b>
+                </h5>
+                <p class="text-justify">
+                  <a href="#" class="text" style="color: #ffff;">Kelas</a>
+                </p>
+                <p class="text-justify">
+                  <a href="/layoutlogin" class="text" style="color: #ffff;">Login</a>
+                </p>
+                <!-- <a class="text" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a> -->
+                          <form id="logout-form" action="{{ route('logoutfnl') }}" method="POST" class="d-none">
+                            @csrf
+                          </form>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-1 mt-3 mb-4 mr-md-2 mr-lg-0 mr-xl-5">
+                <!-- Links -->
+                <h5 class="text-uppercase fw-bold mb-4 text-justify">
+                  <b>Layanan</b>
+                </h5>
+                <p class="text-justify">
+                  <a href="#" class="text" style="color: #ffff;">Konsultasi</a>
+                </p>
+                <p class="text-justify">
+                  <a href="#" class="text" style="color: #ffff;">Jenis Konsultasi</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-4 col-xl-3 col-xxl-2 mt-3 px-0 mb-4">
+                <!-- Links -->
+                <h5 class="text-uppercase fw-bold mb-4 text-justify">
+                  <b>Contact Us</b>
+                </h5>
+                <p class="text-justify">
+                  <i class="fa fa-envelope"></i><a class="text" style="color:#ffff;"> : arsana.ecosystem@gmail.com</a>
+                </p>
+                <p class="text-justify">
+                  <i class="fa fa-phone"></i><a class="text" style="color:#ffff;"> : +6287738934560</a>
+                </p>
+                <p class="text-justify">
+                  <i class="fa fa-globe"></i><a class="text" style="color:#ffff;"> : arsanaecosystem.com</a>
+                </p>
+                <p class="text-justify">
+                  <i class="fa fa-instagram"></i><a class="text" style="color:#ffff;"> : @arsana.ecosystem</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color:#6C6B6B;">
+          © 2022 Copyright:
+          <a class="text-reset fw-bold" style="color: #ffff;">Crossdev</a>
         </div>
+        <!-- Copyright -->
+      </footer>
+    <!-- Footer -->
       </div>
     </div>
-  </div>    
-
-  </section> -->
-  <!-- Section: Social media -->
-
-
-  <!-- Section: Links  -->
-  <section id="footer" name="footer">
-    <div class="container-fluid text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="container">
-      <div class="row row-cols-lg-5">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mb-4" style="margin-top: 1%;">
-          <!-- Content -->
-          <img style="width: 90px; height:90px; border-radius:50%; margin-top:10px; margin-left:-10px"  src="{{asset('images/logo_IMA.jpeg')}}" alt="">
-          <p class="text-center">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mb-4"  style="margin-top: 2%;">
-          <!-- Links -->
-          <h5 class="text-uppercase fw-bold mb-4 text-justify">
-            <b>Home</b>
-          </h5>
-          <p class="text-justify">
-            <a href="#news" class="text" style="color: #ffff;">Berita</a>
-          </p>
-          <p class="text-justify">
-            <a href="#services" class="text" style="color: #ffff;">Service</a>
-          </p>
-          <p class="text-justify">
-            <a href="#about" class="text" style="color: #ffff;">About Us</a>
-          </p>
-          <p class="text-justify">
-            <a href="#comment" class="text" style="color: #ffff;">Comment For Us</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mb-4" style="margin-top: 2%;">
-          <!-- Links -->
-          <h5 class="text-uppercase fw-bold mb-4 text-justify">
-            <b>Link</b>
-          </h5>
-          <p class="text-justify">
-            <a href="#" class="text" style="color: #ffff;">Kelas</a>
-          </p>
-          <p class="text-justify">
-            <a href="/layoutlogin" class="text" style="color: #ffff;">Login</a>
-          </p>
-          <!-- <a class="text" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><b>Logout</b></a> -->
-                    <form id="logout-form" action="{{ route('logoutfnl') }}" method="POST" class="d-none">
-                      @csrf
-                    </form>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-2 col-xl-2 mb-4" style="margin-top: 2%;">
-          <!-- Links -->
-          <h5 class="text-uppercase fw-bold mb-4 text-justify">
-            <b>Layanan</b>
-          </h5>
-          <p class="text-justify">
-            <a href="#" class="text" style="color: #ffff;">Konsultasi</a>
-          </p>
-          <p class="text-justify">
-            <a href="#" class="text" style="color: #ffff;">Jenis Konsultasi</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mb-4" style="margin-top: 2%;">
-          <!-- Links -->
-          <h5 class="text-uppercase fw-bold mb-4 text-justify">
-            <b>Contact Us</b>
-          </h5>
-          <p class="text-justify">
-            <i class="fa fa-envelope"></i><a class="text" style="color:#ffff;"> : arsana.ecosystem@gmail.com</a>
-          </p>
-          <p class="text-justify">
-            <i class="fa fa-phone"></i><a class="text" style="color:#ffff;"> : +6287738934560</a>
-          </p>
-          <p class="text-justify">
-            <i class="fa fa-globe"></i><a class="text" style="color:#ffff;"> : arsanaecosystem.com</a>
-          </p>
-          <p class="text-justify">
-            <i class="fa fa-instagram"></i><a class="text" style="color:#ffff;"> : @arsana.ecosystem</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color:#6C6B6B;">
-    © 2022 Copyright:
-    <a class="text-reset fw-bold" style="color: #ffff;">Crossdev</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
 </div>
-</div>
-    </div>
-    <script src="assets/js/jquery.js"></script> 
-    <script src="assets/js/popper.js"></script> 
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/news.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

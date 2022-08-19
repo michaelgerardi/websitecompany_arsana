@@ -369,7 +369,7 @@ margin-bottom:10px;
   color: #145889;
   background: #f7f5ec;
 }
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 1200px) and(max-width:768px) and (max-width:576px) {
   .our-team {
     margin-bottom: 10px;
   }
@@ -387,8 +387,8 @@ margin-bottom:10px;
 
 {{-- BERITA TERBARU HEADING --}}
 <section id="news" class="news">
-<div class="container-fluid">
-  <h1 class="mr-3" style="color:#BB0A1E">Berita Terbaru</h1>
+<div class="container col-xl-12 col-md-12 col-xs-12">
+  <h1 class="ml-2" style="color:#BB0A1E">Berita Terbaru</h1>
     <hr width="100%" noshade size="25%" style="color:#BB0A1E">
 </div>
 </section>
@@ -448,16 +448,16 @@ margin-bottom:10px;
 <section id="about" class="about">
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
-    <div class="row">
-      <div class="col-sm-5 col-md-5 col-xl-5 col-xs-12">
-        <h3 class="text-start mt-4" style="color:black"><b>ABOUT ARSANA</b></h3>
+    <div class="row align-items-center">
+      <div class="col-xl-6 col-md-12 col-xs-12">
+        <h3 class="text-start" style="color:black"><b>ABOUT ARSANA</b></h3>
           <p class="text-start" style="color: black; text-align:justify;">
           Sebuah platform peningkatan kompetensi untuk para profesional dan akademisi. Menyajikan pelatihan secara blended learning, in house training, 
-          dan konsultasi yang diisi oleh para ahli & praktisi. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum rerum porro architecto, officiis ducimus voluptates quaerat dicta cupiditate nulla nobis, dolorum consequatur accusantium laboriosam corporis sit minima nisi, maxime blanditiis?
+          dan konsultasi yang diisi oleh para ahli & praktisi.
            </p>
       </div>
-      <div class="col-sm-6 col-md-6 col-xl-6 col-xs-12 offset-1">
-        <img class="mx-auto d-block" src="images/gambar2_1.jpg" alt="">
+      <div class="col-xs-12 col-md-12 col-xl-5 offset-xl-1 text-center">
+        <img class="img-fluid" src="images/gambar2_1.jpg" alt="">
       </div>
     </div>
   </div>
@@ -468,11 +468,11 @@ margin-bottom:10px;
 <section id="services" class="services">
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#BB0A1E">
-    <div class="row">
-    <div class="col-sm-5 col-md-5 col-xl-5 col-xs-12">
-      <img class="img-fluid ml-5" src="images/learning_1.jpg" alt="">
+    <div class="row align-items-center">
+    <div class="col-xl-6 col-md-12 col-xs-12 mb-3 text-center">
+      <img class="img-fluid" src="images/learning_1.jpg" alt="">
       </div>
-      <div class="col-sm-6 col-md-6 col-xl-6 col-xs-12 offset-1">
+      <div class="col-xs-12 col-md-12 col-xl-5">
         <h4 class="text-start" style="color:#ffff"><b>SERVICE</b></h1>
           <h1 class="text-start" style="color:#ffff; text-align:justify">Learning Ecosystem</h1>
           <div class="text-start" style="color: #ffff; text-align:justify">
@@ -482,7 +482,6 @@ margin-bottom:10px;
           Setiap tema akan disajikan dalam model asinkronus (belajar mandiri berupa video, modul, dll) 
           dan sinkronus (belajar secara live).
              </div>
-          <br>
             <!-- LINK HALAMAN SERVICE -->
             <a class="btn btn-white" href="/service" role="button">See More</a>
       </div>
@@ -494,16 +493,15 @@ margin-bottom:10px;
 <br>
 <div class="container-fluid">
   <div class="jumbotron" style="background-color:#ffff">
-    <div class="row">
-      <div class="col-sm-5 col-md-5 col-xl-5 col-xs-12">
-        <h4 class="text-start mt-5" style="color:black"><b>CONSULTING ECOSYSTEM</b></h1>
+    <div class="row align-items-center">
+      <div class="col-xl-6 col-md-12 col-xs-12">
+        <h4 class="text-start" style="color:black"><b>CONSULTING ECOSYSTEM</b></h1>
           <p class="text-start" style="color: black; text-align:justify">
           Kami menyediakan pelayanan konsultasi  dengan 
-          praktisi/narasumber pengampu secara individu ataupun group, baik secara offline maupun online. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione inventore delectus ex rem exercitationem repellendus in ea, voluptate nostrum ipsa maiores dolorum obcaecati cumque vel nulla eius sed laudantium earum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis non aliquam officia, adipisci at pariatur exercitationem laborum facere iure tenetur placeat impedit. Repellat, alias. Qui adipisci veritatis maxime unde officia?
-          </p>
+          praktisi/narasumber pengampu secara individu ataupun group, baik secara offline maupun online.
       </div>
-      <div class="col-sm-6 col-md-6 col-xl-6 col-xs-12 offset-1">
-        <img class="mx-auto d-block" src="images/consultans_2.jpg" alt="">
+      <div class="col-xs-12 col-md-12 col-xl-5 offset-xl-1 text-center">
+        <img class="img-fluid" src="images/consultans_2.jpg" alt="">
       </div>
     </div>
   </div>
@@ -576,13 +574,12 @@ margin-bottom:10px;
     <div class="jumbotron" style="background-color:#BB0A1E">
       
       <div id="cards_landscape_wrap-2">
-        <div class="container mt-1">
-          <h1 style="color:#ffff;" class="text-center"><b>PORTFOLIO</b></h1>
+        <div class="container mt-1 col-xl-12 col-md-12 col-xs-12">
+            <h1 style="color:#ffff;" class="text-center"><b>PORTFOLIO</b></h1>
           <div class="row">
-
           @foreach($portofolio as $portofolio)
             <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <a href="">
+            {{-- <a href=""> --}}
             <div class="card-flyer">
               <div class="text-box">
                 <div class="image-box">
@@ -590,7 +587,7 @@ margin-bottom:10px;
                 </div>
               </div>
             </div>
-            </a>
+            {{-- </a> --}}
             </div>
             @endforeach
 
@@ -601,80 +598,31 @@ margin-bottom:10px;
   </div>
 </section>
 
-<!-- LAYANAN KONSUL -->
-<!-- <div class="container-fluid">
-  <div class="jumbotron" style="background-color:#BB0A1E">
-    <div class="row">
-      <div class="col-lg-5 col-md-6 col-sm-12">
-        <img style="width: 7cm; height:7cm; margin-left:150px" src="images/20220704070302.png" alt="">
-      </div>
-      <div class="col-lg-7 col-md-6 col-sm-12">
-        <h4 style="color:#ffff">JENIS KONSULTASI</h1>
-          <div class="col-lg-7 col-md-6 col-sm-12">
-        <div class="card border-dark mb-4 ">
-            <div class="card-body text-dark">
-                <h5 class="card-title">Konsultasi 1</h5>
-                <div class="decription" style="color: black">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </div>
-                <a class="btn btn-red" href="" role="button">Lanjut Konsultasi</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-7 col-md-6 col-sm-12">
-        <div class="card border-dark mb-4 ">
-            <div class="card-body text-dark">
-                <h5 class="card-title">Konsultasi 2</h5>
-                <div class="decription; text-justify" style="color: black" >
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                </div>
-                <a class="btn btn-red" href="" role="button">Lanjut Konsultasi</a>
-            </div>
-        </div>
-    </div>
-          <br>
-          <div class="col-lg-7 col-md-6 col-sm-12">
-        <div class="card border-dark mb-4 ">
-            <div class="card-body text-dark">
-                <h5 class="card-title">Konsultasi 3</h5>
-                <div class="decription" style="color: black">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </div>
-                <a class="btn btn-red" href="" role="button">Lanjut Konsultasi</a>
-            </div>
-        </div>
-    </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
 <!-- COMMENT US -->
 <section id="comment" class="comment">
   <div class="container-fluid">
     <div class="jumbotron" style="background-color:#ffff">
-      <div class="row">
-        <div class="col-sm-5 col-md-5 col-xl-5 col-xs-12">
-        <iframe class="mx-auto d-block" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="550" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="row align-items-center">
+        <div class="col-xs-12 col-md-12 col-xl-5 col-sm-12 mb-3 text-center">
+        <iframe class="col-sm-12 col-md-12 col-xs-12 col-md-12 col-xl-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.09396980032147!2d110.4409368881141!3d-7.736292442644153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bfc9a68e5cf%3A0x9797cbde4d86fc91!2sVilla%20Arsana!5e0!3m2!1sid!2sid!4v1657378890055!5m2!1sid!2sid" width="550" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <div class="col-sm-6 col-md-6 col-xl-6 col-xs-12 offset-1" >
+        <div class="col-xs-12 col-md-12 col-sm-12 col-xl-5 offset-xl-1" >
             <h3 class="text-start" style="text-align: justify"><b>COMMENT FOR US</b></h3>
             <br>
             <div class="container-fluid">
-              <form action="#" >
+              <form method="Post" action="/comment">
+                @csrf
                 <div class="form-group first">
                   <label for="username" style="color: black;">Name</label>
-                  <input type="text" class="form-control" placeholder="Your Name" id="name" >
+                  <input type="text" class="form-control" placeholder="Your Name" name="nama" >
                 </div>
                 <div class="form-group last mb-3">
                   <label for="password" style="color: black;">Email</label>
-                  <input type="text" class="form-control" placeholder="Your Email" id="email">
+                  <input type="text" class="form-control" placeholder="Your Email" name="email">
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Comment</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" name="comment" rows="3"></textarea>
                 </div>
                 <input type="submit" value="Submit" class="btn btn-danger btn-block">
                 <!-- <hr width="100%" noshade size="25%" style="color:#BB0A1E">
@@ -693,11 +641,10 @@ margin-bottom:10px;
 <section>
   <div class="container-fluid">
     <div class="jumbotron" style="background-color:#2b2b2b; height:min-content; margin-bottom:-70px;">
-      <div class="row">
+      <div class="row align-items-center">
       <div class="container">
     <div class="row blog">
         <h1 class="center mx-auto text-center py-4" style="color:#ffff">MEET OUR KEY PERSON</h1>
-       
 	   <div class="col-md-12">
             <div id="blogCarousel" class="carousel slide" data-ride="carousel">
 
@@ -766,14 +713,10 @@ margin-bottom:10px;
                         <!--.row-->
                     </div>
                     <!--.item-->
-                    
-
-
                 </div>
                 <!--.carousel-inner-->
             </div>
             <!--.Carousel-->
-
         </div>
     </div>
 </div>

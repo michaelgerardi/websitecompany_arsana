@@ -33,7 +33,7 @@ class portofolio_controller extends Controller
         $nama =$data->id . "_" ."portofolio". "." . $image->getClientOriginalExtension();
         portofolio::where('id', $data->id)->update(['gambar' => $nama]);
         $image->move($destinationPath, $nama);
-        return $input;
+        return redirect()->back();
     }
 
     public function delete_portofolio($id)
