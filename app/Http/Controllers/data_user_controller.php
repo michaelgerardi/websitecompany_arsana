@@ -9,7 +9,7 @@ class data_user_controller extends Controller
 {
    public function __construct()
     {
-        $this->middleware('auth:pengajar');
+        $this->middleware('auth:admin');
     }
     public function viewdatauser()
     {
