@@ -21,8 +21,8 @@ class kategori_controller extends Controller
             'nama_kategori'=>'required|max:255'
         ]);
         kategori::create($request->all());
-        //return view();
-        return $request;
+        return redirect()->route('kategori');
+        // return $request;
     }
 
     public function findidkategori($id){

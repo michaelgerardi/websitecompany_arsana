@@ -77,8 +77,8 @@ class blog_controller extends Controller
         $nama =$data->id . "_" ."blog". "." . $image->getClientOriginalExtension();
         blog::where('id', $data->id)->update(['gambar' => $nama]);
         $image->move($destinationPath, $nama);
-        return $input;
-        //return redirect()->with('success','Product created successfully.');
+        // return $input;
+        return redirect('/blog')->with('success','Product created successfully.');
     }
 
     public function findidblog($id){
@@ -92,7 +92,7 @@ class blog_controller extends Controller
         $destinationPath = 'images';
         File::delete($destinationPath.'/'.$data_blog->gambar);
         $data_blog->delete();
-        return redirect()->back();
+        return redirect('/blog')->back();
     }
 
 
@@ -121,9 +121,9 @@ class blog_controller extends Controller
         $post->keterangan = $request->keterangan;
         $post->status = $request->status;
         $post->save();
-        return redirect()->back();
+        // return redirect()->back();
     
-        //return redirect()->route('blog')->with('success','Post updated successfully');
+        return redirect()->route('blog')->with('success','Post updated successfully');
     }
 
     public function history()
@@ -138,8 +138,8 @@ class blog_controller extends Controller
     public function Destroy($id){
         $data_blog = blog::onlyTrashed()->find($id);
         $data_blog->ForceDelete();
-        return $data_blog;
-        //return redirect()->back();
+        // return $data_blog;
+        return redirect()->back();
     }
 
     public function Restore($id)

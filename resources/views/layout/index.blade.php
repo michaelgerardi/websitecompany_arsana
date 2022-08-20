@@ -408,11 +408,11 @@ margin-bottom:10px;
                 <div class="cardcontainer">
                   <div class="photo">
                       <img src="{{asset('images/'.$content[$ii-1]->gambar)}}">
-                      <div class="photos">Photos</div>
+                      <div class="photos">{{\Illuminate\Support\Str::limit($content[$ii-1]->nama_blog, 5, $end='...')}}</div>
                   </div>
                   <div class="content">
                     <div class="container col-md-12">
-                      <p class="txt4 col-md-12" style="margin-top:20px">{{$content[$ii-1]->nama_blog}}</p>
+                      <p class="txt4 col-md-12" style="margin-top:20px"><b>{{$content[$ii-1]->nama_blog}}</b></p>
                       <p class="txt2 col-md-12" style="margin-top:25px">{{\Illuminate\Support\Str::limit($content[$ii-1]->keterangan, 150, $end='...')}} </p>
                     </div>
                   </div>

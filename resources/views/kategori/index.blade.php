@@ -70,7 +70,6 @@
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Data Tabel Kategori</h1>
             </div>
-            <br>
             @if(count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
@@ -80,12 +79,12 @@
                     </ul>
                 </div>
             @endif
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin: top 30px; margin: button 30%; margin: left 30px;">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin: button 30%; margin: left 30px;">
                     [+] Tambah Data Kategori
                 </button>
 
         
-            <table class="table" style="margin: top 30px;">
+            <table class="table" style="margin-top: 30px;">
                 <thead>
                     <tr>
                         <th>Nama Kategori</th>

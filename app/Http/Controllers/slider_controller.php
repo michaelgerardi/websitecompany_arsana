@@ -34,7 +34,8 @@ class slider_controller extends Controller
         $nama =$data->id . "_" ."slider". "." . $image->getClientOriginalExtension();
         slider::where('id', $data->id)->update(['gambar' => $nama]);
         $image->move($destinationPath, $nama);
-        return $input;
+        // return $input;
+        return redirect()->back();
     }
 
     public function delete_slider($id)

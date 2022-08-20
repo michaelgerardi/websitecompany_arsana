@@ -270,7 +270,7 @@
                   <a href="#about" class="text" style="color: #ffff;">About Us</a>
                 </p>
                 <p class="text-justify">
-                  <a href="#comment" class="text" style="color: #ffff;">Comment For Us</a>
+                  <a href="#comment" class="text" style="color: #ffff;">Comment</a>
                 </p>
               </div>
               <!-- Grid column -->
