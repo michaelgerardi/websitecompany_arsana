@@ -249,7 +249,7 @@
                 <!-- Content -->
                 <img class="mb-2" style="width: 90px; height:90px; border-radius:50%; margin-left:-10px"  src="{{asset('images/logo_IMA.jpeg')}}" alt="">
                 <p class="text-center">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                  Sebuah platform peningkatan kompetensi untuk para profesional dan akademisi. Menyajikan pelatihan secara blended learning, in house training, dan konsultasi yang diisi oleh para ahli & praktisi.
                 </p>
               </div>
               <!-- Grid column -->
@@ -261,16 +261,16 @@
                   <b>Home</b>
                 </h5>
                 <p class="text-justify">
-                  <a href="#news" class="text" style="color: #ffff;">Berita</a>
+                  <a href="/layout#news" class="text" style="color: #ffff;">Berita</a>
                 </p>
                 <p class="text-justify">
-                  <a href="#services" class="text" style="color: #ffff;">Service</a>
+                  <a href="/layout#services" class="text" style="color: #ffff;">Service</a>
                 </p>
                 <p class="text-justify">
-                  <a href="#about" class="text" style="color: #ffff;">About Us</a>
+                  <a href="/layout#about" class="text" style="color: #ffff;">About Us</a>
                 </p>
                 <p class="text-justify">
-                  <a href="#comment" class="text" style="color: #ffff;">Comment</a>
+                  <a href="/layout#comment" class="text" style="color: #ffff;">Comment</a>
                 </p>
               </div>
               <!-- Grid column -->
