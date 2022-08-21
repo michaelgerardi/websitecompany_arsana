@@ -11,7 +11,7 @@ class Blog extends Model
     use HasFactory;
     use SoftDeletes;
     protected $table = 'blog';
-    protected $fillable = ['id','id_kategori','nama_blog','tanggal_blog','keterangan','status','gambar','user_id'];
+    protected $fillable = ['id','id_kategori','nama_blog','tanggal_blog','keterangan','status','gambar','user_id','view'];
     protected $dates =['deleted_at'];
 
     protected function kategori(){

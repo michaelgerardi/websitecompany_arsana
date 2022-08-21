@@ -8,6 +8,7 @@ use App\Models\portofolio;
 use App\Models\layanan;
 use App\Models\user;
 use App\Models\slider;
+use Illuminate\Support\Facades\Cookie;
 
 class layout_controller extends Controller
 {
@@ -33,8 +34,14 @@ class layout_controller extends Controller
     public function viewdetailberita($id)
     {
        $data_blog = Blog::where('id',$id)->first();
-       //return $data_blog;
-       return view('layout.viewberita',compact('data_blog'));
+       $nama="cookie_".$data_blog->id;
+       if (Cookie::get($nama)=='') {
+        Blog::where('id',$id)->increment('view');
+        Cookie::queue(Cookie::make($nama,'1',60));
+        return view('layout.viewberita',compact('data_blog'));
+       } else {
+        return view('layout.viewberita',compact('data_blog'));
+       }
     }
     public function viewdetaillayanan($id)
     {

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('keterangan');
             $table->string('gambar');
             $table->char('status',1);
+            $table->integer('view')->default(0);
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();

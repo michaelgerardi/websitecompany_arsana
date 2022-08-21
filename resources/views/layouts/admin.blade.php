@@ -165,14 +165,17 @@
         </div>
         <!-- /.container-fluid -->
         <div class="row col-md-12">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <div id="container"></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <div id="datamasuk"></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <div id="piechart"></div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div id="countviews"></div>
             </div>
         </div>
         <script>
@@ -183,9 +186,7 @@
                 title: {
                     text: 'Data Konten Approval'
                 },
-                subtitle: {
-                    text: 'Source: WorldClimate.com'
-                },
+    
                 xAxis: {
                     categories: [<?php
                                     foreach($bulan as $row2){
@@ -240,13 +241,10 @@
                 text: 'Data Konten Perbulan'
             },
 
-            subtitle: {
-                text: 'Source: thesolarfoundation.com'
-            },
 
             yAxis: {
                 title: {
-                    text: 'Number of Employees'
+                    text: 'Jumlah (Konten)'
                 }
             },
 
@@ -324,12 +322,12 @@
                         cursor: 'pointer',
                         dataLabels: {
                             enabled: true,
-                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                            format: '<b>{point.name}</b>: {point.y:.0f} Blog'
                         }
                     }
                 },
                 series: [{
-                    name: 'Brands',
+                    name: 'Jumlah Blog',
                     colorByPoint: true,
                     data: [<?php
                     foreach( $data_grafikpie as $row2){
@@ -341,6 +339,53 @@
                     ?>]
                 }]
             });              
+        </script>
+
+        <!-- //Piechart Count Views -->
+        <script>
+            Highcharts.chart('countviews', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Views Berita'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.y:.0f} View'
+                    }
+                }
+            },
+            series: [{
+                name: 'Views',
+                colorByPoint: true,
+                data: [
+                    <?php
+                    foreach( $countview as $row3){
+                        echo "{"
+                        ."name:"."'".$row3->nama_blog."',"
+                        ."y:".$row3->view."
+                        },"; 
+                    }
+                    ?> 
+            ]
+            }]
+        });
         </script>
     </div>
     <!-- End of Main Content -->

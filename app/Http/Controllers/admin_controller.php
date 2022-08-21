@@ -27,9 +27,10 @@ class admin_controller extends Controller
         $data_peserta = user::where('role_id','1')->count('role_id');
         $konten_setuju = blog::where('status','1')->count('status');
         $konten_tidaksetuju = blog::where('status','0')->count('status');
-         return view('layouts.admin',
+        $countview=blog::where('status','1')->select('nama_blog','view')->get();
+        return view('layouts.admin',
          compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie','data_pengajar',
-         'data_peserta','konten_setuju','konten_tidaksetuju'));
-        //return $konten_tidaksetuju;
+         'data_peserta','konten_setuju','konten_tidaksetuju','countview'));
+        //return $countview;
     }
 }
