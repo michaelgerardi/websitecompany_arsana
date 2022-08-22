@@ -27,9 +27,9 @@ class peserta_controller extends Controller
         ->where('status','1')->groupby('month')->orderBy('month','desc')->get();
         $data_tidaksetuju = blog::where('blog.user_id',Auth::guard($role)->user()->id)->selectraw("count(*) as total_tidaksetuju,DATE_FORMAT(tanggal_blog,'%M')as month ")
         ->where('status','0')->groupby('month')->orderBy('month','desc')->get();
-        $bulan = blog::where('blog.user_id',Auth::guard($role)->user()->id)->selectraw("DATE_FORMAT(tanggal_blog,'%M')as month")->distinct()->orderBy('tanggal_blog','asc')->get();
-        $data_konten = blog::where('blog.user_id',Auth::guard($role)->user()->id)->selectraw("count(*) AS total_data, DATE_FORMAT(tanggal_blog,'%M')as month" )
-        ->groupby('month')->orderBy('tanggal_blog','asc')->get();
+        $bulan = blog::where('blog.user_id',Auth::guard($role)->user()->id)->selectraw("DATE_FORMAT(tanggal_blog,'%M') as month")->distinct()->orderBy('month','asc')->get();
+        $data_konten = blog::where('blog.user_id',Auth::guard($role)->user()->id)->selectraw("count(*) AS total_data, DATE_FORMAT(tanggal_blog,'%M') as month" )
+        ->groupby('month')->orderBy('month','asc')->get();
         $data_grafikpie = blog::where('blog.user_id',Auth::guard($role)->user()->id)->selectraw("nama_kategori, count(id_kategori) as jumlah")
         ->join('kategori','blog.id_kategori','=','kategori.id')->groupBy('nama_kategori')->get();
         return view('layouts.userindex',compact('bulan','data_setuju','data_tidaksetuju','data_konten','data_grafikpie'));
