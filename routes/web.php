@@ -108,4 +108,6 @@ Route::get('/viewdatapengajar',[App\Http\Controllers\data_user_controller::class
 // crud comment
 route::post('/comment',[App\Http\Controllers\comment_controller::class,'savecomment'])->name('savecomment');
 
+//privacy policies
+Route::get('/privacypol',[App\Http\Controllers\LoginAuthController::class, 'privacypol'])->name('privacypol');
 

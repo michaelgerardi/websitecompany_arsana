@@ -148,4 +148,8 @@ class LoginAuthController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('loginfinal');
     }
+    public function privacypol()
+    {
+        return view('privacy_policies');
+    }
 }

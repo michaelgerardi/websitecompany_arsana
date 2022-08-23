@@ -79,9 +79,11 @@
               <hr width="100%" noshade size="25%" style="color:#BB0A1E">
               <!-- <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a> -->
                <!-- tambahkan script di bawah ini untuk membuat tombol signin google -->
-               <a type="button" class="btn  btn-google btn-block" href="{{ route('auth.google')}}"><img src="https://img.icons8.com/color/16/000000/google-logo.png">google</a>
-               <a class="btn btn-lg  btn-block text-uppercase btn-outline" href="">
-                </a>
+               <!-- <a type="button" class="btn  btn-google btn-block" href="{{ route('auth.google')}}"><img src="https://img.icons8.com/color/16/000000/google-logo.png">google</a> -->
+               <button type="button" class="btn  btn-google btn-block" href="{{ route('auth.google')}}"><img src="https://img.icons8.com/color/16/000000/google-logo.png" disabled>google (Under Maintanance)</button>
+              <span>               
+                <p>By clicking the button above you agree to our <a class="link-primary" href="{{route('privacypol')}}">privacy policy</a>.</p>
+              </span>
                 
             </form>
           </div>

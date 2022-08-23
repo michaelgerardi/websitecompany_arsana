@@ -87,6 +87,9 @@
                                             <button type="submit" class="btn btn-primary">
                                                 {{ __('Register') }}
                                             </button>
+                                            <div class="text-white">               
+                                                <p><strong>By clicking the button above you agree to our <a class="link-light" href="{{route('privacypol')}}">privacy policy</a>.</strong> </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </form>
