@@ -54,8 +54,8 @@ class peserta_controller extends Controller
         }
     
         Blog::create($input);
-        return $input;
-        //return redirect()->with('success','Product created successfully.');
+        //return $input;
+        return redirect()->with('success','Product created successfully.');
     }
 
     public function peserta_blog(Request $request){

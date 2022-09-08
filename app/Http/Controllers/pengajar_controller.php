@@ -33,8 +33,8 @@ class pengajar_controller extends Controller
         }
     
         blog::create($input);
-        return $input;
-        //return redirect()->with('success','Product created successfully.');
+        //return $input;
+        return redirect()->with('success','Product created successfully.');
     }
 
     public function pengajar_blog(Request $request){

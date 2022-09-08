@@ -186,7 +186,7 @@
 </head>
 <body>
 <!-- WA FLOATING -->
-<a href="https://chat.whatsapp.com/LV7qshiHrlT4HnqtdAC5gh" class="float" target="_blank">
+<a href="https://api.whatsapp.com/send?phone=6281325489793" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
     <div class="app">
@@ -204,19 +204,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="navbar-brand " href="/layout"><b>Home</b></a>
+                <a class="navbar-brand " href="/"><b>Home</b></a>
                 </li>
                 <li class="nav-item">
-                <a class="navbar-brand " href="/layout#news"><b>News</b></a>
+                <a class="navbar-brand " href="/#news"><b>News</b></a>
                 </li>
                 <li class="nav-item">
-                <a class="navbar-brand " href="/layout#portfolio"><b>Portofolio</b></a>
+                <a class="navbar-brand " href="/#portfolio"><b>Portofolio</b></a>
                 </li>
                 <li class="nav-item">
-                <a class="navbar-brand " href="/layout#about"><b>About</b></a>
+                <a class="navbar-brand " href="/#about"><b>About</b></a>
                 </li>
                 <li class="nav-item">
-                <a class="navbar-brand " href="/layout#footer"><b>Contact</b></a>
+                <a class="navbar-brand " href="/#footer"><b>Contact</b></a>
                 </li>
               </ul>
             </div>
@@ -261,16 +261,16 @@
                   <b>Home</b>
                 </h5>
                 <p class="text-justify">
-                  <a href="/layout#news" class="text" style="color: #ffff;">Berita</a>
+                  <a href="/#news" class="text" style="color: #ffff;">Berita</a>
                 </p>
                 <p class="text-justify">
-                  <a href="/layout#services" class="text" style="color: #ffff;">Service</a>
+                  <a href="/#services" class="text" style="color: #ffff;">Service</a>
                 </p>
                 <p class="text-justify">
-                  <a href="/layout#about" class="text" style="color: #ffff;">About Us</a>
+                  <a href="/#about" class="text" style="color: #ffff;">About Us</a>
                 </p>
                 <p class="text-justify">
-                  <a href="/layout#comment" class="text" style="color: #ffff;">Comment</a>
+                  <a href="/#comment" class="text" style="color: #ffff;">Comment</a>
                 </p>
               </div>
               <!-- Grid column -->
@@ -301,10 +301,10 @@
                   <b>Layanan</b>
                 </h5>
                 <p class="text-justify">
-                  <a href="#" class="text" style="color: #ffff;">Konsultasi</a>
+                  <a href="/#services" class="text" style="color: #ffff;">Konsultasi</a>
                 </p>
                 <p class="text-justify">
-                  <a href="#" class="text" style="color: #ffff;">Jenis Konsultasi</a>
+                  <a href="/#services" class="text" style="color: #ffff;">Jenis Konsultasi</a>
                 </p>
               </div>
               <!-- Grid column -->
@@ -319,7 +319,7 @@
                   <i class="fa fa-envelope"></i><a class="text" style="color:#ffff;"> : arsana.ecosystem@gmail.com</a>
                 </p>
                 <p class="text-justify">
-                  <i class="fa fa-phone"></i><a class="text" style="color:#ffff;"> : +6287738934560</a>
+                  <i class="fa fa-phone"></i><a class="text" style="color:#ffff;"> : +62 813-2548-9793</a>
                 </p>
                 <p class="text-justify">
                   <i class="fa fa-globe"></i><a class="text" style="color:#ffff;"> : arsanaecosystem.com</a>

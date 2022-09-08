@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('mainpage');
-});
-
+Route::get('/', [App\Http\Controllers\layout_controller::class,'indexlayout'])->name('mainpage');
 //kategori CRUD
 route::post('/kategori/insert',[App\Http\Controllers\kategori_controller::class,'tambah_kategori']);
 route::get('/kategori',[App\Http\Controllers\kategori_controller::class,'index_kategori'])->name('kategori');
@@ -36,7 +33,7 @@ route::post('/ProsesEdit_blog',[App\Http\Controllers\blog_controller::class, 'Ed
 route::get('/viewblog/{id}',[App\Http\Controllers\layout_controller::class, 'viewdetailberita']);
 
 //Route Layout
-route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout'])->name('mainpage');
+//route::get('/layout',[App\Http\Controllers\layout_controller::class,'indexlayout'])->name('mainpage');
 route::get('/service',[App\Http\Controllers\layout_controller::class,'serviceLay']);
 
 //Route Auth & Login
