@@ -2,6 +2,7 @@
 
 @section('content')
 {{-- IMAGE SLIDER  --}}
+<link rel="canonical" href="https://arsanaecosystem.com/">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: -25px;">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -658,13 +659,13 @@ margin-bottom:10px;
 
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6">
+                            <div class="col-lg-4 col-md-6 mb-md-3 mb-3">
                                 <div class="our-team">
                                     <div class="pic">
                                         <img src="images/a.png">
                                     </div>
                                     <div class="team-content">
-                                        <h3 class="title">Ktut Rentyasti Pakupi (Asti) </h3>
+                                        <h3 class="title">Ktut Rentyasti Palupi (Asti) </h3>
                                         <span class="post">Marketing Consultant</span>
                                     </div>
                                     <ul class="social">
@@ -675,7 +676,7 @@ margin-bottom:10px;
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 col-md-6">
+                            <div class="col-lg-4 col-md-6 mb-md-3 mb-3">
                                 <div class="our-team">
                                     <div class="pic">
                                         <img src="images/a.png">
@@ -692,7 +693,7 @@ margin-bottom:10px;
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 col-md-6">
+                            <div class="col-lg-4 col-md-6 mb-md-3 mb-3">
                                 <div class="our-team">
                                     <div class="pic">
                                         <img src="images/a.png">
